@@ -1,0 +1,7 @@
+db.sqlite3
+oit_env
+oit/__pycache__
+base/migrations
+base/__pycache__
+docs
+
