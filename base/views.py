@@ -38,3 +38,11 @@ def contact(request):
 
     return render(request, template, context)
 
+def about(request):
+    """View function for about page."""
+
+    template = 'base/about.html'
+    context = {}
+
+    return render(request, template, context)
+

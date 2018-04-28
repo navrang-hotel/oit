@@ -1,0 +1,85 @@
+{% extends 'base/base_generic.html' %}
+
+{% block navAbo %}
+  active
+{% endblock %}
+
+{% block content %}
+  <div class="container py-5">
+    <div class="row align-items-top">
+      <div class="col-sm-6 py-5">
+        <h3>At OIT, we believe in the power of open source to change the world</h3>
+        <p class="my-4">
+OIT was created alongside Ubuntu to help it reach a wider market. Our services help governments and businesses the world over with migrations, management and support for their Ubuntu deployments. Together with our partners, we ensure that Ubuntu runs reliably on every platform from the PC and the smartphone to the server and, crucially, the cloud.
+        </p>
+      </div>
+      <div class="col-sm-6">
+        {% load static %}
+        <img src="{% static 'base/img/careers_ubu.png' %}" class="img-fluid" alt="Responsive image">
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid py-5 bg-info text-white border-top">
+    <div class="container">
+      <h4 class="py-1">What we do?</h4>
+      <div class="row my-3">
+        <div class="col-sm-6 py-3">
+          <div class="media">
+            <p class="bg-dark rounded-circle p-3 mr-3">
+              1
+            </p>
+            <div class="media-body">
+              <h5 class="mt-0">A culture of continuous innovation</h5>
+            </div>
+          </div>
+          <p>
+At OIT, you’ll be expected to innovate and solve problems every day. It can be challenging, but you’ll never be bored!
+          </p>
+        </div>
+        <div class="col-sm-6 py-3">
+          <div class="media">
+            <p class="bg-dark rounded-circle p-3 mr-3">
+              2
+            </p>
+            <div class="media-body">
+              <h5 class="mt-0">Projects that really matter</h5>
+            </div>
+          </div>
+          <p>
+Everything we do is engineered precisely and with pride. When the world’s businesses and governments depend on your software, there’s no cutting corners.
+          </p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6 py-3">
+          <div class="media">
+            <p class="bg-dark rounded-circle p-3 mr-3">
+              3
+            </p>
+            <div class="media-body">
+              <h5 class="mt-0">Inspirational colleagues</h5>
+            </div>
+          </div>
+          <p>
+We go to great lengths to hire the right people, so you can expect to work with incredibly bright, experienced designers, engineers, researchers and marketing experts from day one.
+          </p>
+        </div>
+        <div class="col-sm-6 py-3">
+          <div class="media">
+            <p class="bg-dark rounded-circle p-3 mr-3">
+              4
+            </p>
+            <div class="media-body">
+              <h5 class="mt-0">The chance to change the world</h5>
+            </div>
+          </div>
+          <p>
+Everything you do at Canonical has the potential to improve millions of people’s lives and have a real impact in the world.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
