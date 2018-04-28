@@ -52,8 +52,8 @@
                   <a class="dropdown-item" href="#">All</a>
                 </div>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Careers</a>
+              <li class="nav-item {% block navCar %}{% endblock %}">
+                <a class="nav-link" href="{% url 'base-careers' %}">Careers</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">Contact</a>

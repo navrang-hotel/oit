@@ -1,0 +1,119 @@
+{% extends 'base/base_generic.html' %}
+
+{% block navCar %}
+  active
+{% endblock %}
+
+{% block content %}
+  <div class="container py-5">
+    <div class="row align-items-top">
+      <div class="col-sm-6 py-5">
+        <h3>If you want to make a difference, make the move to OIT</h3>
+        <p class="my-4">
+Life at OIT is anything but corporate. As a company that exists to support one of today’s most important open source projects, we are changing the world on a daily basis. It’s a collaborative environment, but one in which every member of the team takes personal responsibility for everything they produce.
+        </p>
+        <p>
+          <a href="">View all vacancies</a>
+        </p>
+      </div>
+      <div class="col-sm-6">
+        {% load static %}
+        <img src="{% static 'base/img/careers_ubu.png' %}" class="img-fluid" alt="Responsive image">
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid py-5 bg-info text-white border-top">
+    <div class="container">
+      <h4 class="py-1">Reasons to join OIT</h4>
+      <div class="row my-3">
+        <div class="col-sm-6 py-3">
+          <div class="media">
+            <p class="bg-dark rounded-circle p-3 mr-3">
+              1
+            </p>
+            <div class="media-body">
+              <h5 class="mt-0">A culture of continuous innovation</h5>
+            </div>
+          </div>
+          <p>
+At OIT, you’ll be expected to innovate and solve problems every day. It can be challenging, but you’ll never be bored!
+          </p>
+        </div>
+        <div class="col-sm-6 py-3">
+          <div class="media">
+            <p class="bg-dark rounded-circle p-3 mr-3">
+              2
+            </p>
+            <div class="media-body">
+              <h5 class="mt-0">Projects that really matter</h5>
+            </div>
+          </div>
+          <p>
+Everything we do is engineered precisely and with pride. When the world’s businesses and governments depend on your software, there’s no cutting corners.
+          </p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6 py-3">
+          <div class="media">
+            <p class="bg-dark rounded-circle p-3 mr-3">
+              3
+            </p>
+            <div class="media-body">
+              <h5 class="mt-0">Inspirational colleagues</h5>
+            </div>
+          </div>
+          <p>
+We go to great lengths to hire the right people, so you can expect to work with incredibly bright, experienced designers, engineers, researchers and marketing experts from day one.
+          </p>
+        </div>
+        <div class="col-sm-6 py-3">
+          <div class="media">
+            <p class="bg-dark rounded-circle p-3 mr-3">
+              4
+            </p>
+            <div class="media-body">
+              <h5 class="mt-0">The chance to change the world</h5>
+            </div>
+          </div>
+          <p>
+Everything you do at Canonical has the potential to improve millions of people’s lives and have a real impact in the world.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="container-fluid py-5 nb-bg-lgray border-top">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-6 border-right">
+          <div class="row">
+            <div class="col-sm-6">
+              <a href=""><h3>Find roles</h3></a>
+              <p>
+For anyone interested in open source software and Ubuntu in particular, OIT is an incredible place to work.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-3 border-right">
+          <a href=""><h3>Our design blog</h3></a>
+          <p>
+On the OIT design blog, OIT’s design team shares their process, thoughts and inspiration.
+          </p>
+        </div>
+        <div class="col-sm-3">
+          <a href=""><h3>Our developer blog</h3></a>
+          <p>
+On this blog, the latest community news is shared by OIT’s technical engineers.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+

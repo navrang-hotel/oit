@@ -22,3 +22,11 @@ def services(request):
 
     return render(request, template, context)
 
+def careers(request):
+    """View function for careers page."""
+
+    template = 'base/careers.html'
+    context = {}
+
+    return render(request, template, context)
+
