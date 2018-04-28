@@ -1,28 +1,92 @@
 {% extends 'base/base_generic.html' %}
 
 {% block content %}
-  <!-- Top part -->
-  <div class="container-fluid border pt-3">
+  <div class="container-fluid nb-py-20px border-bottom" id="indexImgCtr">
     <div class="container">
       <div class="row">
-        <div class="col-sm-4">
-          <h3>Operating IT</h3>
+        <div class="col-sm-6 bg-light text-dark py-3 rounded">
+          <h3>We are Operating IT</h3>
+          <p> 
+            It is our mission to make open source software available to people everywhere. We believe the best way to fuel innovation is to give the innovators the technology they need.
+          </p> 
+          <p>
+            <a href=""><strong>About OIT</strong></a>
+          </p>
         </div>
-        <div class="col-sm-8">
+        <div class="col-sm-6">
         </div>
       </div>
     </div>
   </div>
-  <!-- /Top part -->
-
-  <div class="container-fluid">
+  <div class="container-fluid nb-bg-lgray nb-pt-20px">
     <div class="container">
-      <h3 class="text-center">
-      We give software and IT services to business.    
-      </h3>
+      <div class="row">
+        <div class="col-sm-8">
+          <h3>We help organizations to make the most of Software</h3>
+        <p> 
+          We make software. Lorem ipsum solor emut.
+          We make software. Lorem ipsum solor emut.
+          We make software. Lorem ipsum solor emut.
+          We make software. Lorem ipsum solor emut.
+          We make software. Lorem ipsum solor emut.
+          We make software. Lorem ipsum solor emut.
+        </p> 
+        </div>
+        <div class="col-sm-4">
+          {% load static %}
+          <img src="{% static 'base/img/index_2.png' %}" class="img-fluid" alt="Responsive image" />
+        </div>
+      </div>
     </div>
   </div>
 
+  <div class="container nb-pt-20px border-bottom">
+    <div class="row">
+      <div class="col-sm-8">
+        <h3>We deliver <span class="text-danger">software</span></h3>
+        <p> 
+          We make software. Lorem ipsum solor emut.
+          We make software. Lorem ipsum solor emut.
+          We make software. Lorem ipsum solor emut.
+          We make software. Lorem ipsum solor emut.
+          We make software. Lorem ipsum solor emut.
+          We make software. Lorem ipsum solor emut.
+        </p> 
+        <p>
+          <a href="">Software services</a>
+        </p>
+      </div>
+      <div class="col-sm-4">
+        {% load static %}
+        <img src="{% static 'base/img/index_2.png' %}" class="img-fluid" alt="Responsive image" />
+      </div>
+    </div>
+  </div>
+
+  <div class="container nb-pt-20px border-bottom">
+    <div class="row">
+      <div class="col-sm-6">
+        {% load static %}
+        <img src="{% static 'base/img/index_2.png' %}" class="img-fluid" alt="Responsive image" />
+      </div>
+      <div class="col-sm-6">
+        <h3>We help organizations to make the most of Software</h3>
+        <p> 
+          We make software. Lorem ipsum solor emut.
+          We make software. Lorem ipsum solor emut.
+          We make software. Lorem ipsum solor emut.
+          We make software. Lorem ipsum solor emut.
+          We make software. Lorem ipsum solor emut.
+          We make software. Lorem ipsum solor emut.
+        </p> 
+        <p>
+          <a href="">Software services</a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  
   <!-- Second part -->
   <div class="container pt-3 text-center">
     <h4 class="text-info">Focus on buisiness, not IT</h4>
@@ -86,4 +150,26 @@ Since its establishment in 2018, Operating IT has always been committed in the f
   <!-- /Fourth part -->
 
 {% endblock %}
+
+  <div class="container-fluid">
+    <div class="container">
+      <h3 class="text-center">
+      We give software and IT services to business.    
+      </h3>
+    </div>
+  </div>
+
+  <!-- Top part -->
+  <div class="container-fluid border pt-3">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-4">
+          <h3>Operating IT</h3>
+        </div>
+        <div class="col-sm-8">
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- /Top part -->
 
