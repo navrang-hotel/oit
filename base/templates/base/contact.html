@@ -1,0 +1,39 @@
+{% extends 'base/base_generic.html' %}
+
+{% block navCon %}
+  active
+{% endblock %}
+
+{% block content %}
+  <div class="container">
+    <h3 class="text-center pt-5">Contact us and we will get back to you soon</h3>
+    <div class="row py-5">
+      <div class="col-sm-4">
+        <p class="my-4">
+Operating IT Pvt Ltd<br/>
+Suyog Marga, Chandol, Kathmandu, Nepal<br/>
++977 9801185187<br/>
+info@oit.com.np<br/>
+www.oit.com.np<br/>
+        </p>
+      </div>
+      <div class="col-sm-8">
+        <form>
+          <div class="row">
+            <div class="col">
+              <input type="text" class="form-control" placeholder="Name *">
+            </div>
+            <div class="col">
+              <input type="email" class="form-control" placeholder="Email *">
+            </div>
+          </div>
+          <div class="form-group py-3">
+              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Message *"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+

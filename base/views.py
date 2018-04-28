@@ -30,3 +30,11 @@ def careers(request):
 
     return render(request, template, context)
 
+def contact(request):
+    """View function for contact page."""
+
+    template = 'base/contact.html'
+    context = {}
+
+    return render(request, template, context)
+

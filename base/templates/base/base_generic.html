@@ -55,8 +55,8 @@
               <li class="nav-item {% block navCar %}{% endblock %}">
                 <a class="nav-link" href="{% url 'base-careers' %}">Careers</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Contact</a>
+              <li class="nav-item {% block navCon %}{% endblock %}">
+                <a class="nav-link" href="{% url 'base-contact' %}">Contact</a>
               </li>
             </ul>
             <form class="form-inline my-2 my-lg-0">
