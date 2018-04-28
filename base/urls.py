@@ -13,5 +13,6 @@ from . import views
 
 urlpatterns = [
     path('', views.index, name='base-index'),
+    path('services/', views.services, name='base-services'),
 ]
 

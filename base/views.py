@@ -14,3 +14,11 @@ def index(request):
 
     return render(request, template, context)
 
+def services(request):
+    """View function for services page."""
+
+    template = 'base/services.html'
+    context = {}
+
+    return render(request, template, context)
+
