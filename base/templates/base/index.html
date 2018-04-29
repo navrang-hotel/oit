@@ -26,7 +26,7 @@
   <div class="container-fluid nb-bg-lgray py-5">
     <div class="container">
       <div class="row">
-        <div class="col-sm-8">
+        <div class="col-sm-6">
           <h3 class="py-3">We help organizations to make the most of Software</h3>
         <p> 
 Leading organisations all over the world turn to us for our services and expertise – from systems management to the deployment of Ubuntu on their own clouds, servers and desktops. 
@@ -35,9 +35,9 @@ Leading organisations all over the world turn to us for our services and experti
           <a href="">OIT services</a>
         </p>
         </div>
-        <div class="col-sm-4">
+        <div class="col-sm-6">
           {% load static %}
-          <img src="{% static 'base/img/index_2.png' %}" class="img-fluid" alt="Responsive image" />
+          <img src="{% static 'base/img/services_ubu_1.png' %}" class="img-fluid" alt="Responsive image" />
         </div>
       </div>
     </div>
@@ -45,8 +45,12 @@ Leading organisations all over the world turn to us for our services and experti
 
   <div class="container py-5 border-bottom">
     <div class="row">
-      <div class="col-sm-8">
-        <h3 class="py-3">We deliver <span class="text-danger">ERP</span> and <span class="text-danger">MIS</span></h3>
+      <div class="col-sm-6">
+        {% load static %}
+        <img src="{% static 'base/img/services_ubu_2.svg' %}" class="img-fluid" alt="Responsive image" />
+      </div>
+      <div class="col-sm-6">
+        <h3 class="py-3">We deliver <span class="text-success">ERP</span> and <span class="text-success">MIS</span></h3>
         <p> 
 OIT's Enterprise Resource Planning (ERP) and Management Information Systems (MIS) are used by 
 businesses of all kinds. We are proud of the quality of our products.
@@ -54,10 +58,6 @@ businesses of all kinds. We are proud of the quality of our products.
         <p>
           <a href="">OIT products</a>
         </p>
-      </div>
-      <div class="col-sm-4">
-        {% load static %}
-        <img src="{% static 'base/img/index_2.png' %}" class="img-fluid" alt="Responsive image" />
       </div>
     </div>
   </div>
