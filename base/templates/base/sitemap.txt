@@ -1,0 +1,4 @@
+http://oit.com.np/services
+http://oit.com.np/about
+http://oit.com.np/careers
+http://oit.com.np/contact

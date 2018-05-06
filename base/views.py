@@ -54,3 +54,11 @@ def googleVerify(request):
 
     return render(request, template, context)
 
+def googleSitemap(request):
+    """View function for google verification."""
+
+    template = 'base/sitemap.txt'
+    context = {}
+
+    return render(request, template, context)
+
