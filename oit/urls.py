@@ -27,6 +27,6 @@ urlpatterns = [
 from django.urls import include
 
 urlpatterns += [
-    path('base/', include('base.urls')),
+    path('', include('base.urls')),
 ]
 

@@ -16,6 +16,7 @@
 }
 
 #indexImgCtr {
-  background: url('../img/index_pic.jpg');
-  height: 500px;
+  /*background: url('../img/pc_1.svg');*/
+  background-color: #DEDEDE;
+  /*height: 500px;*/
 }
