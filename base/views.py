@@ -46,3 +46,11 @@ def about(request):
 
     return render(request, template, context)
 
+def googleVerify(request):
+    """View function for google verification."""
+
+    template = 'base/google756697d741e49fcc.html'
+    context = {}
+
+    return render(request, template, context)
+
