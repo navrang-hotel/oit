@@ -125,3 +125,17 @@ STATIC_URL = '/static/'
 # So that collectstatic works
 STATIC_ROOT = os.path.join(BASE_DIR, "static/")
 
+
+# Added by developer after this
+#
+# For https 
+#
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
+SESSION_EXPIRE_AT_BROWSER_CLOSE = True
+# Redirect http to https
+SECURE_SSL_REDIRECT = True
+
+
+
