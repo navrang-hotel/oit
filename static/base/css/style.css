@@ -1,0 +1,22 @@
+.nb-pt-20px {
+  padding-top: 40px;
+}
+
+.nb-pb-20px {
+  padding-bottom: 40px;
+}
+
+.nb-py-20px {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.nb-bg-lgray {
+  background-color: #EEEEEE;
+}
+
+#indexImgCtr {
+  /*background: url('../img/pc_1.svg');*/
+  background-color: #DEDEDE;
+  /*height: 500px;*/
+}
