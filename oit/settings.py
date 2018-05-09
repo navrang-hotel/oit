@@ -24,8 +24,10 @@ SECRET_KEY = 'b8f^3$98c2%wd2fp=(0p42_vh27#ov7cgg!1&8^)jr*e91-*2)'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+#DEBUG = False
 
 ALLOWED_HOSTS = []
+#ALLOWED_HOSTS = ['oit.com.np','www.oit.com.np',]
 
 
 # Application definition
@@ -135,7 +137,5 @@ SESSION_COOKIE_SECURE = True
 CSRF_COOKIE_SECURE = True
 SESSION_EXPIRE_AT_BROWSER_CLOSE = True
 # Redirect http to https
-SECURE_SSL_REDIRECT = True
-
-
+#SECURE_SSL_REDIRECT = True
 
