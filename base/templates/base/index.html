@@ -6,6 +6,46 @@
 
 {% block content %}
 
+
+  <div class="container-fluid nb-py-20px border-bottom bg-info">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-6 bg-light text-dark py-3 rounded">
+          <h3>Technology helps business</h3>
+          <p> 
+It is our task to make software and provide IT services to meet your needs. We strive to provide best technology so that your business is maximizing by using technology. 
+          </p> 
+          <p>
+            <a href="">About OIT</a>
+          </p>
+        </div>
+        <div class="col-sm-6">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid nb-bg-lgray py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-6">
+          <h3 class="py-3">How to use tech?</h3>
+        <p> 
+With proper consultancy we ensure you are utilizing technology appropriately. We make sure you are using the correct resources which will help you become more efficient. 
+        </p> 
+        <p>
+          <a href="">OIT services</a>
+        </p>
+        </div>
+        <div class="col-sm-6">
+          {% load static %}
+          <!--<img src="{% static 'base/img/ofavicon_1.png' %}" class="img-fluid" alt="OIT logo" />-->
+        </div>
+      </div>
+    </div>
+  </div>
+
+
   <div class="container-fluid bg-success">
     <div class="container">
       <div class="row text-white text-center">
@@ -30,39 +70,24 @@
   </div>
 
 
-  <div class="container-fluid nb-py-20px border-bottom bg-info">
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-6 bg-light text-dark py-3 rounded">
-          <h3>Operating IT</h3>
-          <p> 
-It is our task to make software and provide IT services to meet your needs. We strive to provide best technology so that your business is maximizing by using technology. 
-          </p> 
-          <p>
-            <a href="">About OIT</a>
-          </p>
-        </div>
-        <div class="col-sm-6">
-        </div>
-      </div>
-    </div>
-  </div>
+{% endblock %}
 
   <div class="container-fluid nb-bg-lgray py-5">
     <div class="container">
       <div class="row">
         <div class="col-sm-6">
-          <h3 class="py-3">We help organizations to make the most of Software</h3>
+          <h3 class="py-3">We would like to work with you</h3>
         <p> 
-With proper consultancy we ensure you are utilizing technology appropriately. We make sure you are using the correct resources which will help you become more efficient. 
+We want to help you to increase your business by utilizing software and IT productively. Please get in touch
+with us and we will discuss how we can help you.
         </p> 
         <p>
-          <a href="">OIT services</a>
+          <a href="">Contact us</a>
         </p>
         </div>
         <div class="col-sm-6">
           {% load static %}
-          <img src="{% static 'base/img/pc_1.svg' %}" class="img-fluid" alt="Responsive image" />
+          <img src="{% static 'base/img/o_favicon_1.png' %}" class="img-fluid" alt="Responsive image" />
         </div>
       </div>
     </div>
@@ -86,29 +111,4 @@ businesses of all kinds. We are proud of the quality of our products.
       </div>
     </div>
   </div>
-
-
-
-  <div class="container-fluid nb-bg-lgray py-5">
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-6">
-          <h3 class="py-3">We would like to work with you</h3>
-        <p> 
-We want to help you to increase your business by utilizing software and IT productively. Please get in touch
-with us and we will discuss how we can help you.
-        </p> 
-        <p>
-          <a href="">Contact us</a>
-        </p>
-        </div>
-        <div class="col-sm-6">
-          {% load static %}
-          <img src="{% static 'base/img/pc_1.svg' %}" class="img-fluid" alt="Responsive image" />
-        </div>
-      </div>
-    </div>
-  </div>
-
-{% endblock %}
 

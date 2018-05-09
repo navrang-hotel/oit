@@ -34,3 +34,13 @@
   transform: scale(1.2);
 }
 
+.nb-bg-fgray {
+  background-color: #DDDDDD;
+}
+.nb-bg-fdgray {
+  background-color: #CCCCCC;
+}
+
+.nb-font-sm {
+  font-size: 12px;
+}
