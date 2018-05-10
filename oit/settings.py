@@ -58,7 +58,9 @@ ROOT_URLCONF = 'oit.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        # Modified by developer to use project wise templates
+        #'DIRS': [],
+        'DIRS': ['./templates',],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -132,10 +134,14 @@ STATIC_ROOT = os.path.join(BASE_DIR, "static/")
 #
 # For https 
 #
-SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
-SESSION_COOKIE_SECURE = True
-CSRF_COOKIE_SECURE = True
-SESSION_EXPIRE_AT_BROWSER_CLOSE = True
+#SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+#SESSION_COOKIE_SECURE = True
+#CSRF_COOKIE_SECURE = True
+#SESSION_EXPIRE_AT_BROWSER_CLOSE = True
 # Redirect http to https
 #SECURE_SSL_REDIRECT = True
+
+# Redirect to home URL after login (Default redirects to /accounts/profile/)
+# From mdn django
+LOGIN_REDIRECT_URL = '/'
 
