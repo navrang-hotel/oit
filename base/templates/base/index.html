@@ -7,68 +7,56 @@
 {% block content %}
 
 
-  <div class="container-fluid nb-py-20px border-bottom bg-info">
+  <div class="container-fluid nb-py-20px border-bottom">
     <div class="container">
       <div class="row">
-        <div class="col-sm-6 bg-light text-dark py-3 rounded">
-          <h3>Technology helps business</h3>
-          <p> 
-It is our task to make software and provide IT services to meet your needs. We strive to provide best technology so that your business is maximizing by using technology. 
-          </p> 
-          <p>
-            <a href="">About OIT</a>
-          </p>
+        <div class="col-sm-6 py-3">
+          <div class="container h-100 bg-light rounded border shadow-sm">   
+            <h3>Operating IT</h3>
+            <p> 
+OIT is computer engineering consulting company. Please get in touch with us to collaborate.
+            </p> 
+            <ul>
+              <li><a href="">CLogin</a></li>
+              <li><a href="">Staff</a></li>
+              <li><a href="">Misc</a></li>
+            </ul>
+          </div>  
         </div>
-        <div class="col-sm-6">
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="container-fluid nb-bg-lgray py-5">
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-6">
-          <h3 class="py-3">How to use tech?</h3>
-        <p> 
-With proper consultancy we ensure you are utilizing technology appropriately. We make sure you are using the correct resources which will help you become more efficient. 
-        </p> 
-        <p>
-          <a href="">OIT services</a>
-        </p>
-        </div>
-        <div class="col-sm-6">
-          {% load static %}
-          <!--<img src="{% static 'base/img/ofavicon_1.png' %}" class="img-fluid" alt="OIT logo" />-->
+        <div class="col-sm-6 py-3">
+          <div class="container h-100 bg-light-rm  shadow-sm-rm">   
+            {% load static %} 
+            <img src="{% static 'base/img/index_4.png'%}" class="img-fluid" alt="OIT Picture">
+          </div>
         </div>
       </div>
     </div>
   </div>
 
 
-  <div class="container-fluid bg-success">
+  <div class="container-fluid bg-light">
     <div class="container">
-      <div class="row text-white text-center">
+      <div class="row text-dark text-center">
         <div class="col-sm-3 py-3 nb-cisco-col">
           <h3><i class="fas fa-thumbtack fa-md"></i></h3>
-          <a href="" class="text-white">Get solution</a>
+          <a href="" class="text-dark">Start</a>
         </div>
         <div class="col-sm-3 py-3 nb-cisco-col">
           <h3><i class="fas fa-tachometer-alt fa-md"></i></h3>
-          <a href="" class="text-white">Measure your performance</a>
+          <a href="" class="text-dark">Analytics</a>
         </div>
         <div class="col-sm-3 py-3 nb-cisco-col">
           <h3><i class="fas fa-plug fa-md"></i></h3>
-          <a href="" class="text-white">Remain connected</a>
+          <a href="" class="text-dark">Network</a>
         </div>
         <div class="col-sm-3 py-3 nb-cisco-col">
           <h3><i class="fas fa-star fa-md"></i></h3>
-          <a href="" class="text-white">Achieve and Improve</a>
+          <a href="" class="text-dark">Performance</a>
         </div>
       </div>
     </div> 
   </div>
-
+  
 
 {% endblock %}
 
@@ -112,3 +100,59 @@ businesses of all kinds. We are proud of the quality of our products.
     </div>
   </div>
 
+
+
+
+
+  <div class="container-fluid nb-bg-lgray py-5">
+    <div class="container">
+      <h3 class="pt-3">Contact us</h3>
+      <div class="row py-3 text-secondary">
+        <div class="col-sm-6">
+          <div class="container">
+            <p class="my-0">
+              <strong>Operating IT Pvt Ltd</strong><br/>
+              <i class="fas fa-map-marker"></i>&nbsp;&nbsp;  Suyog Marga, Chandol, Kathmandu, Nepal<br/>
+              <i class="fas fa-phone"></i>&nbsp;  +977 9801185187<br/>
+              <i class="fas fa-envelope"></i>&nbsp;  info@oit.com.np<br/>
+              <i class="fas fa-globe"></i>&nbsp;  www.oit.com.np<br/>
+            </p>
+          </div>
+          <hr/>
+          <form>
+            <div>
+              <p>
+If you want to start a project please write the message to us. We will get back to you 
+with details soon.
+              </p>
+            </div>
+            <div class="row form-group">
+              <div class="col">
+                <label for="">Name*</label>
+                <input type="text" class="form-control" placeholder="">
+              </div>
+              <div class="col">
+                <label for="">Email*</label>
+                <input type="email" class="form-control" placeholder="">
+              </div>
+            </div>
+            <div class="form-group">
+                <label for="">Company name</label>
+                <input type="text" class="form-control" id="compName" rows="3" placeholder="">
+            </div>
+            <div class="form-group">
+                <label for="">Contact number*</label>
+                <input type="text" class="form-control" id="phonNum" rows="3" placeholder="">
+            </div>
+            <div class="form-group">
+                <label for="">What do you need?*</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder=""></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
+        <div class="col-sm-6">
+        </div>
+      </div>
+    </div>
+  </div>

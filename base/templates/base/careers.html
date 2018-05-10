@@ -7,8 +7,8 @@
 {% block content %}
   <div class="container py-5">
     <div class="row align-items-top">
-      <div class="col-sm-6 py-5">
-        <h2>Make the move to OIT</h2>
+      <div class="col-sm-6">
+        <h2>Make the move</h2>
         <p class="my-4">
 Please join us to work in exciting job.
         </p>
@@ -17,97 +17,27 @@ Please join us to work in exciting job.
         </p>
       </div>
       <div class="col-sm-6">
-        {% load static %}
-        <!--<img src="{% static 'base/img/pc_1.svg' %}" class="img-fluid" alt="Responsive image">-->
-      </div>
-    </div>
-  </div>
-
-  <div class="container-fluid py-5 bg-info text-white border-top">
-    <div class="container">
-      <h3 class="py-1">Reasons to join us at OIT</h3>
-      <div class="row my-3">
-        <div class="col-sm-6 py-3">
-          <div class="media py-3">
-            <i class="fas fa-lightbulb fa-3x"></i>
-            <div class="media-body">
-              <h5 class="ml-3 mt-2">Project</h5>
-            </div>
-          </div>
-          <p>
-We work in good projects.
-          </p>
-        </div>
-        <div class="col-sm-6 py-3">
-          <div class="media py-3">
-            <i class="fas fa-check fa-3x"></i>
-            <div class="media-body">
-              <h5 class="ml-3 mt-2">Challenge</h5>
-            </div>
-          </div>
-          <p>
-We have challenging work which is rewarding.
-          </p>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-sm-6">
-          <div class="media py-3">
-            <i class="fas fa-users fa-3x"></i>
-            <div class="media-body">
-              <h5 class="ml-3 mt-2">Quality</h5>
-            </div>
-          </div>
-          <p>
-Quality of project and people working in it will help you.
-          </p>
-        </div>
-        <div class="col-sm-6">
-          <div class="media py-3">
-            <i class="fas fa-globe fa-3x"></i>
-            <div class="media-body">
-              <h5 class="ml-3 mt-2">Freedom</h5>
-            </div>
-          </div>
-          <p>
-We give you freedom to work in your way.
-          </p>
+        <div class="container">
+          <h3 class="py-1">Reasons to join us</h3>
+          <ol>
+            <li>Project</li>
+            <li>Challenge</li>
+            <li>Quality</li>
+            <li>Freedom</li>
+          </ol>
         </div>
       </div>
     </div>
   </div>
-
 
 
   <div class="container-fluid py-5 nb-bg-lgray border-top">
     <div class="container">
-      <div class="row">
-        <div class="col-sm-6 border-right">
-          <div class="row">
-            <div class="col-sm-6">
-              <a href=""><h3>Find roles</h3></a>
-              <p>
-For interested ones, please get in touch with us.
-              </p>
-            </div>
-            <div class="col-sm-6 mt-3 pl-5 text-success">
-              <i class="fas fa-search fa-7x"></i>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-3 border-right">
-          <a href=""><h3>Design blog</h3></a>
-          <p>
-Please check our latest design thoughts.
-          </p>
-        </div>
-        <div class="col-sm-3">
-          <a href=""><h3>Developer blog</h3></a>
-          <p>
-Please check our latest developer thoughts.
-          </p>
-        </div>
-      </div>
+      <ul>
+        <li><a href="">Find roles</a></li>
+        <li><a href="">Design blog</a></li>
+        <li><a href="">Developer blog</a></li>
+      </ul>
     </div>
   </div>
 {% endblock %}

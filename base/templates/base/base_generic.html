@@ -29,11 +29,16 @@
   </head>
   <body>
     <header>
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark py-3">
+      <div class="container-fluid nb-bg-fdgray-rm bg-dark text-secondary nb-font-sm">
+        <div class="container py-1">
+          Contact: +977 9808376049 &nbsp;&nbsp; | &nbsp;&nbsp; Email: operating.it.np@gmail.com
+        </div>
+      </div>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark border-top border-secondary">
         <div class="container">
-          <a class="navbar-brand" href="#">
+          <a class="navbar-brand text-info" href="#">
           {% load static %}
-            <img src="{% static 'base/img/ofavicon_1.png' %}" width="30" height="30" class="d-inline-block align-top" alt="" />
+            <!--<img src="{% static 'base/img/ofavicon_1.png' %}" width="30" height="30" class="d-inline-block align-top" alt="" />-->
             OIT
           </a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -63,9 +68,6 @@
               </li>
               -->
 
-              <li class="nav-item {% block navAbo %}{% endblock %}">
-                <a class="nav-link" href="{% url 'base-about' %}">About</a>
-              </li>
               <li class="nav-item {% block navCar %}{% endblock %}">
                 <a class="nav-link" href="{% url 'base-careers' %}">Careers</a>
               </li>
@@ -73,6 +75,7 @@
                 <a class="nav-link" href="{% url 'base-contact' %}">Contact</a>
               </li>
             </ul>
+            <a class="text-secondary" href=""><i class="fas fa-sign-in-alt fa-md"></i> &nbsp;Login</a>
           </div>
         </div>
       </nav>
@@ -91,20 +94,23 @@
               <p class="text-secondary">&copy; 2018 OIT</p>
             </div>
             <div class="col-sm-3 py-3 text-secondary">
-              <h5>Info</h5>
-              <a class="text-secondary" href="">Terms</a><br/>
+              <h5>Site</h5>
+              <a class="text-secondary" href="">Home</a><br/>
+              <a class="text-secondary" href="">Services</a><br/>
+              <a class="text-secondary" href="">Careers</a><br/>
+              <a class="text-secondary" href="">Contact</a><br/>
             </div>
             <div class="col-sm-3 py-3 text-secondary">
-              <h5>Resources</h5>
+              <h5>Others</h5>
               <a class="text-secondary" href="">Documentation</a><br/>
             </div>
             <div class="col-sm-3 py-3 text-secondary">
               <h5>Follow us</h5>
-              <a href=""><i class="fab fa-facebook-f fa-md text-secondary"></i></a>
+              <a href=""><i class="fab fa-facebook-square fa-lg text-secondary"></i></a>
               &nbsp; &nbsp; &nbsp;
-              <a href=""><i class="fab fa-twitter fa-md text-secondary"></i></a>
+              <a href=""><i class="fab fa-twitter-square fa-lg text-secondary"></i></a>
               &nbsp; &nbsp; &nbsp;
-              <a href=""><i class="fab fa-github fa-md text-secondary"></i></a>
+              <a href=""><i class="fab fa-github-square fa-lg text-secondary"></i></a>
             </div>
           </div>
         </div>
