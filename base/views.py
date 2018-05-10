@@ -62,3 +62,11 @@ def googleSitemap(request):
 
     return render(request, template, context)
 
+def ologin(request):
+    """View function for google verification."""
+
+    template = 'base/login.html'
+    context = {}
+
+    return render(request, template, context)
+
