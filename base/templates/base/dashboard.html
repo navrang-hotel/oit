@@ -15,7 +15,7 @@
             <h3>Dashboard</h3>
             <ul>
               <li><a href="">Project</a></li>
-              <li><a href="">Profile</a></li>
+              <li><a href="{% url 'base-dashboard-uprofile' %}">Profile</a></li>
               <li><a href="">New</a></li>
             </ul>
           </div>  
@@ -29,6 +29,10 @@
       </div>
     </div>
   </div>
+
+
+  {% block dash_c1%}
+  {% endblock %}
 
 
 {% endblock %}

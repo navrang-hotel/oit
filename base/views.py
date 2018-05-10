@@ -81,3 +81,10 @@ def dashboard(request):
 
     return render(request, template, context)
 
+def uprofile(request):
+    """View function for uprofile."""
+
+    template = 'base/uprofile.html'
+    context = {}
+
+    return render(request, template, context)
