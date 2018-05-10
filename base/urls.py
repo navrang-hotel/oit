@@ -20,5 +20,6 @@ urlpatterns = [
     path('google756697d741e49fcc.html', views.googleVerify, name='base-google-verify'),
     path('sitemap.txt', views.googleSitemap, name='base-google-sitemap'),
     path('ologin/', views.ologin, name='base-ologin'),
+    path('dashboard/', views.dashboard, name='base-dashboard'),
 ]
 

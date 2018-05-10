@@ -74,6 +74,11 @@
               <li class="nav-item {% block navCon %}{% endblock %}">
                 <a class="nav-link" href="{% url 'base-contact' %}">Contact</a>
               </li>
+              {% if user.is_authenticated %}
+                <li class="nav-item {% block navDas %}{% endblock %}">
+                  <a class="nav-link" href="{% url 'base-dashboard' %}">Dashboard</a>
+                </li>
+              {% endif %}
             </ul>
             {% if user.is_authenticated %}
               <span class="text-secondary">{{ user.get_username }}</span>&nbsp;&nbsp;

@@ -6,6 +6,8 @@ from django.shortcuts import render
 # Added by developer after this
 # =============================
 
+from django.contrib.auth.decorators import login_required
+
 def index(request):
     """View function for index page."""
 
@@ -66,6 +68,15 @@ def ologin(request):
     """View function for google verification."""
 
     template = 'base/login.html'
+    context = {}
+
+    return render(request, template, context)
+
+@login_required
+def dashboard(request):
+    """View function for dashboard."""
+
+    template = 'base/dashboard.html'
     context = {}
 
     return render(request, template, context)
