@@ -8,6 +8,8 @@ from django.shortcuts import render
 
 from django.contrib.auth.decorators import login_required
 
+from .models import Project
+
 def index(request):
     """View function for index page."""
 
@@ -64,6 +66,7 @@ def googleSitemap(request):
 
     return render(request, template, context)
 
+# *** No used now ***
 def ologin(request):
     """View function for google verification."""
 
@@ -81,10 +84,22 @@ def dashboard(request):
 
     return render(request, template, context)
 
+@login_required
 def uprofile(request):
     """View function for uprofile."""
 
     template = 'base/uprofile.html'
-    context = {}
+
+    # Get projects of this user
+    user = request.user
+    project_list = Project.objects.all().filter(
+        user=user
+    )
+
+    context = {
+        'project_list': project_list,
+    }
+
 
     return render(request, template, context)
+

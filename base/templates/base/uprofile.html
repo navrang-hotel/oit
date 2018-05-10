@@ -41,24 +41,14 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>Navrang hotel website</td>
-                <td>Maintainance</td>
-                <td><a href="">View Details</a></td>
-              </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td>Navrang hotel ordering</td>
-                <td>Design</td>
-                <td><a href="">View Details</a></td>
-              </tr>
-              <tr>
-                <th scope="row">3</th>
-                <td>Personal page</td>
-                <td>Develop</td>
-                <td><a href="">View Details</a></td>
-              </tr>
+              {% for project in project_list %}
+                <tr>
+                  <th scope="row">1</th>
+                  <td>{{ project.name }}</td>
+                  <td>{{ project.get_status_display }}</td>
+                  <td><a href="">View Details</a></td>
+                </tr>
+              {% endfor %}
             </tbody>
             <tfoot>
             </tfoot>
