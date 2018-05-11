@@ -21,6 +21,7 @@ class Project(models.Model):
     name = models.CharField(max_length=200)
     status = models.CharField(max_length=1, choices=STATUS)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
+    live_url = models.CharField(max_length=100)
 
     def __str__(self):
         """String representation of object."""
