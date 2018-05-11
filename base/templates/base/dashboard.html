@@ -7,28 +7,12 @@
 {% block content %}
 
 
-  <div class="container-fluid nb-py-20px border-bottom">
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-6 py-3">
-          <div class="container h-100 bg-light rounded border shadow-sm">   
-            <h3>Dashboard</h3>
-            <ul>
-              <li><a href="">Project</a></li>
-              <li><a href="{% url 'base-dashboard-uprofile' %}">Profile</a></li>
-              <li><a href="">New</a></li>
-            </ul>
-          </div>  
-        </div>
-        <div class="col-sm-6 py-3">
-          <div class="container h-100 bg-light-rm  shadow-sm-rm">   
-            {% load static %} 
-            <!--<img src="{% static 'base/img/index_4.png'%}" class="img-fluid" alt="OIT Picture">-->
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+  <div class="container-fluid bg-light border-bottom mb-3">
+    <div class="container py-3">   
+        <a href="{% url 'base-dashboard-uprofile' %}">{{ user.username}}</a>&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="">Settings</a> 
+    </div>  
+  </div>  
 
 
   {% block dash_c1%}

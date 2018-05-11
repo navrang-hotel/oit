@@ -6,6 +6,7 @@ from django.shortcuts import render
 # Added by developer after this
 # =============================
 
+from django.views.generic.detail import DetailView 
 from django.contrib.auth.decorators import login_required
 
 from .models import Project
@@ -102,4 +103,12 @@ def uprofile(request):
 
 
     return render(request, template, context)
+
+class ProjectDetailView(DetailView):
+    """View class for project detail view."""
+
+    model = Project
+    template_name = 'base/uproject_detail.html'
+
+
 

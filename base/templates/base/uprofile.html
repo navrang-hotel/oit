@@ -7,30 +7,10 @@
 {% block dash_c1 %}
 
 
-  <div class="container-fluid bg-light nb-py-20px border-bottom">
-    <div class="container">
-      <h4>Profile</h4>
-      <div class="row">
-        <div class="col-sm-6 py-3">
-          <div class="container h-100 bg-light rounded border shadow-sm">   
-              Username: {{ user.username}}<br/>
-              Email: {{ user.email}}<br/>
-              Name: {{ user.first_name}}<br/>
-          </div>  
-        </div>
-        <div class="col-sm-6 py-3">
-          <div class="container h-100 bg-light-rm  shadow-sm-rm">   
-            {% load static %} 
-            <!--<img src="{% static 'base/img/index_4.png'%}" class="img-fluid" alt="OIT Picture">-->
-          </div>
-        </div>
-      </div>
-    </div>
-      
-      <div class="container py-3">
+      <div class="container pt-3">
         <h5>Projects</h5>
         <div class="table-responsive">
-          <table class="table table-dark-rm table-striped table-bordered-rm table-hover-rm table-sm">
+          <table class="table table-striped table-sm">
             <caption>All projects</caption>
             <thead class="thead-light">
               <tr>
@@ -46,7 +26,7 @@
                   <th scope="row">1</th>
                   <td>{{ project.name }}</td>
                   <td>{{ project.get_status_display }}</td>
-                  <td><a href="">View Details</a></td>
+                  <td><a href="{% url 'base-dashboard-uproject' project.pk %}">View Details</a></td>
                 </tr>
               {% endfor %}
             </tbody>
@@ -58,8 +38,7 @@
       
 
       <div class="container">
-        <hr/>
-        <a class="btn btn-link" href="">Start new project</a>
+        <a class="" href="">Start new project</a>
       </div>
 
   </div>
