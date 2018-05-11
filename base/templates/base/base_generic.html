@@ -36,7 +36,7 @@
       </div>
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark border-top border-secondary">
         <div class="container">
-          <a class="navbar-brand text-info" href="#">
+          <a class="navbar-brand text-info" href="{% url 'base-index' %}">
           {% load static %}
             <!--<img src="{% static 'base/img/ofavicon_1.png' %}" width="30" height="30" class="d-inline-block align-top" alt="" />-->
             OIT
@@ -105,14 +105,14 @@
             </div>
             <div class="col-sm-3 py-3 text-secondary">
               <h5>Site</h5>
-              <a class="text-secondary" href="">Home</a><br/>
-              <a class="text-secondary" href="">Services</a><br/>
-              <a class="text-secondary" href="">Careers</a><br/>
-              <a class="text-secondary" href="">Contact</a><br/>
+              <a class="text-secondary" href="{% url 'base-index' %}">Home</a><br/>
+              <a class="text-secondary" href="{% url 'base-services' %}">Services</a><br/>
+              <a class="text-secondary" href="{% url 'base-careers' %}">Careers</a><br/>
+              <a class="text-secondary" href="{% url 'base-contact' %}">Contact</a><br/>
             </div>
             <div class="col-sm-3 py-3 text-secondary">
               <h5>Others</h5>
-              <a class="text-secondary" href="">Documentation</a><br/>
+              <a class="text-secondary" href="{% url 'base-documentation' %}">Documentation</a><br/>
             </div>
             <div class="col-sm-3 py-3 text-secondary">
               <h5>Follow us</h5>
@@ -128,7 +128,7 @@
 
       <div class="container-fluid nb-bg-fdgray my-0 py-2 nb-font-sm">
         <div class="container">
-          <a href="" class="text-dark">Feedback</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <a href="{% url 'base-feedback' %}" class="text-dark">Feedback</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         </div>
       </div>
     </footer>

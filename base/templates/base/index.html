@@ -17,8 +17,8 @@
 Software engineering.
             </p> 
             <ul>
-              <li><a href="">Staff</a></li>
-              <li><a href="">Client</a></li>
+              <li><a href="{% url 'base-start' %}">Start</a></li>
+              <li><a href="">Continue</a></li>
             </ul>
             <p>
 To know what we do, go to <a href="">services</a>.
@@ -26,41 +26,63 @@ To know what we do, go to <a href="">services</a>.
           </div>  
         </div>
         <div class="col-sm-6 py-3">
-          <div class="container h-100 bg-light-rm  shadow-sm-rm">   
-            {% load static %} 
-            <!--<img src="{% static 'base/img/index_4.png'%}" class="img-fluid" alt="OIT Picture">-->
-          </div>
+    <div class="container bg-light border rounded">
+      <div class="row text-dark text-center-rm">
+        <div class="col-sm-3 py-3 nb-cisco-col">
+          <h3><i class="fas fa-thumbtack fa-md"></i></h3>
+          <a href="{% url 'base-dashboard'%}" class="text-dark">Start</a>
+        </div>
+        <div class="col-sm-3 py-3 nb-cisco-col">
+          <h3><i class="fas fa-tachometer-alt fa-md"></i></h3>
+          <a href="" class="text-dark">Monitor</a>
+        </div>
+        <div class="col-sm-3 py-3 nb-cisco-col">
+          <h3><i class="fas fa-plug fa-md"></i></h3>
+          <a href="" class="text-dark">Complete</a>
+        </div>
+        <div class="col-sm-3 py-3 nb-cisco-col">
+          <h3><i class="fas fa-star fa-md"></i></h3>
+          <a href="" class="text-dark">Grow</a>
+        </div>
+      </div>
+    </div> 
         </div>
       </div>
     </div>
   </div>
 
 
+  
+
+{% endblock %}
+
+
+
   <div class="container-fluid bg-light">
     <div class="container">
-      <div class="row text-dark text-center">
+      <div class="row text-dark text-center-rm">
         <div class="col-sm-3 py-3 nb-cisco-col">
           <h3><i class="fas fa-thumbtack fa-md"></i></h3>
-          <a href="" class="text-dark">Start</a>
+          <a href="{% url 'base-dashboard'%}" class="text-dark">Start</a>
         </div>
         <div class="col-sm-3 py-3 nb-cisco-col">
           <h3><i class="fas fa-tachometer-alt fa-md"></i></h3>
-          <a href="" class="text-dark">Analytics</a>
+          <a href="" class="text-dark">Monitor</a>
         </div>
         <div class="col-sm-3 py-3 nb-cisco-col">
           <h3><i class="fas fa-plug fa-md"></i></h3>
-          <a href="" class="text-dark">Network</a>
+          <a href="" class="text-dark">Complete</a>
         </div>
         <div class="col-sm-3 py-3 nb-cisco-col">
           <h3><i class="fas fa-star fa-md"></i></h3>
-          <a href="" class="text-dark">Performance</a>
+          <a href="" class="text-dark">Grow</a>
         </div>
       </div>
     </div> 
   </div>
-  
 
-{% endblock %}
+
+
 
   <div class="container-fluid nb-bg-lgray py-5">
     <div class="container">

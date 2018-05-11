@@ -110,5 +110,27 @@ class ProjectDetailView(DetailView):
     model = Project
     template_name = 'base/uproject_detail.html'
 
+def documentation(request):
+    """View function for documentation page."""
 
+    template = 'base/documentation.html'
+    context = {}
+
+    return render(request, template, context)
+
+def feedback(request):
+    """View function for feedback page."""
+
+    template = 'base/feedback.html'
+    context = {}
+
+    return render(request, template, context)
+
+def ostart(request):
+    """View function for ostart page."""
+
+    template = 'base/ostart.html'
+    context = {}
+
+    return render(request, template, context)
 

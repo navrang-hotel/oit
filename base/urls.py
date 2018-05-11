@@ -23,5 +23,8 @@ urlpatterns = [
     path('dashboard/', views.dashboard, name='base-dashboard'),
     path('dashboard/uprofile/', views.uprofile, name='base-dashboard-uprofile'),
     path('dashboard/uproject/<int:pk>/', views.ProjectDetailView.as_view(), name='base-dashboard-uproject'),
+    path('documentation/', views.documentation, name='base-documentation'),
+    path('feedback/', views.feedback, name='base-feedback'),
+    path('start/', views.ostart, name='base-start'),
 ]
 
