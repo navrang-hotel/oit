@@ -26,5 +26,6 @@ urlpatterns = [
     path('documentation/', views.documentation, name='base-documentation'),
     path('feedback/', views.feedback, name='base-feedback'),
     path('start/', views.ostart, name='base-start'),
+    path('project/', views.oproject, name='base-dashboard-project'),
 ]
 

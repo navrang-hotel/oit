@@ -4,14 +4,22 @@
   active
 {% endblock %}
 
+{% block dash_main_act %}
+  text-success
+{% endblock %}
+
+{% block dash_l2 %}
+  <!-- L-2 -->
+  <div class="container py-1 border-bottom">
+    <a href="">SubDash</a>&nbsp;&nbsp;&nbsp;&nbsp;
+    <a class="" href="">All apps</a>&nbsp;&nbsp;&nbsp;&nbsp;
+  </div>
+{% endblock %}
+
 {% block dash_c1 %}
 
 
-      <div class="container pt-3 border px-0">
-        <a class="" href="">Start new project</a><br />
-        <a class="" href="">Send a message</a><br />
-        <hr />
-
+      <div class="container pt-3 px-0">
         <h5>Projects</h5>
         <div class="table-responsive">
           <table class="table table-striped table-sm">
@@ -38,8 +46,14 @@
             </tfoot>
           </table>
         </div>
+        <hr/>
+
+        <h5>Tasks</h5>
+        <hr/>
       
       </div>
+
+
 
   </div>
 

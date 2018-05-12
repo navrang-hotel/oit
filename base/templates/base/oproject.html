@@ -1,0 +1,44 @@
+{% extends 'base/dashboard.html' %}
+
+{% block dash_proj_act %}
+  text-success
+{% endblock %}
+
+{% block dash_l2 %}
+  <!-- L-2 -->
+  <div class="container py-1 border-bottom">
+    <a class="" href="">New</a>&nbsp;&nbsp;&nbsp;&nbsp;
+    <a class="" href="">Select</a>&nbsp;&nbsp;&nbsp;&nbsp;
+  </div>
+{% endblock %}
+
+{% block dash_c1 %}
+  <div class="container-fluid bg-light-rm pt-3">
+    <div class="container">
+
+      <h4 class="pt-3">Your projects</h4>
+      <ul>
+      {% for project in project_list %}
+        <li class="mt-2">
+          <a href="{% url 'base-dashboard-uproject' project.pk %}">{{ project.name }}</a>
+          <br/> 
+          <span class="text-secondary">{{ project.get_status_display }}</span>
+        </li>
+      {% endfor %}
+      </ul>
+
+
+      <h4 class="pt-3">Select Action</h4>
+      <ul class="">
+        <li class=""><a class="" href="">Start new</a></br></li>
+        <li><a class="" href="">Select</a></br></li>
+      </ul>
+
+
+
+
+    </div>
+  </div>
+{% endblock %}
+
+

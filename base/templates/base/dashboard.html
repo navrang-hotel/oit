@@ -7,11 +7,22 @@
 {% block content %}
 
 
-  <div class="container-fluid bg-light border-bottom mb-3">
-    <div class="container py-3">   
-        <a href="{% url 'base-dashboard-uprofile' %}">{{ user.username}}</a>&nbsp;&nbsp;&nbsp;&nbsp;
-        <a href="">Settings</a> 
-    </div>  
+  <div class="container-fluid bg-light border-bottom">
+
+    <!-- L-0 -->
+    <div class="container py-1 border-bottom">
+      <a class="text-success" href="{% url 'base-dashboard' %}">Dash</a>&nbsp;&nbsp;&nbsp;&nbsp;
+    </div>
+    <!-- L-1 -->
+    <div class="container py-1 border-bottom">
+      <a class="{% block dash_proj_act %}{% endblock %}" href="{% url 'base-dashboard-project' %}">Project</a>&nbsp;&nbsp;&nbsp;&nbsp;
+      <a class="{% block dash_main_act %}{% endblock %}" href="{% url 'base-dashboard-uprofile' %}">Misc</a>&nbsp;&nbsp;&nbsp;&nbsp;
+    </div>
+
+    {% block dash_l2 %}
+    {% endblock %}
+
+
   </div>  
 
 
@@ -20,3 +31,7 @@
 
 
 {% endblock %}
+
+{% block footer%}
+{% endblock %}
+

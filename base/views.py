@@ -108,7 +108,7 @@ class ProjectDetailView(DetailView):
     """View class for project detail view."""
 
     model = Project
-    template_name = 'base/uproject_detail.html'
+    template_name = 'base/oproject_detail.html'
 
 def documentation(request):
     """View function for documentation page."""
@@ -134,3 +134,19 @@ def ostart(request):
 
     return render(request, template, context)
 
+def oproject(request):
+    """View function for oproject page."""
+
+    template = 'base/oproject.html'
+
+    # Get projects of this user
+    user = request.user
+    project_list = Project.objects.all().filter(
+        user=user
+    )
+
+    context = {
+        'project_list': project_list,
+    }
+
+    return render(request, template, context)
