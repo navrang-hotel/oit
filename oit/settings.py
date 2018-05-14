@@ -145,3 +145,4 @@ STATIC_ROOT = os.path.join(BASE_DIR, "static/")
 # From mdn django
 LOGIN_REDIRECT_URL = '/dashboard'
 
+# Just settings

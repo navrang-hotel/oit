@@ -29,3 +29,5 @@ urlpatterns = [
     path('project/', views.oproject, name='base-dashboard-project'),
 ]
 
+# In urls
+# Out urls

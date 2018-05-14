@@ -150,3 +150,6 @@ def oproject(request):
     }
 
     return render(request, template, context)
+
+# Just foo
+# Just bar
