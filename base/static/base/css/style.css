@@ -44,3 +44,11 @@
 .nb-font-sm {
   font-size: 12px;
 }
+
+.nb-ul-nostyle {
+  list-style: none;
+}
+
+.nb-bg-red {
+  background-color: red;
+}
