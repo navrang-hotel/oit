@@ -20,7 +20,7 @@ Below is the list of services we provide.
               </div>
               <div class="col-sm-4">
                 {% load static %}
-                <img class="img-fluid" src="{% static 'base/img/logo_1.png' %}" />
+                <!--<img class="img-fluid" src="{% static 'base/img/logo_1.png' %}" />-->
               </div>
             </div>
 
@@ -80,21 +80,20 @@ protected in the internet.
     </div>
 </div>
 
-<div class="container-fluid bg-info-rm text-white-rm py-5">
-
-
-      <div class="container">
-        <h4>Questions?</h4>
-        <hr/>
-        <p class="my-4">
-Please read <a href="">Services FAQ</a>.<br/>
-        </p>
+  <div class="container my-4">
+    <h4>Questions?</h4>
+    <hr/>
+    <div class="row py-3 text-dark">
+      <div class="col-sm-6 bg-light border py-3">
         <p>
-For further queries please email <a href="mailto:info@oit.com.np">enquiry@oit.com.np</a> with your question,
- or submit the form below.
+If you have any quesitons regarding services, please write an
+email to <a href="">sales@oit.com.np</a>. Or if you wish you
+can submit the form below. 
         </p>
-        <div class="row">
-          <div class="col-sm-6">
+            <h4 class="py-3">Question</h4>
+            <p class="text-secondary py-2">
+Please write your question to us.
+            </p>
             <form>
               <div class="form-group">
                 <label for="">Name</label> 
@@ -111,14 +110,17 @@ For further queries please email <a href="mailto:info@oit.com.np">enquiry@oit.co
               </div>
               <button type="submit" class="btn btn-primary">Submit</button>
             </form>
-          </div>
-          <div class="col-sm-6">
-          </div>
-        </div>
       </div>
-          <hr/>
-  <div class="container">
+      <div class="col-sm-6 py-3">
+                <h5 class="text-center py-2 bg-info text-white my-0">Quick Links</h5>
+                <ul class="list-group">
+                  <li class="list-group-item"><a href="">Services FAQ</a></li>
+                  <li class="list-group-item"><a href="">Contact sales</a></li>
+                  <li class="list-group-item"><a href="">Get support</a></li>
+                  <li class="list-group-item"><a href="">Start project</a></li>
+                </ul>
+      </div>
+    </div>
   </div>
-</div>
 {% endblock %}
 
