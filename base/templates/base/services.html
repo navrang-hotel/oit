@@ -5,116 +5,121 @@
 {% endblock %}
 
 {% block content %}
-    <div class="container mt-5 pb-3">
-            <h2>Services</h2>
+<div class="container-fluid bg-info-rm text-white-rm pb-3 shadow-sm">
+    <div class="container pt-5 pb-3">
+            <h2>OIT Services</h2>
             <div class="row">
               <div class="col-sm-8">
-                <p class="my-4 text-secondary">
-We provide software and information technology (IT) services.
+                <p>
+We are a computer engineering consulting firm, and we
+provide engineering services to our clients.
+We have been helping clients utilize the IT 
+sector to grow their business. Since our establishment
+we have been providing high quality service to
+our clients. Below is the list of services we provide.
                 </p>
-                <p class="my-4 text-secondary">
-Below is the list of services operating it provides.
-                </p>
-
               </div>
               <div class="col-sm-4">
                 {% load static %}
-                <!--<img class="img-fluid" src="{% static 'base/img/orlogo_1.jpg' %}" />-->
+                <img class="img-fluid" src="{% static 'base/img/logo_1.png' %}" />
               </div>
             </div>
-            <hr />
+
+            <div class="row border-bottom">
+              <div class="col-sm-4 border-right py-5">
+                  <h4 class="pb-3">Software development</h4>
+                   <i class="fas fa-desktop fa-2x mr-3 text-info"></i><br/>
+                  <p class="pt-3">
+We make software according to your needs.
+Software range from websites, desktop and mobile applications.
+                  </p>
+              </div>
+              <div class="col-sm-4 border-right py-5">
+                  <h4 class="pb-3">Business Process automation</h4>
+                  <i class="fas fa-magic fa-2x mr-3 text-info"></i><br/>
+                  <p class="pt-3">
+Business process automation (BPA) is the technology-enabled automation of business processes.
+                  </p>
+              </div>
+              <div class="col-sm-4 py-5">
+                  <h4 class="pb-3">Digital marketing</h4>
+                  <i class="fas fa-adjust fa-2x mr-3 text-info"></i>
+                  <p class="pt-3">
+Marketing of products using digital technologies, mainly on the Internet, but also including mobile phones, display advertising, etc.
+                  </p>
+              </div>
+            </div>
 
 
-            <h5 class="my-4">
-Custom software development
-            </h5>
-            <ul>
-              <li>
-                <a href="">Web</a>
-                <p>
-A web application is typically accessed over internet using web browser like firefox or chrome.
-Different kind of applications can be made using web. For example:
-                  <ul>
-                    <li>Website</li>
-                    <li>ERP</li>
-                    <li>MIS</li>
-                  </ul>
-                </p>
-                <p>
-Best for following scenarios:
-                  <ul>
-                    <li>Business webpage</li>
-                    <li>Mobile users</li>
-                    <li>Informative prupose</li>
-                  </ul>
-                </p>
-              </li>
-              <li>
-                <a href="">Desktop application</a>
-                <p>
-Desktop application is installed in a desktop and has a user interface to perform tasks. Usually used for 
-book keeping and automating processes in business.
-                  <ul>
-                    <li>Website</li>
-                    <li>ERP</li>
-                    <li>MIS</li>
-                  </ul>
-                </p>
-                <p>
-Best for following scenarios:
-                  <ul>
-                    <li>Business webpage</li>
-                    <li>Mobile users</li>
-                    <li>Informative prupose</li>
-                  </ul>
-                </p>
-              </li>
-              <li>
-                <a href="">Mobile app</a>
-                <p>
-A web application is typically accessed over internet using web browser like firefox or chrome.
-Different kind of applications can be made using web. For example:
-                  <ul>
-                    <li>Website</li>
-                    <li>ERP</li>
-                    <li>MIS</li>
-                  </ul>
-                </p>
-                <p>
-Best for following scenarios:
-                  <ul>
-                    <li>Business webpage</li>
-                    <li>Mobile users</li>
-                    <li>Informative prupose</li>
-                  </ul>
-                </p>
-              </li>
-            </ul>
-
-
-            <h5 class="my-4">
-Business IT services
-            </h5>
-            <ul>
-              <li><a href="">Network</a></li>
-              <li><a href="">Storage</a></li>
-              <li><a href="">Security</a></li>
-              <li><a href="">Content</a></li>
-            </ul>
-
-
-            <h5 class="my-4">
-Consultancy and Training
-            </h5>
-            <ul>
-              <li><a href="">Certifications</a></li>
-            </ul>
-
-            <hr />
-            <p class="my-4 text-secondary">
-For more information, visit <a href="">Services FAQ</a>.<br/>
-For further queries email <a href="mailto:info@oit.com.np">enquiry@oit.com.np</a> with your question.
-            </p>
+            <div class="row pt-5-rm">
+              <div class="col-sm-4 border-right border-right-danger py-5">
+                  <h4 class="pb-3">Open source stack</h4>
+                  <i class="fas fa-briefcase fa-2x mr-3 text-info"></i><br/>
+                  <p class="pt-3">
+OpenStack is a set of software tools for building and managing cloud computing platforms for public and private clouds.
+Backed by some of the biggest companies in software development and hosting,
+as well as thousands of individual community members, many think that OpenStack is the future of cloud computing.
+                  </p>
+              </div>
+              <div class="col-sm-4 border-right py-5">
+                  <h4 class="pb-3">Training and Certifications</h4>
+                  <i class="fas fa-calculator fa-2x mr-3 text-info"></i><br/>
+                  <p class="pt-3">
+Training for relevant IT certifications. We are partner of Red Hat Certifications, and other 
+network and open source certificaitons.
+                  </p>
+              </div>
+              <div class="col-sm-4 py-5">
+                  <h4 class="pb-3">Security and Storage</h4>
+                  <i class="fas fa-cloud fa-2x mr-3 text-info"></i><br/>
+                  <p class="pt-3">
+Cloud storage so that you always have access to your data. Security so that your data is 
+protected in the internet.
+                  </p>
+              </div>
+            </div>
     </div>
+</div>
+
+<div class="container-fluid bg-info-rm text-white-rm py-5">
+
+
+      <div class="container">
+        <h4>Questions?</h4>
+        <hr/>
+        <p class="my-4">
+Please read <a href="">Services FAQ</a>.<br/>
+        </p>
+        <p>
+For further queries please email <a href="mailto:info@oit.com.np">enquiry@oit.com.np</a> with your question,
+ or submit the form below.
+        </p>
+        <div class="row">
+          <div class="col-sm-6">
+            <form>
+              <div class="form-group">
+                <label for="">Name</label> 
+                <input type="text" class="form-control" id="" aria-describedby="nameHelp" placeholder="" />
+              </div>
+              <div class="form-group">
+                <label for="">Email</label> 
+                <input type="email" class="form-control" id="" aria-describedby="nameEmail" placeholder="" />
+              </div>
+
+              <div class="form-group py-3">
+                  <label for="">Message</label> 
+                  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder=""></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+          </div>
+          <div class="col-sm-6">
+          </div>
+        </div>
+      </div>
+          <hr/>
+  <div class="container">
+  </div>
+</div>
 {% endblock %}
 
