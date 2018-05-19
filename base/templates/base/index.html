@@ -7,44 +7,140 @@
 {% block content %}
 
 
-  <div class="container-fluid nb-py-20px border-bottom">
+
+<div class="container-fluid py-5 bg-info text-white">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-4">
+        <h3 class="py-3">Operating IT</h3>
+        <p>
+We provide IT services to business.
+Please start a project with us
+if you have any software or IT needs.
+Starting project is easy and with us 
+you will get technical expertise.
+        </p>
+        <br/>
+        <a class="btn btn-warning shadow" href="">Start Project</a>
+      </div>
+      <div class="col-sm-4">
+        {% load static %}
+        <!--<img class="img-fluid" src="{% static 'base/img/revenue_1.png' %}" />-->
+      </div>
+      <div class="col-sm-4">
+        <img class="img-fluid" src="{% static 'base/img/logo_1.png' %}" />
+      </div>
+    </div>
+  </div>
+</div>
 
 
 
-<div class="container mt-0 pt-0">
-  <div class="jumbotron mt-0">
-    <h1 class="display-4">Information Technology for Business</h1>
-    <p class="lead">
-We are leading informaiton technology (IT) services firm, helping business manage better and be efficient. 
-    </p>
-    <hr class="my-4">
-    <p>
-Excel IT.
-    </p>
-    <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+<div class="container-fluid bg-light-rm border py-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6">
+        <h2>Growing your business?</h2>
+        <p class="py-3">
+        </p>
+      </div>
+      <div class="col-sm-6">
+        {% load static %}
+        <!--<img class="img-fluid" src="{% static 'base/img/it_1.jpg' %}" />-->
+      </div>
+    </div>
+            <div class="row border-bottom">
+              <div class="col-sm-4 border-right py-5">
+                  <h4 class="pb-3">Increased sales</h4>
+                   <i class="fas fa-rupee-sign fa-2x mr-3 text-info"></i><br/>
+                  <p class="pt-3">
+Taking order online and prividing services online help 
+you reach more customers and increase sales.
+                  </p>
+              </div>
+              <div class="col-sm-4 border-right py-5">
+                  <h4 class="pb-3">Effective marketing</h4>
+                  <i class="fas fa-users fa-2x mr-3 text-info"></i><br/>
+                  <p class="pt-3">
+Social media, email, mobile phone and other digital media
+make marketing more effective.
+                  </p>
+              </div>
+              <div class="col-sm-4 py-5">
+                  <h4 class="pb-3">Process automation</h4>
+                  <i class="fas fa-sitemap fa-2x mr-3 text-info"></i>
+                  <p class="pt-3">
+Most business processes can be automated using software making you more efficient. 
+                  </p>
+              </div>
+            </div>
+            <div class="row border-bottom">
+              <div class="col-sm-4 border-right py-5">
+                  <h4 class="pb-3">Better customer relation</h4>
+                   <i class="fas fa-users fa-2x mr-3 text-info"></i><br/>
+                  <p class="pt-3">
+Providing support and effective communication with customers 
+can be improved using digital methods.
+                  </p>
+              </div>
+              <div class="col-sm-4 border-right py-5">
+                  <h4 class="pb-3">Effective communication</h4>
+                  <i class="fas fa-volume-up fa-2x mr-3 text-info"></i><br/>
+                  <p class="pt-3">
+Commuincation with clients, stakeholders and internal team is made
+a lot easier with digital technology.
+                  </p>
+              </div>
+              <div class="col-sm-4 py-5">
+                  <h4 class="pb-3">More</h4>
+                  <i class="fas fa-adjust fa-2x mr-3 text-info"></i>
+                  <p class="pt-3">
+There are much more <a href="">benefits of using IT in business</a>.
+                  </p>
+              </div>
+            </div>
   </div>
 </div>
 
 
 
 
-
-    <div class="container bg-light border rounded">
-      <div class="row text-dark text-center-rm">
-        <div class="col-sm-3 py-3 nb-cisco-col">
-          <h3><i class="fas fa-thumbtack fa-md"></i></h3>
-        </div>
-        <div class="col-sm-3 py-3 nb-cisco-col">
-          <h3><i class="fas fa-tachometer-alt fa-md"></i></h3>
-        </div>
-        <div class="col-sm-3 py-3 nb-cisco-col">
-          <h3><i class="fas fa-plug fa-md"></i></h3>
-        </div>
-        <div class="col-sm-3 py-3 nb-cisco-col">
-          <h3><i class="fas fa-star fa-md"></i></h3>
-        </div>
+<div class="container-fluid bg-info text-white border py-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6">
+        <h3>OIT is your partner</h3>
+        <p class="py-3">
+We can help you use latest IT technology relevant to your business.
+We are proud to be serving and helping clients doing various 
+business to grow. What you get from us ?
+          <ul>
+            <li>Technical Expertise</li>
+            <li>Excellent support</li>
+            <li>Reasonable fee</li>
+            <li>Long term commitment</li>
+          </ul>
+        </p>
+        <p class="py-3">
+Please <a class="text-white" href="">write a message</a> to us if you have any questions.
+If, you are ready <a class="text-white" href="">start project</a> with us.
+        </p>
+        <p class="py-3">
+Please <a class="text-white" href="">view OIT services</a> to know about srvices
+we provide.
+        </p>
       </div>
-    </div> 
+      <div class="col-sm-6">
+        {% load static %}
+        <img class="img-fluid" src="{% static 'base/img/revenue_1.png' %}" />
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
   
 
 {% endblock %}
@@ -202,3 +298,49 @@ To know what we do, visit <a href="">services</a>.
       </div>
     </div>
   </div>
+
+
+
+<div class="container mt-0 pt-0">
+  <div class="jumbotron mt-0 bg-info text-white">
+    <h1 class="display-4">IT Services for Business</h1>
+    <p class="lead">
+We are leading informaiton technology (IT) services firm, helping business manage better and be efficient. 
+    </p>
+    <hr class="my-4">
+    <p>
+Excel IT.
+    </p>
+    <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+  </div>
+</div>
+
+
+
+
+    <div class="container bg-light border rounded">
+      <div class="row text-dark text-center-rm">
+        <div class="col-sm-3 py-3 nb-cisco-col">
+          <h3><i class="fas fa-thumbtack fa-md"></i></h3>
+        </div>
+        <div class="col-sm-3 py-3 nb-cisco-col">
+          <h3><i class="fas fa-tachometer-alt fa-md"></i></h3>
+        </div>
+        <div class="col-sm-3 py-3 nb-cisco-col">
+          <h3><i class="fas fa-plug fa-md"></i></h3>
+        </div>
+        <div class="col-sm-3 py-3 nb-cisco-col">
+          <h3><i class="fas fa-star fa-md"></i></h3>
+        </div>
+      </div>
+    </div> 
+
+
+
+                <h5 class="text-center py-2 bg-success text-white my-0 shadow">Quick Links</h5>
+                <ul class="list-group shadow">
+                  <li class="list-group-item"><a href="">Services FAQ</a></li>
+                  <li class="list-group-item"><a href="">Contact sales</a></li>
+                  <li class="list-group-item"><a href="">Get support</a></li>
+                  <li class="list-group-item"><a href="">Start project</a></li>
+                </ul>

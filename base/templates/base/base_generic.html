@@ -38,9 +38,9 @@
 -->
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark border-top border-secondary">
         <div class="container">
-          <a class="navbar-brand text-info" href="{% url 'base-index' %}">
+          <a class="navbar-brand text-white" href="{% url 'base-index' %}">
           {% load static %}
-            <!--<img src="{% static 'base/img/ofavicon_1.png' %}" width="30" height="30" class="d-inline-block align-top" alt="" />-->
+            <img src="{% static 'base/img/logo_1.png' %}" width="30" height="30" class="d-inline-block align-top" alt="" />
             OIT
           </a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -86,7 +86,7 @@
               <span class="text-secondary">{{ user.get_username }}</span>&nbsp;&nbsp;
               <a class="text-secondary" href="{% url 'logout' %}?next={{request_path}}"><i class="fas fa-sign-out-alt fa-md"></i> &nbsp;Logout</a>
             {% else %}
-              <a class="text-secondary" href="{% url 'login' %}?next={{request_path}}"><i class="fas fa-sign-in-alt fa-md"></i> &nbsp;Login</a>
+              <a class="text-white" href="{% url 'login' %}?next={{request_path}}"><i class="fas fa-sign-in-alt fa-md"></i> &nbsp;Login</a>
             {% endif %}
           </div>
         </div>
