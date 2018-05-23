@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- meta -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <!-- /meta -->
+
+    <title>
+      {% block title %}
+      {% endblock %}
+    </title>
+
+    <!-- Local style sheet -->
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'base/css/style.css' %}">
+    <!-- /Local style sheet -->
+  </head>
+  <body>
+    <header>
+    </header>
+
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <footer>
+    </footer>
+  </body>
+</html>
+

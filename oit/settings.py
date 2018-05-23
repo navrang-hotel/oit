@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # Added by developer after this
     'base.apps.BaseConfig',
+    'wcup.apps.WcupConfig',
 ]
 
 MIDDLEWARE = [

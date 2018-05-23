@@ -5,3 +5,5 @@ base/migrations
 base/__pycache__
 docs
 
+migrations
+__pycache__
