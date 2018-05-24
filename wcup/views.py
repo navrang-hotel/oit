@@ -10,6 +10,9 @@ from .models import Player
 from django.http import HttpResponseRedirect
 
 from .forms import PlayerForm
+from .models import NepNews, Blog
+from django.views.generic.list import ListView
+from django.views.generic.detail import DetailView
 
 def index(request):
     """View function for index page."""
@@ -43,4 +46,22 @@ def player_create(request):
     }
         
     return render(request, template, context)
+
+class NepNewsList(ListView):
+    """View class for NepNewsList."""
+
+    model = NepNews
+    template_name = 'wcup/nepnews_list.html'
+
+class BlogListView(ListView):
+    """View class for blog list."""
+
+    model = Blog
+    template_name = 'wcup/blog_list.html'
+
+class BlogDetailView(DetailView):
+    """View class for blog detail."""
+
+    model = Blog
+    template_name = 'wcup/blog_detail.html'
 

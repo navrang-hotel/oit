@@ -40,3 +40,55 @@ class Player(models.Model):
 
         return self.first_name + ' ' + self.last_name
 
+class NepNews(models.Model):
+    """Class for NepTest model."""
+
+    title = models.TextField(max_length=500)
+
+    def __str__(self):
+        """String representation of object."""
+
+        return self.title
+
+class FTeam(models.Model):
+    """Class for FTeam model."""
+
+    pass
+
+class Poll(models.Model):
+    """Class for Poll model."""
+    
+    pass
+
+class Blog(models.Model):
+    """Class for blog model."""
+    
+    title = models.CharField(max_length=200)
+
+    def __str__(self):
+        """String representation of object."""
+
+        return self.title
+
+
+class BlogEntry(models.Model):
+    """Class for blog entry model."""
+
+    blog = models.ForeignKey(Blog, on_delete=models.CASCADE)
+    body = models.TextField()
+
+    def __str__(self):
+        """String representation of object."""
+
+        return self.blog.title + ' : Entry'
+
+class BlogComment(models.Model):
+    """Class for blog comment model."""
+    
+    blog = models.ForeignKey(Blog, on_delete=models.CASCADE)
+    body = models.TextField()
+
+    def __str__(self):
+        """String representation of object."""
+
+        return self.blog.title + ' : Comment'

@@ -1,0 +1,10 @@
+{% extends 'wcup/wcup_generic.html' %}
+
+{% block content %}
+  <div class="container">
+    {% for blog in blog_list %}
+      <h2>{{ blog.title }}</h2>
+    {% endfor %}
+  </div>
+{% endblock %}
+
