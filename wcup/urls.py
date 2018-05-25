@@ -8,5 +8,6 @@ urlpatterns = [
     path('nepnews_list/', views.NepNewsList.as_view(), name='wcup-nepnews-list'),
     path('blog/', views.BlogListView.as_view(), name='wcup-blog'),
     path('blog/<int:pk>', views.BlogDetailView.as_view(), name='wcup-blog-detail'),
+    path('blog/<int:pk>/comment', views.blog_comment_create, name='wcup-blog-comment-create'),
 ]
 

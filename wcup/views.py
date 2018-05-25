@@ -9,7 +9,7 @@ from django.shortcuts import render
 from .models import Player 
 from django.http import HttpResponseRedirect
 
-from .forms import PlayerForm
+from .forms import PlayerForm, BlogCommentForm
 from .models import NepNews, Blog
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
@@ -64,4 +64,29 @@ class BlogDetailView(DetailView):
 
     model = Blog
     template_name = 'wcup/blog_detail.html'
+
+def blog_comment_create(request, pk):
+    """View function for creating a blog comment."""
+
+    template = 'wcup/blog_comment_create.html'
+
+    if request.method == 'POST':
+        form = PlayerForm(request.POST)
+        if form.is_valid():
+            # first_name = form.cleaned_data['player_first_name']
+            # last_name = form.cleaned_data['player_last_name']
+            # p = Player(
+            #     first_name = first_name,
+            #     last_name = last_name
+            # ) 
+            # p.save()
+            return HttpResponseRedirect('/thanks/')
+    else:
+        form = BlogCommentForm()
+
+    context = {
+        'form': form,
+    }
+        
+    return render(request, template, context)
 

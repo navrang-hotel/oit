@@ -8,3 +8,6 @@ class PlayerForm(forms.Form):
     player_first_name = forms.CharField(label='Player first name', max_length=100)
     player_last_name = forms.CharField(label='Player last name', max_length=100)
 
+class BlogCommentForm(forms.Form):
+    comment_body = forms.CharField(label='Comment', widget=forms.Textarea) 
+

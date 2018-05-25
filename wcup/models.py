@@ -6,6 +6,8 @@ from django.db import models
 # Added by developer after this
 # =============================
 
+from django.contrib.auth.models import User
+
 class Group(models.Model):
     """Class for Group model."""
 
@@ -64,6 +66,7 @@ class Blog(models.Model):
     """Class for blog model."""
     
     title = models.CharField(max_length=200)
+    author = models.ForeignKey(User, on_delete=models.CASCADE, default=1, null=True)
 
     def __str__(self):
         """String representation of object."""
@@ -87,6 +90,7 @@ class BlogComment(models.Model):
     
     blog = models.ForeignKey(Blog, on_delete=models.CASCADE)
     body = models.TextField()
+    user = models.ForeignKey(User, on_delete=models.CASCADE, default=1, null=True)
 
     def __str__(self):
         """String representation of object."""
