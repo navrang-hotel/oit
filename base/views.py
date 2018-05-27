@@ -83,7 +83,7 @@ def ologin(request):
 def dashboard(request):
     """View function for dashboard."""
 
-    template = 'base/dashboard.html'
+    template = 'base/odashboard.html'
     context = {}
 
     return render(request, template, context)
