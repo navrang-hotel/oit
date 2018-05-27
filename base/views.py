@@ -7,9 +7,12 @@ from django.shortcuts import render
 # =============================
 
 from django.views.generic.detail import DetailView 
+from django.views.generic.edit import CreateView
 from django.contrib.auth.decorators import login_required
+from django.urls import reverse
 
-from .models import Project
+from .models import Project, ContactMessage
+from .forms import ContactMessageForm
 
 def index(request):
     """View function for index page."""
@@ -151,5 +154,28 @@ def oproject(request):
 
     return render(request, template, context)
 
-# Just foo
-# Just bar
+class ContactMessageCreate(CreateView):
+    """View class for creating contact message."""
+
+    template_name = 'base/contact.html'
+    model = ContactMessage
+    # fields = [
+    #     'sender_name',
+    #     'sender_email',
+    #     'message',
+    # ]
+    form_class = ContactMessageForm
+
+    def get_success_url(self):
+        """Override success url."""
+
+        return reverse('base-contact-success')
+
+def contactMessageSuccess(request):
+    """View function for contact message success."""
+
+    template = 'base/contact_success.html'
+    context = {}
+
+    return render(request, template, context)
+
