@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'base.apps.BaseConfig',
     'wcup.apps.WcupConfig',
     'ohotel.apps.OhotelConfig',
+    'ocprm.apps.OcprmConfig',
 ]
 
 MIDDLEWARE = [

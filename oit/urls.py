@@ -30,6 +30,7 @@ urlpatterns += [
     path('', include('base.urls')),
     path('wcup/', include('wcup.urls')),
     path('ohotel/', include('ohotel.urls')),
+    path('ocprm/', include('ocprm.urls')),
 ]
 
 #Add Django site authentication urls (for login, logout, password management)

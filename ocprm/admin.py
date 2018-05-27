@@ -6,7 +6,7 @@ from django.contrib import admin
 # Added by developer after this
 # =============================
 
-from .models import ContactMessage
+from .models import Project
 
-admin.site.register(ContactMessage)
+admin.site.register(Project)
 

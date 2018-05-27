@@ -11,7 +11,7 @@ from django.views.generic.edit import CreateView
 from django.contrib.auth.decorators import login_required
 from django.urls import reverse
 
-from .models import Project, ContactMessage
+from .models import ContactMessage
 from .forms import ContactMessageForm
 
 def index(request):
@@ -79,39 +79,39 @@ def ologin(request):
 
     return render(request, template, context)
 
-@login_required
-def dashboard(request):
-    """View function for dashboard."""
+#@login_required
+#def dashboard(request):
+#    """View function for dashboard."""
+#
+#    template = 'base/odashboard.html'
+#    context = {}
+#
+#    return render(request, template, context)
 
-    template = 'base/odashboard.html'
-    context = {}
+#@login_required
+#def uprofile(request):
+#    """View function for uprofile."""
+#
+#    template = 'base/uprofile.html'
+#
+#    # Get projects of this user
+#    user = request.user
+#    project_list = Project.objects.all().filter(
+#        user=user
+#    )
+#
+#    context = {
+#        'project_list': project_list,
+#    }
+#
+#
+#    return render(request, template, context)
 
-    return render(request, template, context)
-
-@login_required
-def uprofile(request):
-    """View function for uprofile."""
-
-    template = 'base/uprofile.html'
-
-    # Get projects of this user
-    user = request.user
-    project_list = Project.objects.all().filter(
-        user=user
-    )
-
-    context = {
-        'project_list': project_list,
-    }
-
-
-    return render(request, template, context)
-
-class ProjectDetailView(DetailView):
-    """View class for project detail view."""
-
-    model = Project
-    template_name = 'base/oproject_detail.html'
+#class ProjectDetailView(DetailView):
+#    """View class for project detail view."""
+#
+#    model = Project
+#    template_name = 'base/oproject_detail.html'
 
 def documentation(request):
     """View function for documentation page."""
@@ -134,23 +134,6 @@ def ostart(request):
 
     template = 'base/ostart.html'
     context = {}
-
-    return render(request, template, context)
-
-def oproject(request):
-    """View function for oproject page."""
-
-    template = 'base/oproject.html'
-
-    # Get projects of this user
-    user = request.user
-    project_list = Project.objects.all().filter(
-        user=user
-    )
-
-    context = {
-        'project_list': project_list,
-    }
 
     return render(request, template, context)
 
