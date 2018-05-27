@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     # Added by developer after this
     'base.apps.BaseConfig',
     'wcup.apps.WcupConfig',
+    'ohotel.apps.OhotelConfig',
 ]
 
 MIDDLEWARE = [

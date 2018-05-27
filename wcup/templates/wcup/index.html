@@ -1,6 +1,18 @@
 {% extends 'wcup/wcup_generic.html' %}
 
 {% block content %}
-  <h2>Wcup Index page</h2>
+  <div class="container">
+    <h2>Wcup Index page</h2>
+    <div class="row">
+      {% for group in group_list %}
+        <div class="col-sm-4">
+          <h4>{{ group.name }}</h4>
+          {% for team in group.team_set.all %}
+            <li>{{ team.name }}</li>  
+          {% endfor %}
+        </div>
+      {% endfor %}
+    </div>
+  </div>
 {% endblock %}
 
