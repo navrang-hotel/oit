@@ -31,3 +31,33 @@ class Project(models.Model):
         
         return self.name
 
+# =====================
+# Start Project request
+# =====================
+
+class StartProjectRequest(models.Model):
+    """Model class for start project request."""
+
+    STATUS = (
+        ('P', 'Pending',),
+        ('D', 'Denied',),
+        ('H', 'On-Hold',),
+        ('A', 'Approved',),
+    )
+
+    PROJECT_TYPE = (
+        ('P', 'Personal',),
+        ('B', 'Business',),
+    )
+
+
+    email = models.EmailField(max_length=50)
+    status = models.CharField(max_length=1, choices=STATUS)
+    project_type = models.CharField(max_length=1, choices=PROJECT_TYPE)
+    description = models.TextField()
+
+    def __str__(self):
+        """String representation of object."""
+        
+        return self.email
+

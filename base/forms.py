@@ -43,7 +43,7 @@ class ContactMessageForm(forms.ModelForm):
                 'class':"form-control",
                 'id':'comments',
                 'name':'comments',
-                'placeholder':'Comment',
+                'placeholder':'Message',
                 'rows':'5',
             }
         )
