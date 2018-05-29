@@ -2,12 +2,12 @@
 
 {% block content %}
 
-  <div class="container">
+  <div class="container col-sm-3">
     {% load ologin %}
-    <div class="container my-5">
-      <h4 class="mb-3">Log in to OIT</h4>
+    <div class="mt-5 mb-3">
+      <h4 class="text-center">Sign in to OIT</h4>
     </div>
-    <div class="col-sm-4 mt-5 py-3 bg-light border rounded shadow">
+    <div class="">
       {% if form.errors %}
       <p class="text-danger">Your username and password didn't match. Please try again.</p>
       {% endif %}
@@ -20,31 +20,24 @@
           <p>Please login to see this page.</p>
           {% endif %}
       {% endif %}
-      
+    </div>
+    <div class="mt-5-rm p-3 mb-3 bg-light border rounded shadow-sm">
       <form method="post" action="{% url 'login' %}">
-      {% csrf_token %}
-      
-      <div class="form-group">
-        <td><strong>{{ form.username.label_tag }}</strong></td>
-        <td>{{ form.username|addcss:"form-control" }}</td>
-      </div>
-      <div class="form-group">
-        <td><strong>{{ form.password.label_tag }}</strong></td>
-        <td>{{ form.password|addcss:"form-control" }}</td>
-      </div>
-      
-      <div class="form-group">
-        <br/>
-        <input class="btn btn-info btn-lg" type="submit" value="Login" />
-        <input type="hidden" name="next" value="{{ next }}" />
-      </div>
-
-      <div>
-        <br/>
-        <p>
-New to OIT? <a href="">Create an account</a>
-        </p>
-      </div>
+        {% csrf_token %}
+        
+        <div class="form-group">
+          <td><strong>{{ form.username.label_tag }}</strong></td>
+          <td>{{ form.username|addcss:"form-control" }}</td>
+        </div>
+        <div class="form-group">
+          <td><strong>{{ form.password.label_tag }}</strong></td>
+          <td>{{ form.password|addcss:"form-control" }}</td>
+        </div>
+        
+        <div class="form-group">
+          <input class="btn btn-primary" type="submit" value="Login" />
+          <input type="hidden" name="next" value="{{ next }}" />
+        </div>
       </form>
       
       {# Assumes you setup the password_reset view in your URLconf #}
@@ -69,9 +62,20 @@ New to OIT? <a href="">Create an account</a>
 {% endcomment %}
 
     </div>
+    <div class="pt-3 px-3 border rounded">
+      <p class="text-center">
+New to OIT? <a href="">Create an account</a>
+      </p>
+    </div>
+
+    <div class="mt-4">
+      <p class="text-center">
+        <a href="" class="nb-fs-sm">Terms</a>&nbsp;&nbsp;
+        <a href="" class="nb-fs-sm">Privacy</a>&nbsp;&nbsp;
+        <a href="" class="nb-fs-sm">Contact OIT</a>
+      </p>
+    </div>
   </div>
-
-
 {% endblock %}
 
 {% block footer %}

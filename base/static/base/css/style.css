@@ -52,3 +52,7 @@
 .nb-bg-red {
   background-color: red;
 }
+
+.nb-fs-sm {
+  font-size: 0.8rem;
+}
