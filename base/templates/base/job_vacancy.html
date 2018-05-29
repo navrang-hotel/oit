@@ -1,0 +1,23 @@
+{% extends 'base/base_generic.html' %}
+
+{% block navCar %}
+  active
+{% endblock %}
+
+{% block content %}
+  <div class="container nb-fg-white my-5">
+    <div class="col-sm-6">
+      <h2 class="mb-3">Job Vacancies</h2>
+      <p>
+Please check below vacancies, and apply to the one you are interested in.
+All the best.
+      </p>
+      <ul>
+        {% for vacancy in jobvacancy_list %}
+          <li><a href="{% url 'base-careers-vacancy-detail' vacancy.pk %}">{{ vacancy.title }}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+{% endblock %}
+

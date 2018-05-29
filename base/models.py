@@ -35,3 +35,60 @@ class ContactMessage(models.Model):
 
         return self.sender_name
 
+# ===========
+# Job Vacancy
+# ===========
+
+class JobVacancy(models.Model):
+    """Class for job vacancy model."""
+
+    JOB_TYPE = (
+        ('I', 'Internship',),
+        ('C', 'Contract',),
+        ('F', 'Fulltime',),
+    )
+    title = models.CharField(max_length=200)
+    job_type = models.CharField(max_length=1, choices=JOB_TYPE)
+
+    def __str__(self):
+        """String representation of the model."""
+
+        return self.title
+
+class JobVacancyResponsibility(models.Model):
+    """Class for job vacancy responsibility model."""
+
+    order = models.IntegerField()
+    job_vacancy = models.ForeignKey(JobVacancy, on_delete=models.CASCADE)
+    body = models.CharField(max_length=200)
+    
+    def __str__(self):
+        """String representation of the model."""
+
+        return self.body + ' JobVacResp'
+
+class JobVacancyQualification(models.Model):
+    """Class for job vacancy qualification model."""
+
+    order = models.IntegerField()
+    job_vacancy = models.ForeignKey(JobVacancy, on_delete=models.CASCADE)
+    body = models.CharField(max_length=200)
+    
+    def __str__(self):
+        """String representation of the model."""
+
+        return self.body + ' JobVacQual'
+
+
+class JobVacancyEntry(models.Model):
+    """Class for job vacancy entry model."""
+
+    order = models.IntegerField()
+    job_vacancy = models.ForeignKey(JobVacancy, on_delete=models.CASCADE)
+    body = models.TextField()
+
+    def __str__(self):
+        """String representation of the model."""
+
+        return self.title
+

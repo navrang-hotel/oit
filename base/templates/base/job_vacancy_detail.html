@@ -1,0 +1,32 @@
+{% extends 'base/base_generic.html' %}
+
+{% block navCar %}
+  active
+{% endblock %}
+
+{% block content %}
+  <div class="container nb-fg-white my-5">
+    <div class="col-sm-6 px-0">
+      <h2 class="mb-3">{{ jobvacancy.title }}</h2>
+      <hr />
+      <p>
+{{ jobvacancy.description}}
+      </p>
+    
+      <h4 class="mb-3">Responsibilities</h3>
+      <ul>
+        {% for responsibility in jobvacancy.jobvacancyresponsibility_set.all %}
+          <li>{{ responsibility.body }}</li>
+        {% endfor %}
+      </ul>
+      <h4 class="mb-3">Qualifications</h3>
+      <ul>
+        {% for qualification in jobvacancy.jobvacancyqualification_set.all %}
+          <li>{{ qualification.body }}</li>
+        {% endfor %}
+      </ul>
+      <a class="btn btn-primary" href="">Apply</a>
+    </div>
+  </div>
+{% endblock %}
+

@@ -7,13 +7,14 @@ from django.shortcuts import render
 # =============================
 
 from django.views.generic.detail import DetailView 
+from django.views.generic.list import ListView 
 from django.views.generic.edit import CreateView
 from django.contrib.auth.decorators import login_required
 from django.urls import reverse
 from django.http import HttpResponseRedirect
 from django.contrib.auth.models import User
 
-from .models import ContactMessage
+from .models import ContactMessage, JobVacancy
 from ocprm.models import StartProjectRequest
 from .forms import ContactMessageForm
 from ocprm.forms import StartProjectRequestForm
@@ -226,4 +227,24 @@ def start_project_request_success(request):
     context = {}
 
     return render(request, template, context)
+
+def job_vacancy(request):
+    """View function for job vacancy."""
+
+    template = 'base/job_vacancy.html'
+    context = {}
+
+    return render(request, template, context)
+
+class JobVacancyList(ListView):
+    """View class for job vacancy."""
+
+    template_name = 'base/job_vacancy.html'
+    model = JobVacancy
+
+class JobVacancyDetail(DetailView):
+    """View class for job vacancy detail."""
+
+    template_name = 'base/job_vacancy_detail.html'
+    model = JobVacancy
 

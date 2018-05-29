@@ -31,5 +31,7 @@ urlpatterns = [
     #path('project/', views.oproject, name='base-dashboard-project'),
     path('startproject/', views.start_project_request, name='base-start-project'),
     path('startproject/success', views.start_project_request_success, name='base-start-project-request-success'),
+    path('careers/vacancy', views.JobVacancyList.as_view(), name='base-careers-vacancy-list'),
+    path('careers/vacancy/<int:pk>', views.JobVacancyDetail.as_view(), name='base-careers-vacancy-detail'),
 ]
 
