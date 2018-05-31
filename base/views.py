@@ -126,6 +126,15 @@ def documentation(request):
 
     return render(request, template, context)
 
+def open_source_projects(request):
+    """View function for open source projects page."""
+
+    template = 'base/open_source_projects.html'
+    context = {}
+
+    return render(request, template, context)
+
+
 def feedback(request):
     """View function for feedback page."""
 

@@ -26,6 +26,7 @@ urlpatterns = [
     #path('dashboard/uprofile/', views.uprofile, name='base-dashboard-uprofile'),
     #path('dashboard/uproject/<int:pk>/', views.ProjectDetailView.as_view(), name='base-dashboard-uproject'),
     path('documentation/', views.documentation, name='base-documentation'),
+    path('opensource/', views.open_source_projects, name='base-opensource'),
     path('feedback/', views.feedback, name='base-feedback'),
     path('start/', views.ostart, name='base-start'),
     #path('project/', views.oproject, name='base-dashboard-project'),

@@ -79,6 +79,10 @@ class JobVacancyQualification(models.Model):
 
         return self.body + ' JobVacQual'
 
+    class Meta:
+
+        ordering = ['order',]
+
 
 class JobVacancyEntry(models.Model):
     """Class for job vacancy entry model."""
@@ -91,4 +95,8 @@ class JobVacancyEntry(models.Model):
         """String representation of the model."""
 
         return self.title
+
+    class Meta:
+
+        ordering = ['order',]
 
