@@ -257,3 +257,19 @@ class JobVacancyDetail(DetailView):
     template_name = 'base/job_vacancy_detail.html'
     model = JobVacancy
 
+def faq(request):
+    """View function for faq page."""
+
+    template = 'base/faq.html'
+    context = {}
+
+    return render(request, template, context)
+
+def support(request):
+    """View function for support page."""
+
+    template = 'base/support.html'
+    context = {}
+
+    return render(request, template, context)
+

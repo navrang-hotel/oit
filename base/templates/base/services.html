@@ -5,7 +5,7 @@
 {% endblock %}
 
 {% block content %}
-<div class="container-fluid bg-info-rm text-white-rm pb-3 shadow-sm">
+<div class="container-fluid bg-info-rm text-white-rm pb-5 shadow-sm">
     <div class="container pt-5 pb-3">
             <h2>OIT Services</h2>
             <div class="row py-3">
@@ -72,15 +72,16 @@ protected in the internet.
     </div>
 </div>
 
-  <div class="container my-4">
-    <h4>Questions?</h4>
-    <hr/>
-    <div class="row py-3 text-dark">
-      <div class="col-sm-6 bg-light border py-3">
+  <div class="container my-5">
+    <h2>Questions?</h2>
+    <div class="row py-4 text-dark">
+      <div class="col-sm-6 bg-light border rounded py-3">
         <p>
 If you have any quesitons regarding services, please write an
-email to <a href="">info@oit.com.np</a>. Or if you wish you
-can submit the form in <a href="{% url 'base-contact' %}">Contact</a> page. 
+email to <a href="mailto:info@oit.com.np">info@oit.com.np</a>.
+        </p>
+        <p>
+Else, visit <a href="{% url 'base-contact' %}">Contact</a> page. 
         </p>
       </div>
       <div class="col-sm-3 py-3">
@@ -88,9 +89,8 @@ can submit the form in <a href="{% url 'base-contact' %}">Contact</a> page.
       <div class="col-sm-3 py-3">
                 <h5 class="text-center py-2 bg-info text-white my-0">Quick Links</h5>
                 <ul class="list-group">
-                  <li class="list-group-item"><a href="">Services FAQ</a></li>
-                  <li class="list-group-item"><a href="">Contact sales</a></li>
-                  <li class="list-group-item"><a href="">Get support</a></li>
+                  <li class="list-group-item"><a href="{% url 'base-faq' %}">FAQ</a></li>
+                  <li class="list-group-item"><a href="{% url 'base-support' %}">Get support</a></li>
                   <li class="list-group-item"><a href="{% url 'base-start-project' %}">Start project</a></li>
                 </ul>
       </div>
