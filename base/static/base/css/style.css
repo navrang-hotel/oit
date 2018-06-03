@@ -56,3 +56,7 @@
 .nb-fs-sm {
   font-size: 0.8rem;
 }
+
+.nb-text-ul {
+  text-decoration: underline;
+}
