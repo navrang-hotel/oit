@@ -57,3 +57,11 @@ class ContactMessageForm(forms.ModelForm):
             'message',
         ]
 
+class UserRegistrationForm(forms.Form):
+    """Class for user registration form."""
+
+    username = forms.CharField(max_length=50)
+    email = forms.EmailField(max_length=50)
+    password1 = forms.CharField(max_length=50)
+    password2 = forms.CharField(max_length=50)
+

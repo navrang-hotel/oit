@@ -36,5 +36,7 @@ urlpatterns = [
     path('careers/vacancy/<int:pk>', views.JobVacancyDetail.as_view(), name='base-careers-vacancy-detail'),
     path('faq/', views.faq, name='base-faq'),
     path('support/', views.support, name='base-support'),
+    path('register/', views.user_register, name='base-user-register'),
+    path('register/success', views.userRegistrationSuccess, name='base-user-register-success'),
 ]
 

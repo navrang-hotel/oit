@@ -13,10 +13,12 @@ from django.contrib.auth.decorators import login_required
 from django.urls import reverse
 from django.http import HttpResponseRedirect
 from django.contrib.auth.models import User
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.models import User
 
 from .models import ContactMessage, JobVacancy
 from ocprm.models import StartProjectRequest
-from .forms import ContactMessageForm
+from .forms import ContactMessageForm, UserRegistrationForm
 from ocprm.forms import StartProjectRequestForm
 
 def index(request):
@@ -269,6 +271,63 @@ def support(request):
     """View function for support page."""
 
     template = 'base/support.html'
+    context = {}
+
+    return render(request, template, context)
+
+class UserRegister(CreateView):
+    """View class for user registration page."""
+
+    template_name = 'register.html'
+    form_class = UserCreationForm
+
+    def get_success_url(self):
+        """Override success url."""
+
+        return reverse('base-index')
+
+def user_register(request):
+    """View function for user registration page."""
+
+    template = 'register_new.html'
+
+    if request.method == 'POST':
+        form = UserRegistrationForm(request.POST)
+        if form.is_valid():
+            email = form.cleaned_data['email']
+            username = form.cleaned_data['username']
+            password1 = form.cleaned_data['password1']
+            password2 = form.cleaned_data['password2']
+            # check if user already exists
+            user_exists = check_user_exists(email)
+            if user_exists == True: 
+                email_exist_err = 'Email already exists.'
+                context = {
+                    'form': form,
+                    'email_exist_err': email_exist_err,
+                }
+                return render(request, template, context)
+            else:
+                u = User.objects.create_user(
+                    username,
+                    email,
+                    password1
+                ) 
+                u.save()
+                return HttpResponseRedirect(reverse('base-user-register-success'))
+    else:
+        form = UserRegistrationForm()
+
+    context = {
+        'form': form,
+    }
+
+    return render(request, template, context)
+
+def userRegistrationSuccess(request):
+    """View function for user registration success."""
+
+    template = 'base/user_register_success.html'
     context = {}
 
     return render(request, template, context)
