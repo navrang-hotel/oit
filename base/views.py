@@ -16,7 +16,8 @@ from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 
-from .models import ContactMessage, JobVacancy
+from .models import ContactMessage, JobVacancy, IndexPageHeader
+from .models import IndexPageHeroPara
 from ocprm.models import StartProjectRequest
 from .forms import ContactMessageForm, UserRegistrationForm
 from ocprm.forms import StartProjectRequestForm
@@ -25,7 +26,14 @@ def index(request):
     """View function for index page."""
 
     template = 'base/index.html'
-    context = {}
+
+    iph = IndexPageHeader.objects.get(id=1)
+    iphp = IndexPageHeroPara.objects.get(id=1)
+
+    context = {
+        'iph': iph,
+        'iphp': iphp,
+    }
 
     return render(request, template, context)
 
@@ -289,7 +297,7 @@ class UserRegister(CreateView):
 def user_register(request):
     """View function for user registration page."""
 
-    template = 'register_new.html'
+    template = 'register.html'
 
     if request.method == 'POST':
         form = UserRegistrationForm(request.POST)

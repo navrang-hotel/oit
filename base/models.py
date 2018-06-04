@@ -100,4 +100,36 @@ class JobVacancyEntry(models.Model):
 
         ordering = ['order',]
 
-    
+# ===
+# CMS
+# ===
+
+# =================    
+# Index Page header    
+# =================    
+
+class IndexPageHeader(models.Model):
+    """Model class for index page header."""
+
+    title = models.CharField(max_length=100)
+
+    def __str__(self):
+        """String representation of object."""
+
+        return self.title
+
+# ====================    
+# Index Page Hero para    
+# ====================    
+
+class IndexPageHeroPara(models.Model):
+    """Model class for index page hero paragraph."""
+
+    body = models.TextField(max_length=500)
+
+    def __str__(self):
+        """String representation of object."""
+
+        return self.body
+
+

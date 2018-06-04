@@ -8,10 +8,12 @@ from django.contrib import admin
 
 from .models import ContactMessage, JobVacancy, JobVacancyEntry
 from .models import JobVacancyResponsibility, JobVacancyQualification
+from .models import IndexPageHeader, IndexPageHeroPara
 
 admin.site.register(ContactMessage)
 admin.site.register(JobVacancy)
 admin.site.register(JobVacancyEntry)
 admin.site.register(JobVacancyResponsibility)
-admin.site.register(JobVacancyQualification)
+admin.site.register(IndexPageHeader)
+admin.site.register(IndexPageHeroPara)
 
