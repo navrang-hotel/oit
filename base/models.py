@@ -100,3 +100,4 @@ class JobVacancyEntry(models.Model):
 
         ordering = ['order',]
 
+    
