@@ -6,31 +6,30 @@
 
 {% block content %}
   <div class="container pt-5">
-    <h2>Operating IT Pvt Ltd</h2>
+    <h2>{{ cph.header }}</h2>
     <hr/>
   </div>
-
-
 
   <div class="container-fluid shadow-rm">
     <div class="container my-4">
       <div class="row py-3 text-dark">
         <div class="col-sm-6">
           <p class="pb-3">
+            <h4 class="text-success-rm mb-5">{{ oit_address.name }}</h4>
             <h5 class="text-success-rm"><i class="fas fa-map-marker text-success"></i>&nbsp;&nbsp; Address</h5>
-            Suyog Marga, Chandol, Kathmandu, Nepal<br/><br/>
+            {{ oit_address.address }}<br/><br/>
             <h5><i class="fas fa-phone text-success"></i>&nbsp;  Phone</h5>
-            General: +977 1 4480583<br/><br/>
+            {{ oit_address.phone }}<br/><br/>
             <h5><i class="fas fa-envelope text-success"></i>&nbsp;  Email</h5>
-            <a href="">info@oit.com.np</a><br/><br/>
+            <a href="">{{ oit_address.email }}</a><br/><br/>
             <h5><i class="fas fa-globe text-success"></i>&nbsp;  Website</h5>
-            <a href="">www.oit.com.np</a><br/><br/>
+            <a href="">{{ oit_address.website }}</a><br/><br/>
           </p>
         </div>
         <div class="col-sm-6 bg-light border py-3 shadow-sm">
-          <h4 class="py-3">Write a message</h4>
+          <h4 class="py-3">{{ cpwm.header }}</h4>
           <p class="text-secondary py-2">
-Please write a message to us and we will get back to you soon.
+            {{ cpwm.body }}
           </p>
           <form action="" method="post">
             {% csrf_token %}
@@ -60,8 +59,8 @@ Please write a message to us and we will get back to you soon.
 
   <div class="container-fluid border-top border-bottom">
     <div class="container py-5">
-      <h2 class="py-3">Are you an existing customer?</h2>
-      <h4 class="py-2">Contact support services</h4>
+      <h2 class="py-3">{{ cpec.header1 }}</h2>
+      <h4 class="py-2">{{ cpec.header2 }}</h4>
       <p class="py-2"> 
         <a class="btn btn-primary text-white">Contact support</a>
       </p> 
@@ -72,7 +71,7 @@ Please write a message to us and we will get back to you soon.
 
   <div class="container-fluid bg-info text-white border-top border-bottom py-3">
     <div class="container pt-4">
-      <h2>Follow us in social media</h2>
+      <h2>{{ cpfu.header }}</h2>
       <ul class="pt-3 nb-ul-nostyle">
         <li class="mb-2" ><a class="text-white" href="https://www.facebook.com/Operating-IT-436697390136345" target="_blank"><i class="fab fa-facebook fa-2x"></i>&nbsp;&nbsp; Facebook</a></li>
         <li class="mb-2" ><a class="text-white" href="https://twitter.com/OperatingI" target="_blank"><i class="fab fa-twitter fa-2x"></i>&nbsp;&nbsp; Twitter</a></li>

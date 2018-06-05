@@ -132,4 +132,82 @@ class IndexPageHeroPara(models.Model):
 
         return self.body
 
+# ===================
+# Contact Page header
+# ===================
 
+class ContactPageHeader(models.Model):
+    """Model class for Contact page header."""
+
+    header = models.CharField(max_length=100)
+
+	
+    def __str__(self):
+        """String representation of object."""
+
+        return self.header
+
+# ===========
+# OIT Address
+# ===========
+
+class OITAddress(models.Model):
+    """Model class for OIT address."""
+
+    name = models.CharField(max_length=100)
+    address = models.CharField(max_length=150)
+    phone = models.CharField(max_length=20)
+    email = models.EmailField(max_length=100)
+    website = models.CharField(max_length=100)
+
+	
+    def __str__(self):
+        """String representation of object."""
+
+        return self.name
+
+# ==========================
+# Contact page Write message
+# ==========================
+
+class ContactPageWriteMessage(models.Model):
+    """Model class for contact page write message section."""
+
+    header = models.CharField(max_length=100)
+    body = models.TextField(max_length=200)
+
+    def __str__(self):
+        """String representation of object."""
+
+        return self.header
+    
+# ==============================
+# Contact page Existing Customer
+# ==============================
+
+class ContactPageExistingCustomer(models.Model):
+    """Model class for contact page existing customer section."""
+
+    header1 = models.CharField(max_length=100)
+    header2 = models.CharField(max_length=100)
+    btn_bs_class = models.CharField(max_length=20)
+
+    def __str__(self):
+        """String representation of object."""
+
+        return self.header1
+
+# ======================
+# Contact page Follow us
+# ======================
+
+class ContactPageFollowUs(models.Model):
+    """Model class for contact page follow us section."""
+
+    header = models.CharField(max_length=100)
+
+    def __str__(self):
+        """String representation of object."""
+
+        return self.header
+    

@@ -18,6 +18,9 @@ from django.contrib.auth.models import User
 
 from .models import ContactMessage, JobVacancy, IndexPageHeader
 from .models import IndexPageHeroPara
+from .models import OITAddress, ContactPageExistingCustomer, ContactPageFollowUs
+from .models import ContactPageWriteMessage, ContactPageHeader
+
 from ocprm.models import StartProjectRequest
 from .forms import ContactMessageForm, UserRegistrationForm
 from ocprm.forms import StartProjectRequestForm
@@ -57,6 +60,8 @@ def contact(request):
     """View function for contact page."""
 
     template = 'base/contact.html'
+
+
     context = {}
 
     return render(request, template, context)
@@ -166,17 +171,28 @@ class ContactMessageCreate(CreateView):
 
     template_name = 'base/contact.html'
     model = ContactMessage
-    # fields = [
-    #     'sender_name',
-    #     'sender_email',
-    #     'message',
-    # ]
     form_class = ContactMessageForm
 
     def get_success_url(self):
         """Override success url."""
 
         return reverse('base-contact-success')
+
+    def get_context_data(self, **kwargs):
+        """Override success url."""
+
+        oit_address = OITAddress.objects.get(id=1)
+        cph = ContactPageHeader.objects.get(id=1)
+        cpwm = ContactPageWriteMessage.objects.get(id=1)
+        cpec = ContactPageExistingCustomer.objects.get(id=1)
+        cpfu = ContactPageFollowUs.objects.get(id=1)
+        context = super(ContactMessageCreate, self).get_context_data(**kwargs)
+        context['cph'] = cph
+        context['oit_address'] = oit_address
+        context['cpwm'] = cpwm
+        context['cpec'] = cpec
+        context['cpfu'] = cpfu
+        return context
 
 def contactMessageSuccess(request):
     """View function for contact message success."""
@@ -218,7 +234,6 @@ def start_project_request(request):
             email = form.cleaned_data['email']
             project_type = form.cleaned_data['project_type']
             description = form.cleaned_data['description']
-            # check if user already exists
             user_exists = check_user_exists(email)
             if user_exists == True: 
                 return HttpResponseRedirect(reverse('login'))
