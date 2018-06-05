@@ -104,6 +104,14 @@ class JobVacancyEntry(models.Model):
 # CMS
 # ===
 
+
+# ==========
+# ==========
+# Index Page
+# ==========
+# ==========
+
+
 # =================    
 # Index Page header    
 # =================    
@@ -131,6 +139,14 @@ class IndexPageHeroPara(models.Model):
         """String representation of object."""
 
         return self.body
+
+
+# ============
+# ============
+# Contact Page
+# ============
+# ============
+
 
 # ===================
 # Contact Page header
@@ -210,4 +226,59 @@ class ContactPageFollowUs(models.Model):
         """String representation of object."""
 
         return self.header
-    
+
+
+# ============
+# ============
+# Careers Page
+# ============
+# ============
+
+
+# =================
+# Careers page hero
+# =================
+
+class CareersPageHero(models.Model):
+    """Model class for careers page hero section."""    
+
+    header = models.CharField(max_length=100)
+    body = models.TextField(max_length=500)
+
+    def __str__(self):
+        """String representation of object."""
+
+        return self.header
+
+# ====================
+# Careers page reasons
+# ====================
+
+class CareersPageReasons(models.Model):
+    """Model class for careers page reasons section."""    
+
+    header = models.CharField(max_length=100)
+
+    def __str__(self):
+        """String representation of object."""
+
+        return self.header
+
+class CareersPageReasonsEntry(models.Model):
+    """Model class for careers page reasons entry."""    
+
+    careers_page_reasons = models.ForeignKey(CareersPageReasons, on_delete=models.CASCADE)
+    order = models.IntegerField()
+    header = models.CharField(max_length=100)
+    icon_bs_class = models.CharField(max_length=50)
+    body = models.TextField(max_length=500)
+
+    def __str__(self):
+        """String representation of object."""
+
+        return self.header
+
+    class Meta:
+
+        ordering = ['order',]
+

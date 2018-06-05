@@ -11,6 +11,7 @@ from .models import JobVacancyResponsibility, JobVacancyQualification
 from .models import IndexPageHeader, IndexPageHeroPara
 from .models import OITAddress, ContactPageExistingCustomer, ContactPageFollowUs
 from .models import ContactPageWriteMessage, ContactPageHeader
+from .models import CareersPageHero, CareersPageReasons, CareersPageReasonsEntry
 
 admin.site.register(ContactMessage)
 admin.site.register(JobVacancy)
@@ -23,4 +24,7 @@ admin.site.register(OITAddress)
 admin.site.register(ContactPageWriteMessage)
 admin.site.register(ContactPageExistingCustomer)
 admin.site.register(ContactPageFollowUs)
+admin.site.register(CareersPageHero)
+admin.site.register(CareersPageReasons)
+admin.site.register(CareersPageReasonsEntry)
 

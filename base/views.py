@@ -20,6 +20,7 @@ from .models import ContactMessage, JobVacancy, IndexPageHeader
 from .models import IndexPageHeroPara
 from .models import OITAddress, ContactPageExistingCustomer, ContactPageFollowUs
 from .models import ContactPageWriteMessage, ContactPageHeader
+from .models import CareersPageHero, CareersPageReasons
 
 from ocprm.models import StartProjectRequest
 from .forms import ContactMessageForm, UserRegistrationForm
@@ -52,7 +53,14 @@ def careers(request):
     """View function for careers page."""
 
     template = 'base/careers.html'
-    context = {}
+
+    crph = CareersPageHero.objects.get(id=1)
+    crpr = CareersPageReasons.objects.get(id=1)
+
+    context = {
+        'crph': crph,
+        'crpr': crpr,
+    }
 
     return render(request, template, context)
 
