@@ -140,6 +140,34 @@ class IndexPageHeroPara(models.Model):
 
         return self.body
 
+# ===============    
+# Index Page Main
+# ===============    
+
+class IndexPageMain(models.Model):
+    """Model class for index page main section."""
+
+    header = models.CharField(max_length=50)
+
+    def __str__(self):
+        """String representation of object."""
+
+        return self.header
+
+# ===============    
+# Index Page Main
+# ===============    
+
+class IndexPagePartner(models.Model):
+    """Model class for index page partner section."""
+
+    header = models.CharField(max_length=50)
+
+    def __str__(self):
+        """String representation of object."""
+
+        return self.header
+
 
 # ============
 # ============
