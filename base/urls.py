@@ -38,5 +38,6 @@ urlpatterns = [
     path('support/', views.support, name='base-support'),
     path('register/', views.user_register, name='base-user-register'),
     path('register/success', views.userRegistrationSuccess, name='base-user-register-success'),
+    path('terms/', views.terms, name='base-terms'),
 ]
 

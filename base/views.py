@@ -367,3 +367,11 @@ def userRegistrationSuccess(request):
 
     return render(request, template, context)
 
+def terms(request):
+    """View function for terms page."""
+
+    template = 'base/terms.html'
+    context = {}
+
+    return render(request, template, context)
+    
