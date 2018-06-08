@@ -1,12 +1,8 @@
 {% extends 'base/base_generic.html' %}
 
-{% block navHom%}
-  active
-{% endblock %}
+{% block navHom%} active {% endblock %}
 
 {% block content %}
-
-
 
 <div class="container-fluid py-5 bg-info text-white">
   <div class="container">
@@ -20,16 +16,14 @@
         <a class="btn btn-warning shadow" href="{% url 'base-start-project' %}">Start Project</a>
       </div>
       <div class="col-sm-4">
-        {% load static %}
-        <!--<img class="img-fluid" src="{% static 'base/img/revenue_1.png' %}" />-->
       </div>
       <div class="col-sm-4">
+        {% load static %}
         <img class="img-fluid" src="{% static 'base/img/logo_1.png' %}" />
       </div>
     </div>
   </div>
 </div>
-
 
 
 <div class="container-fluid bg-light-rm border py-5">
@@ -41,64 +35,60 @@
         </p>
       </div>
       <div class="col-sm-6">
-        {% load static %}
-        <!--<img class="img-fluid" src="{% static 'base/img/it_1.jpg' %}" />-->
       </div>
     </div>
-            <div class="row border-bottom">
-              <div class="col-sm-4 border-right py-5">
-                  <h4 class="pb-3">Increased sales</h4>
-                   <i class="fas fa-rupee-sign fa-2x mr-3 text-info"></i><br/>
-                  <p class="pt-3">
-Taking order online and providing services online help 
-you reach more customers and increase sales.
-                  </p>
-              </div>
-              <div class="col-sm-4 border-right py-5">
-                  <h4 class="pb-3">Effective marketing</h4>
-                  <i class="fas fa-users fa-2x mr-3 text-info"></i><br/>
-                  <p class="pt-3">
-Social media, email, mobile phone and other digital media
-make marketing more effective.
-                  </p>
-              </div>
-              <div class="col-sm-4 py-5">
-                  <h4 class="pb-3">Process automation</h4>
-                  <i class="fas fa-sitemap fa-2x mr-3 text-info"></i>
-                  <p class="pt-3">
-Most business processes can be automated using software making you more efficient. 
-                  </p>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-sm-4 border-right py-5">
-                  <h4 class="pb-3">Better customer relation</h4>
-                   <i class="fas fa-users fa-2x mr-3 text-info"></i><br/>
-                  <p class="pt-3">
-Providing support and effective communication with customers 
-can be improved using digital methods.
-                  </p>
-              </div>
-              <div class="col-sm-4 border-right py-5">
-                  <h4 class="pb-3">Effective communication</h4>
-                  <i class="fas fa-volume-up fa-2x mr-3 text-info"></i><br/>
-                  <p class="pt-3">
-Commuincation with clients, stakeholders and internal team is made
-a lot easier with digital technology.
-                  </p>
-              </div>
-              <div class="col-sm-4 py-5">
-                  <h4 class="pb-3">More</h4>
-                  <i class="fas fa-adjust fa-2x mr-3 text-info"></i>
-                  <p class="pt-3">
-There are much more <a href="">benefits of using IT in business</a>.
-                  </p>
-              </div>
-            </div>
+    <div class="row border-bottom">
+      <div class="col-sm-4 border-right py-5">
+        <h4 class="pb-3">Increased sales</h4>
+         <i class="fas fa-rupee-sign fa-2x mr-3 text-info"></i><br/>
+        <p class="pt-3">
+Taki onle and providing services online help 
+you re ctomers and increase sales.
+        </p>
+      </div>
+      <div class="col-sm-4 border-right py-5">
+        <h4 class="pb-3">Effective marketing</h4>
+        <i class="fas fa-users fa-2x mr-3 text-info"></i><br/>
+        <p class="pt-3">
+Soci, eml, mobile phone and other digital media
+makeng me effective.
+        </p>
+      </div>
+      <div class="col-sm-4 py-5">
+        <h4 class="pb-3">Process automation</h4>
+        <i class="fas fa-sitemap fa-2x mr-3 text-info"></i>
+        <p class="pt-3">
+Mosts presses can be automated using software making you more efficient. 
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-4 border-right py-5">
+        <h4 class="pb-3">Better customer relation</h4>
+         <i class="fas fa-users fa-2x mr-3 text-info"></i><br/>
+        <p class="pt-3">
+Provpporand effective communication with customers 
+can ved ing digital methods.
+        </p>
+      </div>
+      <div class="col-sm-4 border-right py-5">
+        <h4 class="pb-3">Effective communication</h4>
+        <i class="fas fa-volume-up fa-2x mr-3 text-info"></i><br/>
+        <p class="pt-3">
+Commn wi clients, stakeholders and internal team is made
+a lo witdigital technology.
+        </p>
+      </div>
+      <div class="col-sm-4 py-5">
+        <h4 class="pb-3">More</h4>
+        <i class="fas fa-adjust fa-2x mr-3 text-info"></i>
+        <p class="pt-3">
+Therch me <a href="">benefits of using IT in business</a>.
+        </p>
+      </div>
+    </div>
   </div>
 </div>
-
-
 
 
 <div class="container-fluid bg-info text-white border py-5">
@@ -135,5 +125,6 @@ we provide.
     </div>
   </div>
 </div>
+
 {% endblock %}
 

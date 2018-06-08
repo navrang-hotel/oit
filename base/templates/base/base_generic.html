@@ -9,40 +9,39 @@
 
     <!-- Bootstrap 4.0 -->
     <!-- Bootstrap CSS -->
+    {% comment %}
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    {% endcomment %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'base/css/bootstrap.min.css' %}">
     <!-- /Bootstrap 4.0 -->
    
     <!-- Share this -->
-<!--<script type='text/javascript' src='//platform-api.sharethis.com/js/sharethis.js#property=5b07254d467eb300118940c5&product=inline-share-buttons' async='async'></script>-->
+    {% comment %}
+    <script type='text/javascript' src='//platform-api.sharethis.com/js/sharethis.js#property=5b07254d467eb300118940c5&product=inline-share-buttons' async='async'></script>
+    {% endcomment %}
+    <!-- /Share this -->
 
     <!-- title and favicon -->
     <title>OIT</title>
-    {% load static %}
     <link rel="icon" type="image/gif/png" href="{% static 'base/img/ofavicon_1.png'%}">
     <!-- /title and favicon -->
 
     <!-- Font Awesome -->
+    {% comment %}
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+    {% endcomment %}
     <!-- /Font Awesome -->
 
     <!-- Local style sheet -->
-    {% load static %}
     <link rel="stylesheet" href="{% static 'base/css/style.css' %}">
     <!-- /Local style sheet -->
   </head>
   <body>
     <header class="">
-<!--
-      <div class="container-fluid nb-bg-fdgray-rm bg-dark text-secondary nb-font-sm">
-        <div class="container py-1">
-          Contact: +977 9808376049 &nbsp;&nbsp; | &nbsp;&nbsp; Email: operating.it.np@gmail.com
-        </div>
-      </div>
--->
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark border-top border-secondary">
         <div class="container">
           <a class="navbar-brand text-white" href="{% url 'base-index' %}">
-          {% load static %}
             <img src="{% static 'base/img/logo_1.png' %}" width="30" height="30" class="d-inline-block align-top" alt="" />
             OIT
           </a>
@@ -58,21 +57,6 @@
               <li class="nav-item {% block navSer %}{% endblock %}">
                 <a class="nav-link" href="{% url 'base-services' %}">Services</a>
               </li>
-
-              <!--
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Products
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item" href="#">ERP</a>
-                  <a class="dropdown-item" href="#">MIS</a>
-                  <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="#">All</a>
-                </div>
-              </li>
-              -->
-
               <li class="nav-item {% block navCar %}{% endblock %}">
                 <a class="nav-link" href="{% url 'base-careers' %}">Careers</a>
               </li>
@@ -142,9 +126,13 @@
 
      <!-- Optional JavaScript for Bootstrap 4 -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    {% comment %}
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+    {% endcomment %}
+    <script src="{% static 'base/js/jquery-3.3.1.js'%}"></script>
+    <script src="{% static 'base/js/bootstrap.min.js'%}"></script>
      <!-- Optional JavaScript for Bootstrap 4 -->
   </body>
 </html>
