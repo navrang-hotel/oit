@@ -1,106 +1,104 @@
 {% extends 'base/base_generic.html' %}
 
-{% block navSer %}
-  active
-{% endblock %}
+{% block navSer %} active {% endblock %}
 
 {% block content %}
 <div class="container-fluid bg-info-rm text-white-rm pb-5 shadow-sm">
-    <div class="container pt-5 pb-3">
-            <h2 class="pb-4">Services</h2>
-            <div class="row py-3">
-              <div class="col-sm-8">
-		<p>
-OIT provides IT services to business.
-Our services/products help organizations
-use information technology efficiently
-to increase organizational efficiency.
-		</p>
-              </div>
-              <div class="col-sm-4">
-                {% load static %}
-                <img class="img-fluid" src="{% static 'base/img/services_2.png' %}" />
-              </div>
-            </div>
-
-            <div class="row border-bottom">
-              <div class="col-sm-4 border-right py-5">
-                  <h4 class="pb-3">Software development</h4>
-                   <i class="fas fa-desktop fa-2x mr-3 text-info"></i><br/>
-                  <p class="pt-3">
-We make software according to your needs.
-Software range from websites, desktop and mobile applications.
-                  </p>
-              </div>
-              <div class="col-sm-4 border-right py-5">
-                  <h4 class="pb-3">Business Process automation</h4>
-                  <i class="fas fa-magic fa-2x mr-3 text-info"></i><br/>
-                  <p class="pt-3">
-Business process automation (BPA) is the technology-enabled automation of business processes.
-                  </p>
-              </div>
-              <div class="col-sm-4 py-5">
-                  <h4 class="pb-3">Digital marketing</h4>
-                  <i class="fas fa-volume-up fa-2x mr-3 text-info"></i>
-                  <p class="pt-3">
-Marketing of products using digital technologies, mainly on the Internet, but also including mobile phones, display advertising, etc.
-                  </p>
-              </div>
-            </div>
-
-
-            <div class="row pt-5-rm">
-              <div class="col-sm-4 border-right border-right-danger py-5">
-                  <h4 class="pb-3">Open source stack</h4>
-                  <i class="fas fa-briefcase fa-2x mr-3 text-info"></i><br/>
-                  <p class="pt-3">
-Open source software often provides good quality software and can also help you save budget 
-in software licenses.
-                  </p>
-              </div>
-              <div class="col-sm-4 border-right py-5">
-                  <h4 class="pb-3">Training and Certifications</h4>
-                  <i class="fas fa-calculator fa-2x mr-3 text-info"></i><br/>
-                  <p class="pt-3">
-Training for relevant IT certifications. We are partner of Red Hat Certifications, and other 
-network and open source certificaitons.
-                  </p>
-              </div>
-              <div class="col-sm-4 py-5">
-                  <h4 class="pb-3">Security and Storage</h4>
-                  <i class="fas fa-cloud fa-2x mr-3 text-info"></i><br/>
-                  <p class="pt-3">
-Cloud storage so that you always have access to your data. Security so that your data is 
-protected in the internet.
-                  </p>
-              </div>
-            </div>
+  <div class="container pt-5 pb-3">
+    <h2 class="pb-4">Services</h2>
+    <div class="row py-3">
+      <div class="col-sm-8">
+        <p>
+OIpr IT services to business.
+Ouse/products help organizations
+usinion technology efficiently
+toncorganizational efficiency.
+        </p>
+      </div>
+      <div class="col-sm-4">
+        {% load static %}
+        <img class="img-fluid" src="{% static 'base/img/services_2.png' %}" />
+      </div>
     </div>
-</div>
 
-  <div class="container my-5">
-    <h2>Questions?</h2>
-    <div class="row py-4 text-dark">
-      <div class="col-sm-6 bg-light border rounded py-3">
-        <p>
-If you have any quesitons regarding services, please write an
-email to <a href="mailto:info@oit.com.np">info@oit.com.np</a>.
-        </p>
-        <p>
-Else, visit <a href="{% url 'base-contact' %}">Contact</a> page. 
+    <div class="row border-bottom">
+      <div class="col-sm-4 border-right py-5">
+        <h4 class="pb-3">Software development</h4>
+         <i class="fas fa-desktop fa-2x mr-3 text-info"></i><br/>
+        <p class="pt-3">
+Weakwareccording to your needs.
+Sowage fm websites, desktop and mobile applications.
         </p>
       </div>
-      <div class="col-sm-3 py-3">
+      <div class="col-sm-4 border-right py-5">
+        <h4 class="pb-3">Business Process automation</h4>
+        <i class="fas fa-magic fa-2x mr-3 text-info"></i><br/>
+        <p class="pt-3">
+Bunecessutomation (BPA) is the technology-enabled automation of business processes.
+        </p>
       </div>
-      <div class="col-sm-3 py-3">
-                <h5 class="text-center py-2 bg-info text-white my-0">Quick Links</h5>
-                <ul class="list-group">
-                  <li class="list-group-item"><a href="{% url 'base-faq' %}">FAQ</a></li>
-                  <li class="list-group-item"><a href="{% url 'base-support' %}">Get support</a></li>
-                  <li class="list-group-item"><a href="{% url 'base-start-project' %}">Start project</a></li>
-                </ul>
+      <div class="col-sm-4 py-5">
+        <h4 class="pb-3">Digital marketing</h4>
+        <i class="fas fa-volume-up fa-2x mr-3 text-info"></i>
+        <p class="pt-3">
+Maet procts using digital technologies, mainly on the Internet, but also including mobile phones, display advertising, etc.
+        </p>
+      </div>
+    </div>
+
+    <div class="row pt-5-rm">
+      <div class="col-sm-4 border-right border-right-danger py-5">
+        <h4 class="pb-3">Open source stack</h4>
+        <i class="fas fa-briefcase fa-2x mr-3 text-info"></i><br/>
+        <p class="pt-3">
+Op ssoftre often provides good quality software and can also help you save budget 
+inoflicees.
+        </p>
+      </div>
+      <div class="col-sm-4 border-right py-5">
+        <h4 class="pb-3">Training and Certifications</h4>
+        <i class="fas fa-calculator fa-2x mr-3 text-info"></i><br/>
+        <p class="pt-3">
+Trni relant IT certifications. We are partner of Red Hat Certifications, and other 
+neoropenource certificaitons.
+        </p>
+      </div>
+      <div class="col-sm-4 py-5">
+        <h4 class="pb-3">Security and Storage</h4>
+        <i class="fas fa-cloud fa-2x mr-3 text-info"></i><br/>
+        <p class="pt-3">
+Cld e sohat you always have access to your data. Security so that your data is 
+prec thenternet.
+        </p>
       </div>
     </div>
   </div>
+</div>
+
+
+<div class="container my-5">
+  <h2>Questions?</h2>
+  <div class="row py-4 text-dark">
+    <div class="col-sm-6 bg-light border rounded py-3">
+      <p>
+ you have any quesitons regarding services, please write an
+ail to <a href="mailto:info@oit.com.np">info@oit.com.np</a>.
+      </p>
+      <p>
+se, visit <a href="{% url 'base-contact' %}">Contact</a> page. 
+      </p>
+    </div>
+    <div class="col-sm-3 py-3">
+    </div>
+    <div class="col-sm-3 py-3">
+      <h5 class="text-center py-2 bg-info text-white my-0">Quick Links</h5>
+      <ul class="list-group">
+        <li class="list-group-item"><a href="{% url 'base-faq' %}">FAQ</a></li>
+        <li class="list-group-item"><a href="{% url 'base-support' %}">Get support</a></li>
+        <li class="list-group-item"><a href="{% url 'base-start-project' %}">Start project</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
 {% endblock %}
 
