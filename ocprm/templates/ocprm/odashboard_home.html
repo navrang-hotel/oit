@@ -19,7 +19,7 @@
               <th scope="row">{{ project.id }}</th>
               <td>{{ project.name }}</td>
               <td>{{ project.get_status_display }}</td>
-              <td><a href="">View Details</a></td>
+              <td><a href="{% url 'ocprm-project-detail' project.pk %}">View Details</a></td>
             </tr>
           {% endfor %}
         </tbody>

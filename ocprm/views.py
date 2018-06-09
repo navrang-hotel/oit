@@ -6,6 +6,7 @@ from django.shortcuts import render
 # Added by developer after this
 # =============================
 
+from django.views.generic.detail import DetailView 
 from django.contrib.auth.decorators import login_required
 
 from .models import Project
@@ -27,4 +28,12 @@ def index(request):
     }
 
     return render(request, template, context)
+
+#@login_required
+# TODO: Need to add permission required mixin
+class ProjectDetail(DetailView):
+    """View class for project detail page."""
+
+    model = Project
+    template_name = 'ocprm/project_detail.html'
 

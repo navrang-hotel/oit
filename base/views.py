@@ -374,4 +374,16 @@ def terms(request):
     context = {}
 
     return render(request, template, context)
+
+@login_required
+def userProfile(request):
+    """View function for user profile page."""
+
+    template = 'base/user_profile.html'
+
+
+    context = {}
+
+    return render(request, template, context)
+    
     

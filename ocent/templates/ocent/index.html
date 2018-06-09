@@ -1,0 +1,83 @@
+{% extends 'ocent/ocent_generic.html' %}
+
+{% block navFoo%} active {% endblock %}
+
+{% block content %}
+  <div class="container rounded border bg-light p-3">
+
+    <div class="mb-3 border">
+      <h6 class="container rounded-top border-top bg-info text-white p-3 mb-0">
+        User Info
+      </h6>
+      <p class="p-2 m-0">
+        <a href="" class="btn btn-primary btn-sm rounded border">Edit profile</a>
+      </p>
+      <table class="table table-sm table-striped">
+        <thead>
+        </thead>
+        <tbody>
+          <tr>
+            <th class="bg-danger-rm border-right">Username</th>
+            <td>{{ user.username }}</td>
+          </tr>
+          <tr>
+            <th class="bg-warning-rm border-right">Email</th>
+            <td>{{ user.email }}</td>
+          </tr>
+          <tr>
+            <th class="bg-info-rm border-right">Phone</th>
+            <td>{{ user.userprofile.phone_num }}</td>
+          </tr>
+          <tr>
+            <th class="bg-success-rm border-right">Bio</th>
+            <td>{{ user.userprofile.bio }}</td>
+          </tr>
+        </tbody>
+        <tfoot>
+        </tfoot>
+      </table>
+    </div>
+
+    <div class="mb-3">
+      <h6 class="container rounded-top border-top bg-info text-white p-3 mb-0">
+        Projects
+      </h6>
+      <table class="table table-sm table-striped border">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Status</th>
+            <th>Role</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for projectusercontext in user.projectusercontext_set.all %}
+            <tr>
+              <td><a href="">{{ projectusercontext.project.name }}</a></td>
+              <td>{{ projectusercontext.project.get_status_display }}</td>
+              <td>{{ projectusercontext.role }}</td>
+            </tr>
+          {% endfor %}  
+        </tbody>
+        <tfoot>
+        </tfoot>
+      </table>
+    </div>
+
+    <div class="mb-3">
+      <h6 class="container rounded-top border-top bg-info text-white p-3 mb-0">
+        Misc
+      </h6>
+      <div class="container border pt-3">
+        <p class="">
+          <a href="" class="">Add modules</a>&nbsp;&nbsp;&nbsp;&nbsp;
+          <a href="" class="">Search modules</a>&nbsp;&nbsp;&nbsp;&nbsp;
+          <a href="" class="">Transfer</a>&nbsp;&nbsp;&nbsp;&nbsp;
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+{% endblock %}
+

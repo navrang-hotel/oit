@@ -4,7 +4,7 @@
     <!-- meta -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Operating IT Nepal Software and IT services">
+    <meta name="description" content="Operating IT Apps">
     <!-- /meta -->
 
     <!-- Bootstrap 4.0 -->
@@ -23,7 +23,7 @@
     <!-- /Share this -->
 
     <!-- title and favicon -->
-    <title>OIT</title>
+    <title>OIT Apps</title>
     <link rel="icon" type="image/gif/png" href="{% static 'base/img/ofavicon_1.png'%}">
     <!-- /title and favicon -->
 
@@ -34,12 +34,12 @@
     <!-- /Font Awesome -->
 
     <!-- Local style sheet -->
-    <link rel="stylesheet" href="{% static 'base/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'ocent/css/style.css' %}">
     <!-- /Local style sheet -->
   </head>
   <body>
-    <header class="">
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark border-top border-secondary">
+    <header class="mb-5">
+      <nav class="navbar navbar-expand-lg navbar-dark-rm bg-info border-top border-secondary">
         <div class="container">
           <a class="navbar-brand text-white" href="{% url 'base-index' %}">
             <img src="{% static 'base/img/logo_1.png' %}" width="30" height="30" class="d-inline-block align-top" alt="" />
@@ -52,29 +52,18 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
               <li class="nav-item {% block navHom %}{% endblock %}">
-                <a class="nav-link" href="{% url 'base-index' %}">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link text-white" href="{% url 'ocent-index' %}">Profile <span class="sr-only">(current)</span></a>
               </li>
               <li class="nav-item {% block navSer %}{% endblock %}">
-                <a class="nav-link" href="{% url 'base-services' %}">Services</a>
+                <a class="nav-link text-white" href="{% url 'ocprm-dashboard'%}">Project</a>
               </li>
-              <li class="nav-item {% block navCar %}{% endblock %}">
-                <a class="nav-link" href="{% url 'base-careers' %}">Careers</a>
+              <li class="nav-item {% block navDas %}{% endblock %}">
+                <a class="nav-link text-white" href="{% url 'base-index' %}">Site</a>
               </li>
-              <li class="nav-item {% block navCon %}{% endblock %}">
-                <a class="nav-link" href="{% url 'base-contact' %}">Contact</a>
-              </li>
-              {% if user.is_authenticated %}
-                <li class="nav-item {% block navDas %}{% endblock %}">
-                  <a class="nav-link" href="{% url 'ocent-index' %}">Dashboard</a>
-                </li>
-              {% endif %}
             </ul>
-            {% if user.is_authenticated %}
-              <span class="text-secondary">{{ user.get_username }}</span>&nbsp;&nbsp;
-              <a class="text-secondary" href="{% url 'logout' %}?next={{request_path}}"><i class="fas fa-sign-out-alt fa-md"></i> &nbsp;Logout</a>
-            {% else %}
-              <a class="text-white" href="{% url 'login' %}?next={{request_path}}"><i class="fas fa-sign-in-alt fa-md"></i> &nbsp;Login</a>
-            {% endif %}
+            <span class="text-white">{{ user.get_username }}</span>
+            <span class="text-white">&nbsp;&nbsp; &nbsp;&nbsp;|&nbsp;&nbsp; &nbsp;&nbsp;</span>
+            <a class="text-white" href="{% url 'logout' %}?next={{request_path}}"><i class="fas fa-sign-out-alt fa-md"></i>Logout</a>
           </div>
         </div>
       </nav>
@@ -86,41 +75,7 @@
     </main>
 
     {% block footer %}
-    <footer class="border-top">
-      <div class="nb-bg-fgray py-3">
-        <div class="container pt-2">
-          <div class="row">
-            <div class="col-sm-3 py-3">
-              <p class="text-secondary">&copy; 2018 OIT</p>
-            </div>
-            <div class="col-sm-3 py-3 text-secondary">
-              <h5>Site</h5>
-              <a class="text-secondary" href="{% url 'base-index' %}">Home</a><br/>
-              <a class="text-secondary" href="{% url 'base-services' %}">Services</a><br/>
-              <a class="text-secondary" href="{% url 'base-careers' %}">Careers</a><br/>
-              <a class="text-secondary" href="{% url 'base-contact' %}">Contact</a><br/>
-            </div>
-            <div class="col-sm-3 py-3 text-secondary">
-              <h5>Others</h5>
-              <a class="text-secondary" href="{% url 'base-documentation' %}">Documentation</a><br/>
-            </div>
-            <div class="col-sm-3 py-3 text-secondary">
-              <h5>Follow us</h5>
-              <a href="https://www.facebook.com/Operating-IT-436697390136345" target="_blank"><i class="fab fa-facebook fa-2x nb-fg-fb"></i></a>
-              &nbsp; &nbsp; &nbsp;
-              <a href="https://twitter.com/OperatingI" target="_blank"><i class="fab fa-twitter fa-2x text-info"></i></a>
-              &nbsp; &nbsp; &nbsp;
-              <a href="https://github.com/oitcode" target="_blank"><i class="fab fa-github fa-2x text-success"></i></a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="container-fluid nb-bg-fdgray my-0 py-2 nb-font-sm">
-        <div class="container">
-          <a href="{% url 'base-feedback' %}" class="text-dark">Feedback</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        </div>
-      </div>
+    <footer>
     </footer>
     {% endblock %}
 
@@ -136,4 +91,5 @@
      <!-- Optional JavaScript for Bootstrap 4 -->
   </body>
 </html>
+
 

@@ -7,7 +7,19 @@ from django.contrib import admin
 # =============================
 
 from .models import Project, StartProjectRequest
+from .models import ProjectUserContext
 
-admin.site.register(Project)
+class ProjectUserContextInline(admin.TabularInline):
+    """Class for through model."""
+
+    model = ProjectUserContext
+    extra = 1
+
+class ProjectAdmin(admin.ModelAdmin):
+    """Class for project model."""
+
+    inlines = (ProjectUserContextInline,)
+
+admin.site.register(Project, ProjectAdmin)
 admin.site.register(StartProjectRequest)
 

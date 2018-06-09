@@ -310,3 +310,19 @@ class CareersPageReasonsEntry(models.Model):
 
         ordering = ['order',]
 
+# ============
+# User profile
+# ============
+
+class UserProfile(models.Model):
+    """Class for user profile model."""
+
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    bio = models.TextField(max_length=200)
+    phone_num = models.TextField(max_length=20)
+
+    def __str__(self):
+        """String representation of object."""
+
+        return self.user.username
+    

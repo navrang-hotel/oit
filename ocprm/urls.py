@@ -13,5 +13,6 @@ from . import views
 
 urlpatterns = [
     path('', views.index, name='ocprm-dashboard'),
+    path('projectdetail/<int:pk>/', views.ProjectDetail.as_view(), name='ocprm-project-detail'),
 ]
 

@@ -1,38 +1,18 @@
-{% extends 'ocprm/odashboard_generic.html' %}
+{% extends 'ocent/ocent_generic.html' %}
 
 {% block content %}
   <div class="container py-4 bg-info text-white border border-info rounded-top">
-    <h3 class="text-center">O-CRMp</h3>
+    <h3 class="text-center">OIT Projects</h3>
   </div>
   <div class="container bg-white">
     <p>&nbsp;</p>
     <div class="row">
       <div class="col-sm-3">
         <div class="list-group mb-3">
-          <a class="list-group-item list-group-item-secondary list-group-item-action py-1 font-weight-bold" href="">HOME</a>
-          <a class="list-group-item list-group-item-secondary list-group-item-action py-1 font-weight-bold" href="">PROJECT</a>
+          <a class="list-group-item list-group-item-secondary list-group-item-action py-1 font-weight-bold" href="{% url 'ocprm-dashboard' %}">PROJECT</a>
           <a class="list-group-item list-group-item-secondary list-group-item-action py-1 font-weight-bold" href="">SUPPORT</a>
           <a class="list-group-item list-group-item-secondary list-group-item-action py-1 font-weight-bold" href="">TICKET</a>
         </div>
-
-        <ul class="list-group mb-3">
-          <li class="list-group-item list-group-item-secondary py-1">
-            <i class="fas fa-envelope"></i>
-            &nbsp; <a href="" class="text-dark">Message</a>
-          </li>
-          <li class="list-group-item list-group-item-secondary py-1">
-            <i class="fas fa-user"></i>
-            &nbsp; <a href="" class="text-dark">View Profile</a>
-          </li>
-          <li class="list-group-item list-group-item-secondary py-1">
-            <i class="fas fa-key"></i>
-            &nbsp; <a href="" class="text-dark">Change Password</a>
-          </li>
-          <li class="list-group-item list-group-item-secondary py-1">
-            <i class="fas fa-lock"></i>
-            &nbsp; <a href="" class="text-dark">Log out</a>
-          </li>
-        </ul>
       </div>
       <div class="col-sm-9">
         {% block dash_content %}
@@ -42,7 +22,7 @@
   </div>
   <div class="container py-3 bg-info text-white border border-info rounded-bottom mb-3">
     <p>
-      <a class="text-white" href="">&copy; 2018 OIT. All Rights Reserved.</a>
+      &copy; 2018 OIT. All Rights Reserved.
       &nbsp;&nbsp;&nbsp;&nbsp;
       <a class="text-white" href="">Help</a>
     </p>

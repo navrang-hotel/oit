@@ -21,10 +21,13 @@ class Project(models.Model):
         ('M', 'Maintainance',),
     )
 
-    name = models.CharField(max_length=200)
+    name = models.CharField(max_length=100)
+    description = models.CharField(max_length=200)
     status = models.CharField(max_length=1, choices=STATUS)
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    # user = models.ForeignKey(User, on_delete=models.CASCADE)
     live_url = models.CharField(max_length=100)
+
+    actors = models.ManyToManyField(User, through='ProjectUserContext')
 
     def __str__(self):
         """String representation of object."""
@@ -61,3 +64,25 @@ class StartProjectRequest(models.Model):
         
         return self.email
 
+
+# ==============
+# Junction table
+# ==============
+
+# TODO: Need to rename this class (with a suitable name hopefully).
+class ProjectUserContext(models.Model):
+    """Model class for project-x-user junction table.
+
+    There is a many-to-many relationship between project and user through 
+    context.
+    """
+
+    project = models.ForeignKey(Project, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    role = models.CharField(max_length=10)
+
+    def __str__(self):
+        """String representation of the object."""
+
+        return self.project.name + ' <-> ' + self.user.username
+    

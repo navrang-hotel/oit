@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'wcup.apps.WcupConfig',
     'ohotel.apps.OhotelConfig',
     'ocprm.apps.OcprmConfig',
+    'ocent.apps.OcentConfig',
 ]
 
 MIDDLEWARE = [
@@ -146,6 +147,6 @@ STATIC_ROOT = os.path.join(BASE_DIR, "static/")
 
 # Redirect to home URL after login (Default redirects to /accounts/profile/)
 # From mdn django
-LOGIN_REDIRECT_URL = '/ocprm'
+LOGIN_REDIRECT_URL = '/ocent'
 
 # Just settings

@@ -1,0 +1,46 @@
+{% extends 'ocprm/odashboard.html' %}
+
+{% block dash_content %}
+
+  <div>
+    <h5 class="bg-info text-white text-center py-2 rounded-top mb-0 ">Project Detail</h5>
+  </div>
+
+
+  <div class="border rounded mb-3">
+    <table class="table table-sm table-striped">
+      <thead>
+      </thead>
+      <tbody>
+        <tr>
+          <th>Name</th>
+          <td>{{ project.name }}</td>
+        </tr>
+        <tr>
+          <th>Description</th>
+          <td>{{ project.description }}</td>
+        </tr>
+        <tr>
+          <th>Status</th>
+          <td>{{ project.get_status_display }}</td>
+        </tr>
+        <tr>
+          <th>Url</th>
+          <td>{{ project.live_url }}</td>
+        </tr>
+      </tbody>
+      <tfoot>
+      </tfoot>
+    </table>
+  </div>
+
+  <div>
+    <h5 class="bg-info text-white text-center py-2 rounded-top mb-0 ">Actions</h5>
+    <div class="mb-3 border p-3">
+      <a href="">Message</a>&nbsp;&nbsp;&nbsp;&nbsp;
+      <a href="">Bug</a>&nbsp;&nbsp;&nbsp;&nbsp;
+      <a href="">Report</a>&nbsp;&nbsp;&nbsp;&nbsp;
+    </div>
+  </div>
+{% endblock %}
+
