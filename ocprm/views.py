@@ -7,6 +7,7 @@ from django.shortcuts import render
 # =============================
 
 from django.views.generic.detail import DetailView 
+from django.views.generic.list import ListView 
 from django.contrib.auth.decorators import login_required
 
 from .models import Project
@@ -20,7 +21,7 @@ def index(request):
     # Get projects of this user
     user = request.user
     project_list = Project.objects.all().filter(
-        user=user
+        projectusercontext__user=user
     )
     
     context = {
@@ -30,10 +31,28 @@ def index(request):
     return render(request, template, context)
 
 #@login_required
-# TODO: Need to add permission required mixin
-class ProjectDetail(DetailView):
-    """View class for project detail page."""
+# TODO: Need to add auth+permission required mixin
+def projectDetail(request):
+    """View function for project detail page."""
+
+    template = 'ocprm/odashboard_detail.html'
+    context = {}
+
+    return render(request, template, context)
+
+#@login_required
+# TODO: Need to add auth+permission required mixin
+class ProjectList(ListView):
+    """View class for project list page."""
 
     model = Project
-    template_name = 'ocprm/project_detail.html'
+    template_name = 'ocprm/odashboard_list.html'
+
+def support(request):
+    """View function for support page."""
+
+    template = 'ocprm/odashboard_support.html'
+    context = {}
+
+    return render(request, template, context)
 

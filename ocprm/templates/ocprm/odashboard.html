@@ -1,5 +1,6 @@
 {% extends 'ocent/ocent_generic.html' %}
 
+{% block ocnavPrj%} nb-active-info {% endblock %}
 {% block content %}
   <div class="container py-4 bg-info text-white border border-info rounded-top">
     <h3 class="text-center">OIT Projects</h3>
@@ -9,9 +10,21 @@
     <div class="row">
       <div class="col-sm-3">
         <div class="list-group mb-3">
-          <a class="list-group-item list-group-item-secondary list-group-item-action py-1 font-weight-bold" href="{% url 'ocprm-dashboard' %}">PROJECT</a>
-          <a class="list-group-item list-group-item-secondary list-group-item-action py-1 font-weight-bold" href="">SUPPORT</a>
-          <a class="list-group-item list-group-item-secondary list-group-item-action py-1 font-weight-bold" href="">TICKET</a>
+          <a class="list-group-item list-group-item-secondary list-group-item-action py-1 font-weight-bold {% block opnavHom %}{% endblock %}"
+              href="{% url 'ocprm-dashboard' %}">HOME
+          </a>
+          <a class="list-group-item list-group-item-secondary list-group-item-action py-1 font-weight-bold {% block opnavSea %}{% endblock %}"
+             href="">SEARCH
+          </a>
+          <a class="list-group-item list-group-item-secondary list-group-item-action py-1 font-weight-bold {% block opnavLis %}{% endblock %}"
+             href="{% url 'ocprm-project-list' %}">LIST
+          </a>
+          <a class="list-group-item list-group-item-secondary list-group-item-action py-1 font-weight-bold {% block opnavDet %}{% endblock %}"
+             href="{% url 'ocprm-project-detail' %}">DETAIL
+          </a>
+          <a class="list-group-item list-group-item-secondary list-group-item-action py-1 font-weight-bold {% block opnavSup %}{% endblock %}"
+             href="{% url 'ocprm-support' %}">SUPPORT
+          </a>
         </div>
       </div>
       <div class="col-sm-9">

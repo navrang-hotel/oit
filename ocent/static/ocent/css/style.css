@@ -1,3 +1,12 @@
 body {
   background-color: #CCC;
 }
+
+.nb-active-info {
+  background-color: #0b809e;
+}
+
+.nb-bg-dinfo {
+  background-color: #AABBBB;
+}
+

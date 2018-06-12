@@ -1,18 +1,18 @@
 {% extends 'ocent/ocent_generic.html' %}
 
-{% block navFoo%} active {% endblock %}
+{% block ocnavPro%} nb-active-info {% endblock %}
 
 {% block content %}
-  <div class="container rounded border bg-light p-3">
+  <div class="container rounded border bg-light p-0">
 
-    <div class="mb-3 border">
+    <div class="border pb-0">
       <h6 class="container rounded-top border-top bg-info text-white p-3 mb-0">
-        User Info
+        My profile
       </h6>
       <p class="p-2 m-0">
         <a href="" class="btn btn-primary btn-sm rounded border">Edit profile</a>
       </p>
-      <table class="table table-sm table-striped">
+      <table class="table table-sm table-striped border mb-0">
         <thead>
         </thead>
         <tbody>
@@ -38,44 +38,18 @@
       </table>
     </div>
 
-    <div class="mb-3">
-      <h6 class="container rounded-top border-top bg-info text-white p-3 mb-0">
-        Projects
-      </h6>
-      <table class="table table-sm table-striped border">
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Status</th>
-            <th>Role</th>
-          </tr>
-        </thead>
-        <tbody>
-          {% for projectusercontext in user.projectusercontext_set.all %}
-            <tr>
-              <td><a href="">{{ projectusercontext.project.name }}</a></td>
-              <td>{{ projectusercontext.project.get_status_display }}</td>
-              <td>{{ projectusercontext.role }}</td>
-            </tr>
-          {% endfor %}  
-        </tbody>
-        <tfoot>
-        </tfoot>
-      </table>
-    </div>
-
-    <div class="mb-3">
-      <h6 class="container rounded-top border-top bg-info text-white p-3 mb-0">
-        Misc
-      </h6>
-      <div class="container border pt-3">
-        <p class="">
-          <a href="" class="">Add modules</a>&nbsp;&nbsp;&nbsp;&nbsp;
-          <a href="" class="">Search modules</a>&nbsp;&nbsp;&nbsp;&nbsp;
-          <a href="" class="">Transfer</a>&nbsp;&nbsp;&nbsp;&nbsp;
-        </p>
+    {% comment %}
+    <div class="row mb-5">
+      <div class="col-sm-6">
+        <h6 class="container rounded-top border bg-info text-white p-3 mb-0">
+          Modules
+        </h6> 
+        <div class="border p-2 bg-success-rm">
+          <a class="btn btn-sm btn-primary text-white">Project</a>
+        </div>
       </div>
     </div>
+    {% endcomment %}
 
   </div>
 
