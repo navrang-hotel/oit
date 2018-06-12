@@ -4,35 +4,98 @@
 {% block dash_content %}
 
   <div>
-    <h5 class="bg-info text-white text-center py-2 rounded-top mb-0 ">Project Detail</h5>
+    <h5 class="bg-info text-white text-center py-2 rounded-top mb-0 ">Project detail</h5>
   </div>
-
-
   <div class="border rounded mb-3">
     <table class="table table-sm table-striped">
       <thead>
       </thead>
       <tbody>
         <tr>
-          <th>Name</th>
+          <th>name</th>
           <td>{{ project.name }}</td>
         </tr>
         <tr>
-          <th>Description</th>
+          <th>description</th>
           <td>{{ project.description }}</td>
         </tr>
         <tr>
-          <th>Status</th>
+          <th>status</th>
           <td>{{ project.get_status_display }}</td>
         </tr>
         <tr>
-          <th>Url</th>
+          <th>url</th>
           <td>{{ project.live_url }}</td>
         </tr>
       </tbody>
       <tfoot>
       </tfoot>
     </table>
+  </div>
+
+
+  <div>
+    <h5 class="bg-info text-white text-center py-2 rounded-top mb-0 ">Next task</h5>
+  </div>
+  <div class="border rounded mb-3">
+    <table class="table table-sm table-striped">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Description</th>
+          <th>Owner</th>
+          <th>Priority</th>
+          <th>Status</th>
+          <th>Comment</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>9882</td>
+          <td><a href="">Complete registration mos ...</a></td>
+          <td>dev01</td>
+          <td>1</td>
+          <td>InProgress</td>
+          <td></td>
+        </tr>
+     
+      </tbody>
+      <tfoot>
+      </tfoot>
+    </table>
+  </div>
+  <div>
+    <h5 class="bg-info text-white text-center py-2 rounded-top mb-0 ">Comments</h5>
+  </div>
+  <div class="border rounded mb-3">
+    <table class="table table-sm table-striped">
+      <thead>
+      </thead>
+      <tbody>
+        <tr>
+          <th>name</th>
+          <td>{{ project.name }}</td>
+        </tr>
+        <tr>
+          <th>description</th>
+          <td>{{ project.description }}</td>
+        </tr>
+        <tr>
+          <th>status</th>
+          <td>{{ project.get_status_display }}</td>
+        </tr>
+        <tr>
+          <th>url</th>
+          <td>{{ project.live_url }}</td>
+        </tr>
+      </tbody>
+      <tfoot>
+      </tfoot>
+    </table>
+  </div>
+
+  <div class="mb-3">
+    <a class="btn btn-sm btn-primary text-white">PDF</a>
   </div>
 
 {% endblock %}
