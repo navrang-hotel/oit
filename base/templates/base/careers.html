@@ -24,15 +24,14 @@
   </div>
 
 
-  <div class="container-fluid bg-info-rm text-white-rm pb-5">
+  <div class="container-fluid bg-info text-white pb-5">
     <div class="container pt-5 pb-3">
-      <h2 class="pb-3">{{ crpr.header }}</h2>
+      <h2 class="pb-4">{{ crpr.header }}</h2>
       <div class="row">
         {% for crpre in crpr.careerspagereasonsentry_set.all %}
-          <div class="col-sm-6 py-5 bg-danger-rm text-white-rm">
-            <h4 class="pb-3"><span class="border-bottom border-info"><i class="{{ crpre.icon_bs_class }}"></i> {{ crpre.header }}</span></h4>
-            <br/>
-            <p class="pt-3">
+          <div class="col-sm-6 py-5-rm bg-danger-rm text-white-rm">
+            <h4 class="pb-2"><span class="text-danger"><i class="{{ crpre.icon_bs_class }}"></i>&#x2605;</span> {{ crpre.header }}</h4>
+            <p class="mb-4">
               {{ crpre.body }}
             </p>
           </div>
@@ -42,15 +41,15 @@
   </div>
 
 
-  <div class="container-fluid py-5 bg-info text-white border-top">
+  <div class="container-fluid py-5 bg-info-rm text-white-rm border-top">
     <div class="container">
       <h2 class="mb-4">Useful Resources</h2>
       <p>
 You may be also interested in following resources. 
       </p>
       <ul>
-        <li><a class="text-white nb-text-ul" href="{% url 'base-documentation' %}">Documentation</a></li>
-        <li><a class="text-white nb-text-ul" href="{% url 'base-opensource' %}">Open source projects</a></li>
+        <li><a class="text-white-rm nb-text-ul-rm" href="{% url 'base-documentation' %}">Documentation</a></li>
+        <li><a class="text-white-rm nb-text-ul-rm" href="{% url 'base-opensource' %}">Open source projects</a></li>
       </ul>
     </div>
   </div>

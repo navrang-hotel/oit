@@ -1,0 +1,20 @@
+{% extends 'base/base_generic.html'%}
+
+{% block content %}
+  <div class="container mt-5">
+    {% block page_header %}
+    {% endblock %}
+
+    {% block banner %}
+      <div class="rounded border bg-light my-5 p-3 col-sm-6">
+        <h4 class="pb-3 pt-1"><span class="text-danger">&#x26D4;</span> Maitainance</h4>
+        <p>
+This page is down for maintainance. Please visit later.  
+        </p> 
+        <p>
+Sorry for the inconvinience.
+        </p> 
+      </div>
+    {% endblock %}
+  </div>
+{% endblock %}
