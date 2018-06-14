@@ -1,4 +1,4 @@
-{% extends 'base/maintainance.html' %}
+{% extends 'base/base_generic.html' %}
 
 
 <!-- Which block to show active? -->
@@ -7,5 +7,17 @@
 {% block page_header %}
   <h3>Documentation</h3>
   <hr />
+{% endblock %}
+
+{% block content %}
+  <div class="container pt-5">
+    <h3>Documentation</h3>
+    <hr />
+    <h4>Software</h4>
+    <ul>
+      <li><a href="">Git</a></li>
+      <li><a href="">Tmux</a></li>
+    </ul>
+  </div>
 {% endblock %}
 
