@@ -2,42 +2,40 @@
 
 {% block ocnavPrj%} nb-active-info {% endblock %}
 {% block content %}
+  {% comment %}
   <div class="container py-4 bg-info text-white border border-info rounded-top">
     <h3 class="text-center">OITP</h3>
   </div>
-  <div class="container bg-white">
+  {% endcomment %}
+  <div class="container bg-white-rm">
+    {% comment %}
     <p>&nbsp;</p>
     <div class="row">
       <div class="col-sm-3">
         <div class="list-group mb-3">
-          <a class="list-group-item list-group-item-secondary list-group-item-action py-1 font-weight-bold {% block opnavHom %}{% endblock %}"
-              href="{% url 'ocprm-dashboard' %}">HOME
-          </a>
-          <a class="list-group-item list-group-item-secondary list-group-item-action py-1 font-weight-bold {% block opnavSea %}{% endblock %}"
-             href="">SEARCH
-          </a>
           <a class="list-group-item list-group-item-secondary list-group-item-action py-1 font-weight-bold {% block opnavLis %}{% endblock %}"
-             href="{% url 'ocprm-project-list' %}">LIST
+             href="{% url 'ocprm-project-list' %}">VIEW LIST
           </a>
           <a class="list-group-item list-group-item-secondary list-group-item-action py-1 font-weight-bold {% block opnavDet %}{% endblock %}"
-             href="{% url 'ocprm-project-detail' %}">DETAIL
+             href="{% url 'ocprm-project-detail' %}">VIEW DETAIL
           </a>
           <a class="list-group-item list-group-item-secondary list-group-item-action py-1 font-weight-bold {% block opnavSup %}{% endblock %}"
-             href="{% url 'ocprm-support' %}">SUPPORT
+             href="{% url 'ocprm-support' %}">GET SUPPORT
           </a>
         </div>
       </div>
-      <div class="col-sm-9">
-        {% block dash_content %}
-        {% endblock %}
+      <div class="">
       </div>
+      {% endcomment %}
+      {% block dash_content %}
+      {% endblock %}
     </div>
   </div>
-  <div class="container py-3 bg-info text-white border border-info rounded-bottom mb-3">
+  <div class="container py-3 bg-info-rm text-white-rm border-rm border-info-rm rounded-bottom mb-3">
     <p>
       &copy; 2018 OIT. All Rights Reserved.
       &nbsp;&nbsp;&nbsp;&nbsp;
-      <a class="text-white" href="">Help</a>
+      <a class="text-white-rm" href="">Help</a>
     </p>
   </div>
 {% endblock %}

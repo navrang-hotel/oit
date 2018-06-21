@@ -12,7 +12,7 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('', views.index, name='ocprm-dashboard'),
+    path('', views.ProjectList.as_view(), name='ocprm-dashboard'),
     path('project/list/', views.ProjectList.as_view(), name='ocprm-project-list'),
     path('projectdetail/', views.projectDetail, name='ocprm-project-detail'),
     path('support/', views.support, name='ocprm-support'),

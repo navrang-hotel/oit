@@ -1,5 +1,5 @@
 body {
-  background-color: #CCC;
+  background-color: #EEE;
 }
 
 .nb-active-info {
@@ -10,3 +10,6 @@ body {
   background-color: #AABBBB;
 }
 
+.nb-bg-mosinfo {
+  background-color: #BDE8F6;
+}
