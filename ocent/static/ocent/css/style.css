@@ -13,3 +13,11 @@ body {
 .nb-bg-mosinfo {
   background-color: #BDE8F6;
 }
+
+.nb-w25 {
+  width: 25%;
+}
+
+.nb-w10 {
+  width: 10%;
+}

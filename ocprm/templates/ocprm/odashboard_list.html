@@ -3,41 +3,49 @@
 {% block  opnavLis %} nb-bg-dinfo {% endblock %}
 
 {% block dash_content %}
-    {% comment %}
-    <h5 class="bg-info text-white text-center py-2 rounded-top mb-0 ">Project List</h5>
-    {% endcomment %}
-      <div class="border bg-white p-4 mb-4">
-        <h3>Start new project</h3>
-        <h6>Please start a new project.</h6>
-        <a class="btn btn-primary mt-3" href="">Start Project</a>
-      </div>
+  <div class="border bg-white p-4 mb-4">
+    <h3>Start new project</h3>
+    <h6>Please start a new project.</h6>
+    <a class="btn btn-primary mt-3" href="">Start Project</a>
+  </div>
 
-      <div class="container bg-white p-4 border">
-        <h3 class="mb-4">Your project status</h3>
-        <p class="nb-bg-mosinfo p-3 mb-4 rounded border">
-          &#x26A1; Please provide complete information for faster request processing.
-        </p>
-        <table class="table table-sm-rm table-responsive-rm table-striped border">
-          <thead class="bg-info text-white">
-            <tr class="p-5">
-              <th scope="col" class="p-3">Project ID</th>
-              <th scope="col" class="p-3">Name</th>
-              <th scope="col" class="p-3">Status</th>
-              <th scope="col" class="p-3">Action</th>
-            </tr>
-          </thead>
-          <tbody>
-            {% for project in project_list %}
-              <tr>
-                <th scope="row">{{ project.id }}</th>
-                <td>{{ project.name }}</td>
-                <td>{{ project.get_status_display }}</td>
-                <td><a href="{% url 'ocprm-project-detail' %}">View Details</a></td>
-              </tr>
-            {% endfor %}
-          </tbody>
-        </table>
-      </div>
-
+  <div class="container bg-white p-4 border">
+    <h3 class="mb-4">Your project status</h3>
+    <p class="nb-bg-mosinfo p-3 mb-4 rounded border">
+      &#x26A1; Please provide complete information for faster request processing.
+    </p>
+    <table class="table table-sm-rm table-responsive-sm table-striped border">
+      <thead class="bg-info text-white">
+        <tr class="p-5">
+          <th scope="col" class="p-3 nb-w10">Project ID</th>
+          <th scope="col" class="p-3">Name</th>
+          <th scope="col" class="p-3">Status</th>
+          <th scope="col" class="p-3">Role</th>
+          <th scope="col" class="p-3">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for project in project_list %}
+          <tr>
+            <th scope="row">{{ project.id }}</th>
+            <td>{{ project.name }}</td>
+            <td>{{ project.get_status_display }}</td>
+            <td>
+              <!-- TODO: This needs to be recoded. Maybe not efficient to loop through
+                   all the users. Also this logic would be better in view rather
+                   than in the template. 
+              -->
+              {% for projectusercontext in project.projectusercontext_set.all %}
+                {% if projectusercontext.user == user %}
+                  {{ projectusercontext.role }}
+                {% endif %}
+              {% endfor %}
+            </td>
+            <td><a href="{% url 'ocprm-project-detail' %}">View Details</a></td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
 {% endblock %}
 

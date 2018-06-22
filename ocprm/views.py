@@ -48,6 +48,13 @@ class ProjectList(ListView):
     model = Project
     template_name = 'ocprm/odashboard_list.html'
 
+    def get_queryset(self):
+        """Get the queryset for current user only."""
+        
+        user = self.request.user
+        project_list = Project.objects.filter(actors=user)
+        return project_list
+
 def support(request):
     """View function for support page."""
 

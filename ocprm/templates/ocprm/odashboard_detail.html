@@ -3,39 +3,63 @@
 {% block opnavDet%} nb-bg-dinfo {% endblock %}
 {% block dash_content %}
 
-  <div class="p-3">
+  <div class="container bg-white rounded border p-3 mb-4">
     <a class="btn btn-sm btn-primary px-2" href="{% url 'ocprm-dashboard' %}">&#x2190; Back</a>
+    &nbsp;&nbsp;&nbsp;&nbsp;
+    <a class="btn btn-sm btn-primary text-white">Generate PDF</a>
+    &nbsp;&nbsp;&nbsp;&nbsp;
+    <a class="btn btn-sm btn-primary text-white">New Task</a>
+    &nbsp;&nbsp;&nbsp;&nbsp;
+    <a class="btn btn-sm btn-primary text-white">Get support</a>
+    &nbsp;&nbsp;&nbsp;&nbsp;
+    <a class="btn btn-sm btn-primary text-white">Payment</a>
   </div>
 
   <div class="bg-white border rounded mb-5 p-3">
     <h5 class="mb-4">Project detail</h5>
-    <table class="table table-sm table-striped">
+    <table class="table table-sm table-responsive-sm table-bordered">
       <thead>
       </thead>
       <tbody>
         <tr>
+          <th class="nb-w25">ID</th>
+          <td>{{ project.name }} P101-00001</td>
+        </tr>
+        <tr>
           <th>Name</th>
-          <td>{{ project.name }}</td>
+          <td>{{ project.name }} Shivansh H&H system</td>
         </tr>
         <tr>
           <th>Description</th>
-          <td>{{ project.description }}</td>
+          <td>{{ project.description }} Hotel system for shivansh</td>
+        </tr>
+        <tr>
+          <th>Type</th>
+          <td>{{ project.description }} Custom software</td>
         </tr>
         <tr>
           <th>Status</th>
-          <td>{{ project.get_status_display }}</td>
+          <td>{{ project.get_status_display }} Maintainance</td>
         </tr>
         <tr>
           <th>Start date</th>
-          <td>{{ project.get_status_display }}</td>
+          <td>{{ project.get_status_display }} 2018-02-18</td>
         </tr>
         <tr>
           <th>End date</th>
-          <td>{{ project.get_status_display }}</td>
+          <td>{{ project.get_status_display }} 2018-03-18</td>
         </tr>
         <tr>
           <th>Url</th>
-          <td>{{ project.live_url }}</td>
+          <td>{{ project.live_url }} N/A</td>
+        </tr>
+        <tr>
+          <th>Client POC</th>
+          <td><a href="">{{ project.live_url }} John Doe</a></td>
+        </tr>
+        <tr>
+          <th>OIT POC</th>
+          <td><a href="">{{ project.live_url }} Aryan Sitaula</a></td>
         </tr>
       </tbody>
       <tfoot>
@@ -46,7 +70,7 @@
 
   <div class="bg-white border rounded mb-5 p-3">
     <h5 class="mb-4">Tasks</h5>
-    <table class="table table-sm table-striped border">
+    <table class="table table-sm table-striped table-responsive-sm border">
       <thead>
         <tr>
           <th>ID</th>
@@ -76,35 +100,11 @@
 
   <div class="bg-white border rounded mb-5 p-3">
     <h5 class="mb-4">Comments</h5>
-    <table class="table table-sm table-striped">
-      <thead>
-      </thead>
-      <tbody>
-        <tr>
-          <th>name</th>
-          <td>{{ project.name }}</td>
-        </tr>
-        <tr>
-          <th>description</th>
-          <td>{{ project.description }}</td>
-        </tr>
-        <tr>
-          <th>status</th>
-          <td>{{ project.get_status_display }}</td>
-        </tr>
-        <tr>
-          <th>url</th>
-          <td>{{ project.live_url }}</td>
-        </tr>
-      </tbody>
-      <tfoot>
-      </tfoot>
-    </table>
+    <p> John Doe, June 1 2018: Lorem inpsum section had some issues.  </p>
+    <p> John Doe, June 1 2018: Lorem inpsum section had some issues.  </p>
+    <p><a href="">Go to all comments</a></p>
   </div>
 
-  <div class="mb-5">
-    <a class="btn btn-sm btn-primary text-white">PDF</a>
-  </div>
 
 {% endblock %}
 
