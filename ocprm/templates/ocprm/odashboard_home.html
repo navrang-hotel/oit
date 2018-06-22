@@ -4,37 +4,6 @@
 
 {% block dash_content %}
   <div class="bg-white text-black rounded border p-3 shadow-sm">
-    {% comment %}
-    <h5 class="bg-info text-white text-center py-2 rounded-top mb-0 ">Active projects</h5>
-    <div class="mb-3 border">
-      <table class="table table-sm table-striped">
-        <thead>
-          <tr>
-            <th scope="col">Project ID</th>
-            <th scope="col">Name</th>
-            <th scope="col">Status</th>
-            <th scope="col">Action</th>
-          </tr>
-        </thead>
-        <tbody>
-          {% for project in project_list %}
-            <tr>
-              <th scope="row">{{ project.id }}</th>
-              <td>{{ project.name }}</td>
-              <td>{{ project.get_status_display }}</td>
-              <td><a href="">View Details</a></td>
-            </tr>
-          {% endfor %}
-        </tbody>
-      </table>
-      <br/>
-    </div>
-    {% endcomment %}
-    
-    <h4>OITP</h4>
-    <p>
-      &copy; 2018 Operating IT Pvt Ltd
-    </p>
   </div>
 {% endblock %}
 
