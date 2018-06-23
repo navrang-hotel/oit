@@ -3,16 +3,19 @@
 {% block opnavDet%} nb-bg-dinfo {% endblock %}
 {% block dash_content %}
 
-  <div class="container bg-white rounded border p-3 mb-4">
-    <a class="" href="{% url 'ocprm-dashboard' %}">&#x2190; Back</a>
-    &nbsp;&nbsp;&nbsp;&nbsp;
-    <a class="" href="">Generate PDF</a>
-    &nbsp;&nbsp;&nbsp;&nbsp;
-    <a class="" href="">Get support</a>
+  <div class="container bg-info-rm rounded p-1 mb-4">
+    <p class="m-0 p-0">
+      <a class="bg-light text-dark rounded border border-info py-1 px-3 m-0" href="{% url 'ocprm-dashboard' %}">&#x2190; Back</a>
+      {% comment %}
+      <a class="bg-secondary text-white rounded border-right border-white py-1 px-3 m-0" href="">Generate PDF</a>
+      <a class="bg-secondary text-white rounded border-right border-white py-1 px-3 m-0" href="">New Task</a>
+      <a class="bg-secondary text-white rounded border-right border-white py-1 px-3 m-0" href="">Get support</a>
+      {% endcomment %}
+    </p>
   </div>
 
-  <div class="bg-white border rounded mb-5 p-3">
-    <h5 class="mb-4 border-left border-info">Project detail</h5>
+  <div class="bg-white border rounded mb-4 p-3">
+    <h5 class="mb-4">Project detail</h5>
     <table class="table table-sm table-responsive-sm table-bordered">
       <thead>
       </thead>
@@ -64,7 +67,8 @@
   </div>
 
 
-  <div class="bg-white border rounded mb-5 p-3">
+  {% comment %}
+  <div class="bg-white border rounded mb-4 p-3">
     <h5 class="mb-4">Tasks</h5>
     <table class="table table-sm table-striped table-responsive-sm border">
       <thead>
@@ -94,13 +98,13 @@
   </div>
 
 
-  <div class="bg-white border rounded mb-5 p-3">
+  <div class="bg-white border rounded mb-4 p-3">
     <h5 class="mb-4">Comments</h5>
     <p> John Doe, June 1 2018: Lorem inpsum section had some issues.  </p>
-    <hr />
     <p> John Doe, June 1 2018: Lorem inpsum section had some issues.  </p>
     <p><a href="">Go to all comments</a></p>
   </div>
+  {% endcomment %}
 
 
 {% endblock %}
