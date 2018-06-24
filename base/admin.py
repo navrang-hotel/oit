@@ -9,6 +9,7 @@ from django.contrib import admin
 from .models import ContactMessage, JobVacancy, JobVacancyEntry
 from .models import JobVacancyResponsibility, JobVacancyQualification
 from .models import IndexPageHeader, IndexPageHeroPara, IndexPageMain, IndexPagePartner
+from .models import IndexPageServices, IndexPageServicesEntry
 from .models import OITAddress, ContactPageExistingCustomer, ContactPageFollowUs
 from .models import ContactPageWriteMessage, ContactPageHeader
 from .models import CareersPageHero, CareersPageReasons, CareersPageReasonsEntry
@@ -31,4 +32,6 @@ admin.site.register(CareersPageHero)
 admin.site.register(CareersPageReasons)
 admin.site.register(CareersPageReasonsEntry)
 admin.site.register(UserProfile)
+admin.site.register(IndexPageServices)
+admin.site.register(IndexPageServicesEntry)
 

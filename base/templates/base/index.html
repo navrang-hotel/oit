@@ -27,14 +27,13 @@
 
 
 <div class="container pb-5">
-  <h2 class="pb-4-rm">Services</h2>
+
+  <h2 class="pb-4-rm">{{ ips.header }}</h2>
+
   <div class="row py-3">
     <div class="col-sm-8">
       <p class="text-secondary">
-pr IT services to business.
-se/products help organizations
-inion technology efficiently
-ncorganizational efficiency.
+        {{ ips.lpara }}
       </p>
     </div>
     <div class="col-sm-4">
@@ -42,57 +41,19 @@ ncorganizational efficiency.
       <img class="img-fluid" src="{% static 'base/img/services_2.png' %}" />
     </div>
   </div>
-  <div class="row border-bottom">
-    <div class="col-sm-4 border-right py-5-rm">
-      <h4 class="pb-3-rm">Software development</h4>
-      <p class="pt-2 text-secondary">
-      <i class="fas fa-desktop fa-2x mr-3 text-info"></i>
-akwareccording to your needs.
-wage fm websites, desktop and mobile applications.
-      </p>
-    </div>
-    <div class="col-sm-4 border-right py-5-rm">
-      <h4 class="pb-3-rm">Business Process automation</h4>
-      <p class="pt-2 text-secondary">
-      <i class="fas fa-magic fa-2x mr-3 text-info"></i>
-necessutomation (BPA) is the technology-enabled automation of business processes.
-      </p>
-    </div>
-    <div class="col-sm-4 py-5-rm">
-      <h4 class="pb-3-rm">Digital marketing</h4>
-      <p class="pt-2 text-secondary">
-      <i class="fas fa-volume-up fa-2x mr-3 text-info"></i>
-et procts using digital technologies, mainly on the Internet, but also including mobile phones, display advertising, etc.
-      </p>
-    </div>
+
+  <div class="row">
+    {% for ipse in ips.indexpageservicesentry_set.all %}
+      <div class="col-sm-4 py-5-rm bg-danger-rm text-white-rm">
+        <h4 class="pb-2">{{ ipse.header }}</h4>
+        <p class="mb-4">
+          <i class="{{ ipse.icon_bs_class }}"></i>
+          {{ ipse.body }}
+        </p>
+      </div>
+    {% endfor %}
   </div>
 
-  <div class="row pt-5-rm">
-    <div class="col-sm-4 border-right border-right-danger pt-3">
-      <h4 class="pb-3-rm">Open source stack</h4>
-      <p class="pt-2 text-secondary">
-      <i class="fas fa-briefcase fa-2x mr-3 text-info"></i>
- ssoftre often provides good quality software and can also help you save budget 
-oflicees.
-      </p>
-    </div>
-    <div class="col-sm-4 border-right pt-3">
-      <h4 class="pb-3-rm">Training and Certifications</h4>
-      <p class="pt-2 text-secondary">
-      <i class="fas fa-calculator fa-2x mr-3 text-info"></i>
-ni relant IT certifications. We are partner of Red Hat Certifications, and other 
-oropenource certificaitons.
-      </p>
-    </div>
-    <div class="col-sm-4 pt-3">
-      <h4 class="pb-3-rm">Security and Storage</h4>
-      <p class="pt-2 text-secondary">
-      <i class="fas fa-cloud fa-2x mr-3 text-info"></i>
-d e sohat you always have access to your data. Security so that your data is 
-ec thenternet.
-      </p>
-    </div>
-  </div>
 </div>
 
 
@@ -126,11 +87,11 @@ ec thenternet.
   <div class="row py-4 text-dark">
     <div class="col-sm-6 bg-light border rounded py-3">
       <p>
- you have any quesitons regarding services, please write an
-ail to <a href="mailto:info@oit.com.np">info@oit.com.np</a>.
+If you have any quesitons regarding services, please write an
+email to <a href="mailto:info@oit.com.np">info@oit.com.np</a>.
       </p>
       <p>
-se, visit <a href="{% url 'base-contact' %}">Contact</a> page. 
+Please, visit <a href="{% url 'base-contact' %}">Contact</a> page to stay in touch with us. 
       </p>
     </div>
     <div class="col-sm-3 py-3">

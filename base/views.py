@@ -18,6 +18,7 @@ from django.contrib.auth.models import User
 
 from .models import ContactMessage, JobVacancy
 from .models import IndexPageHeader, IndexPageHeroPara, IndexPageMain, IndexPagePartner
+from .models import IndexPageServices
 from .models import OITAddress, ContactPageExistingCustomer, ContactPageFollowUs
 from .models import ContactPageWriteMessage, ContactPageHeader
 from .models import CareersPageHero, CareersPageReasons
@@ -35,12 +36,14 @@ def index(request):
     iphp = IndexPageHeroPara.objects.get(id=1)
     ipm = IndexPageMain.objects.get(id=1)
     ipp = IndexPagePartner.objects.get(id=1)
+    ips = IndexPageServices.objects.get(id=1)
 
     context = {
         'iph': iph,
         'iphp': iphp,
         'ipm': ipm,
         'ipp': ipp,
+        'ips': ips,
     }
 
     return render(request, template, context)

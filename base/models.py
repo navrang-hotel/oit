@@ -326,3 +326,32 @@ class UserProfile(models.Model):
 
         return self.user.username
     
+class IndexPageServices(models.Model):
+    """Class for index page services cms."""
+    
+    header = models.CharField(max_length=20)
+    lpara = models.TextField(max_length=200)
+
+    def __str__(self):
+        """String representation of object."""
+
+        return self.header
+
+class IndexPageServicesEntry(models.Model):
+    """Model class for index page services entry."""    
+
+    index_page_services = models.ForeignKey(IndexPageServices, on_delete=models.CASCADE)
+    order = models.IntegerField()
+    header = models.CharField(max_length=100)
+    icon_bs_class = models.CharField(max_length=50)
+    body = models.TextField(max_length=500)
+
+    def __str__(self):
+        """String representation of object."""
+
+        return self.header
+
+    class Meta:
+
+        ordering = ['order',]
+
