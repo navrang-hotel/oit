@@ -13,8 +13,6 @@ from django.http import HttpResponse
 
 from django.contrib.auth.mixins import LoginRequiredMixin
 
-from reportlab.pdfgen import canvas
-
 from .models import Project
 
 @login_required
