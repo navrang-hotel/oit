@@ -6,7 +6,7 @@ from django.contrib import admin
 # Added by developer after this
 # =============================
 
-from .models import Project, StartProjectRequest
+from .models import Project, StartProjectRequest, ProjectTask, ProjectComment
 from .models import ProjectUserContext
 
 class ProjectUserContextInline(admin.TabularInline):
@@ -22,4 +22,7 @@ class ProjectAdmin(admin.ModelAdmin):
 
 admin.site.register(Project, ProjectAdmin)
 admin.site.register(StartProjectRequest)
+admin.site.register(ProjectTask)
+admin.site.register(ProjectComment)
+
 

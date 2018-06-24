@@ -41,7 +41,7 @@
                 {% endif %}
               {% endfor %}
             </td>
-            <td><a href="{% url 'ocprm-project-detail' %}">View Details</a></td>
+            <td><a href="{% url 'ocprm-project-detail' project.id %}">View Details</a></td>
           </tr>
         {% endfor %}
       </tbody>

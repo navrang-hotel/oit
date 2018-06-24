@@ -3,13 +3,13 @@
 {% block opnavDet%} nb-bg-dinfo {% endblock %}
 {% block dash_content %}
 
-  <div class="container bg-info-rm rounded p-1 mb-4">
+  <div class="container bg-white rounded p-3 mb-4">
     <p class="m-0 p-0">
-      <a class="bg-light text-dark rounded border border-info py-1 px-3 m-0" href="{% url 'ocprm-dashboard' %}">&#x2190; Back</a>
+      <a class="btn btn-info nb-bg-dinfoe text-white py-1 px-3 m-0" href="{% url 'ocprm-dashboard' %}">&#x2190; Back</a>
       {% comment %}
-      <a class="bg-secondary text-white rounded border-right border-white py-1 px-3 m-0" href="">Generate PDF</a>
+      <a class="btn btn-info nb-bg-dinfoe text-white py-1 px-3 m-0" href="">Get support</a>
       <a class="bg-secondary text-white rounded border-right border-white py-1 px-3 m-0" href="">New Task</a>
-      <a class="bg-secondary text-white rounded border-right border-white py-1 px-3 m-0" href="">Get support</a>
+      <a class="bg-secondary text-white rounded border-right border-white py-1 px-3 m-0" href="">Generate PDF</a>
       {% endcomment %}
     </p>
   </div>
@@ -22,43 +22,43 @@
       <tbody>
         <tr>
           <th class="nb-w25">ID</th>
-          <td>{{ project.name }} P101-00001</td>
+          <td>{{ project.id }}</td>
         </tr>
         <tr>
           <th>Name</th>
-          <td>{{ project.name }} Shivansh H&H system</td>
+          <td>{{ project.name }}</td>
         </tr>
         <tr>
           <th>Description</th>
-          <td>{{ project.description }} Hotel system for shivansh</td>
+          <td>{{ project.description }}</td>
         </tr>
         <tr>
           <th>Type</th>
-          <td>{{ project.description }} Custom software</td>
+          <td>{{ project.project_type }}</td>
         </tr>
         <tr>
           <th>Status</th>
-          <td>{{ project.get_status_display }} Maintainance</td>
+          <td>{{ project.get_status_display }}</td>
         </tr>
         <tr>
           <th>Start date</th>
-          <td>{{ project.get_status_display }} 2018-02-18</td>
+          <td>{{ project.start_date }}</td>
         </tr>
         <tr>
           <th>End date</th>
-          <td>{{ project.get_status_display }} 2018-03-18</td>
+          <td>{{ project.end_date }}</td>
         </tr>
         <tr>
           <th>Url</th>
-          <td>{{ project.live_url }} N/A</td>
+          <td>{{ project.live_url }}</td>
         </tr>
         <tr>
           <th>Client POC</th>
-          <td><a href="">{{ project.live_url }} John Doe</a></td>
+          <td><a href="">{{ project.client_poc.username }}</a></td>
         </tr>
         <tr>
           <th>OIT POC</th>
-          <td><a href="">{{ project.live_url }} Aryan Sitaula</a></td>
+          <td><a href="">{{ project.vendor_poc.username }}</a></td>
         </tr>
       </tbody>
       <tfoot>
@@ -67,30 +67,31 @@
   </div>
 
 
-  {% comment %}
   <div class="bg-white border rounded mb-4 p-3">
-    <h5 class="mb-4">Tasks</h5>
+    <h5 class="mb-4">Your Tasks</h5>
+    <p class="nb-bg-mosinfo p-3 mb-4 rounded border">
+      &#x26A1; Please complete tasks on time for smooth project operation.
+    </p>
     <table class="table table-sm table-striped table-responsive-sm border">
       <thead>
         <tr>
           <th>ID</th>
-          <th>Description</th>
+          <th>Name</th>
           <th>Owner</th>
-          <th>Priority</th>
           <th>Status</th>
-          <th>Comment</th>
+          <th>Overdue</th>
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>9882</td>
-          <td><a href="">Complete registration mos ...</a></td>
-          <td>dev01</td>
-          <td>1</td>
-          <td>InProgress</td>
-          <td></td>
-        </tr>
-     
+        {% for project_task in project.projecttask_set.all %}
+          <tr>
+            <td>{{ project_task.id }}</td>
+            <td><a href="">{{ project_task.name }}</a></td>
+            <td>{{ project_task.owner.username }}</td>
+            <td>{{ project_task.get_status_display }}</td>
+            <td class="bg-danger-rm text-danger">Yes</td>
+          </tr>
+        {% endfor %}
       </tbody>
       <tfoot>
       </tfoot>
@@ -100,12 +101,23 @@
 
   <div class="bg-white border rounded mb-4 p-3">
     <h5 class="mb-4">Comments</h5>
-    <p> John Doe, June 1 2018: Lorem inpsum section had some issues.  </p>
-    <p> John Doe, June 1 2018: Lorem inpsum section had some issues.  </p>
-    <p><a href="">Go to all comments</a></p>
+    {% for comment in project.projectcomment_set.all %}
+      <p>
+          {{ comment.commentor.username}}
+        <span class="text-secondary">
+          [ {{ comment.write_dtime }} ]
+        </span>
+        <br />
+        <span class="text-secondary">
+          {{ comment.body }}
+        </span>
+      </p>
+      <hr />
+    {% endfor %}
+    <p> 
+      <a href="">Write comment</a>
+    </p> 
   </div>
-  {% endcomment %}
-
 
 {% endblock %}
 

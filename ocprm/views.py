@@ -10,6 +10,8 @@ from django.views.generic.detail import DetailView
 from django.views.generic.list import ListView 
 from django.contrib.auth.decorators import login_required
 
+from django.contrib.auth.mixins import LoginRequiredMixin
+
 from .models import Project
 
 @login_required
@@ -30,19 +32,7 @@ def index(request):
 
     return render(request, template, context)
 
-#@login_required
-# TODO: Need to add auth+permission required mixin
-def projectDetail(request):
-    """View function for project detail page."""
-
-    template = 'ocprm/odashboard_detail.html'
-    context = {}
-
-    return render(request, template, context)
-
-#@login_required
-# TODO: Need to add auth+permission required mixin
-class ProjectList(ListView):
+class ProjectList(LoginRequiredMixin, ListView):
     """View class for project list page."""
 
     model = Project
@@ -54,6 +44,23 @@ class ProjectList(ListView):
         user = self.request.user
         project_list = Project.objects.filter(actors=user)
         return project_list
+
+# TODO: Need to add auth+permission required mixin
+@login_required
+def projectDetail(request):
+    """View function for project detail page."""
+
+    template = 'ocprm/odashboard_detail.html'
+    context = {}
+
+    return render(request, template, context)
+
+class ProjectDetail(LoginRequiredMixin, DetailView):
+    """View class for project detail page."""
+
+    model = Project
+    template_name = 'ocprm/odashboard_detail.html'
+
 
 def support(request):
     """View function for support page."""

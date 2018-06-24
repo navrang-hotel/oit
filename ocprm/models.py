@@ -7,6 +7,7 @@ from django.db import models
 # =============================
 
 from django.contrib.auth.models import User
+from django.utils import timezone
 
 # ===============
 # Project
@@ -23,10 +24,13 @@ class Project(models.Model):
 
     name = models.CharField(max_length=100)
     description = models.CharField(max_length=200)
+    project_type = models.CharField(max_length=20)
     status = models.CharField(max_length=1, choices=STATUS)
-    # user = models.ForeignKey(User, on_delete=models.CASCADE)
+    start_date = models.DateField()
+    end_date = models.DateField()
     live_url = models.CharField(max_length=100)
-
+    client_poc = models.ForeignKey(User, on_delete=models.CASCADE, related_name='client_poc')
+    vendor_poc = models.ForeignKey(User, on_delete=models.CASCADE, related_name='vendor_poc')
     actors = models.ManyToManyField(User, through='ProjectUserContext')
 
     def __str__(self):
@@ -86,3 +90,54 @@ class ProjectUserContext(models.Model):
 
         return self.project.name + ' <-> ' + self.user.username
     
+
+# ====
+# Task
+# ====
+
+class ProjectTask(models.Model):
+    """Class for project task model."""
+
+    STATUS = (
+        ('N', 'New',),
+        ('O', 'Open',),
+        ('I', 'InProgress',),
+        ('H', 'OnHold',),
+        ('C', 'Complete',),
+    )
+
+    project = models.ForeignKey(Project, on_delete=models.CASCADE)
+    name = models.CharField(max_length=100)
+    description = models.CharField(max_length=200)
+    status = models.CharField(max_length=1, choices=STATUS)
+    start_date = models.DateField()
+    target_end_date = models.DateField()
+    actual_end_date = models.DateField(null=True, blank=True)
+    owner = models.ForeignKey(User, on_delete=models.CASCADE, related_name='task_owner')
+    raiser = models.ForeignKey(User, on_delete=models.CASCADE, related_name='task_raiser')
+    
+    def __str__(self):
+        """String representation of object."""
+        
+        return self.project.name + self.name
+
+# =======
+# Comment
+# =======
+
+class ProjectComment(models.Model):
+    """Class for project comment model."""
+
+    project = models.ForeignKey(Project, on_delete=models.CASCADE)
+    body = models.CharField(max_length=200)
+    write_dtime = models.DateTimeField(default=timezone.now)
+    commentor = models.ForeignKey(User, on_delete=models.CASCADE)
+    
+    def __str__(self):
+        """String representation of object."""
+        
+        return self.project.name + self.commentor.username
+
+    class Meta:
+        ordering = ['-write_dtime']
+
