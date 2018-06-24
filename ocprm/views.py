@@ -9,8 +9,11 @@ from django.shortcuts import render
 from django.views.generic.detail import DetailView 
 from django.views.generic.list import ListView 
 from django.contrib.auth.decorators import login_required
+from django.http import HttpResponse
 
 from django.contrib.auth.mixins import LoginRequiredMixin
+
+from reportlab.pdfgen import canvas
 
 from .models import Project
 
