@@ -4,30 +4,33 @@
 
 {% block content %}
 
-  <div class="container pt-5">
-    <h2>{{ cph.header }}</h2>
-    <hr/>
+  {% comment %}
+  <div class="jumbotron jumbotron-fluid bg-info text-white">
+    <div class="container">
+      <h2 class="text-center">{{ cph.header }}</h2>
+    </div>
   </div>
+  {% endcomment %}
 
 
-  <div class="container-fluid shadow-rm">
-    <div class="container my-4">
-      <div class="row py-3 text-dark">
+  <div class="container-fluid shadow-rm mt-5">
+    <div class="container mb-4">
+      <div class="row pb-3">
         <div class="col-sm-6">
           <p class="pb-3">
-            <h4 class="text-success-rm mb-5">{{ oit_address.name }}</h4>
-            <h5 class="text-success-rm"><i class="fas fa-map-marker text-success"></i>&nbsp;&nbsp; Address</h5>
-            {{ oit_address.address }}<br/><br/>
-            <h5><i class="fas fa-phone text-success"></i>&nbsp;  Phone</h5>
-            {{ oit_address.phone }}<br/><br/>
-            <h5><i class="fas fa-envelope text-success"></i>&nbsp;  Email</h5>
-            <a href="">{{ oit_address.email }}</a><br/><br/>
-            <h5><i class="fas fa-globe text-success"></i>&nbsp;  Website</h5>
-            <a href="">{{ oit_address.website }}</a><br/><br/>
+            <h3 class="text-info mb-4">{{ oit_address.name }}</h3>
+            <i class="fas fa-map-marker text-success"></i>&nbsp;{{ oit_address.address }}<br/>
+            <i class="fas fa-phone text-success"></i>&nbsp;{{ oit_address.phone }}<br/>
+            <i class="fas fa-envelope text-success"></i>&nbsp; <a href="">{{ oit_address.email }}</a><br/>
+            <i class="fas fa-globe text-success"></i>&nbsp; <a href="">{{ oit_address.website }}</a><br/>
           </p>
+          <div id="gmap">
+          </div>
         </div>
-        <div class="col-sm-6 bg-light border py-3 shadow-sm">
-          <h4 class="py-3">{{ cpwm.header }}</h4>
+        <div class="col-sm-2">
+        </div>
+        <div class="col-sm-4 bg-light border my-5 shadow-sm">
+          <h3 class="py-3 text-info">{{ cpwm.header }}</h3>
           <p class="text-secondary py-2">
             {{ cpwm.body }}
           </p>
@@ -49,7 +52,7 @@
               </div>
             </div>
             <div class="form-group">
-              <button class="btn btn-primary text-white pull-right" type="submit">Submit</button>
+              <button class="btn btn-success text-white pull-right" type="submit">Submit</button>
             </div>
           </form>
         </div>
@@ -57,28 +60,48 @@
     </div>
   </div>
 
+  <hr class="m-0 p-0"/>
 
-  <div class="container-fluid border-top border-bottom">
-    <div class="container py-5">
-      <h2 class="py-3">{{ cpec.header1 }}</h2>
-      <h4 class="py-2">{{ cpec.header2 }}</h4>
-      <p class="py-2"> 
-        <a class="btn btn-primary text-white" href="{% url 'base-support' %}">Contact support</a>
-      </p> 
-    </div>
-  </div>
-
-
-  <div class="container-fluid bg-info text-white border-top border-bottom py-3">
-    <div class="container pt-4">
-      <h2>{{ cpfu.header }}</h2>
-      <ul class="pt-3 nb-ul-nostyle">
-        <li class="mb-2" ><a class="text-white" href="https://www.facebook.com/Operating-IT-436697390136345" target="_blank"><i class="fab fa-facebook fa-2x"></i>&nbsp;&nbsp; Facebook</a></li>
-        <li class="mb-2" ><a class="text-white" href="https://twitter.com/OperatingI" target="_blank"><i class="fab fa-twitter fa-2x"></i>&nbsp;&nbsp; Twitter</a></li>
-        <li class="mb-2" ><a class="text-white" href="https://github.com/oitcode" target="_blank"><i class="fab fa-github fa-2x"></i>&nbsp;&nbsp; Github</a></li>
-      </ul>
+  <div class="container-fluid bg-light py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-6 my-5">
+          <h3 class="text-info py-3">{{ cpec.header1 }}</h3>
+          <h4 class="text-secondary py-2">{{ cpec.header2 }}</h4>
+          <p class="py-2"> 
+            <a class="btn btn-success text-white" href="{% url 'base-support' %}">Contact support</a>
+          </p> 
+        </div>
+        <div class="col-sm-6 bg-info text-white my-5 p-3 shadow-lg rounded">
+          <h3 class="">{{ cpfu.header }}</h3>
+          <ul class="pt-3 nb-ul-nostyle">
+            <li class="mb-2" ><a class="text-white" href="https://www.facebook.com/Operating-IT-436697390136345" target="_blank"><i class="fab fa-facebook fa-2x"></i>&nbsp;&nbsp; Facebook</a></li>
+            <li class="mb-2" ><a class="text-white" href="https://twitter.com/OperatingI" target="_blank"><i class="fab fa-twitter fa-2x"></i>&nbsp;&nbsp; Twitter</a></li>
+            <li class="mb-2" ><a class="text-white" href="https://github.com/oitcode" target="_blank"><i class="fab fa-github fa-2x"></i>&nbsp;&nbsp; Github</a></li>
+          </ul>
+        </div>
+      </div>
     </div>
   </div>
 
 {% endblock %}
+
+{% block body_script %}
+  <script>
+  // Initialize and add the map
+  function initMap() {
+    // The location of Uluru
+    var oitm = {lat: 27.729254, lng: 85.337990};
+    // The map, centered at Uluru
+    var map = new google.maps.Map(
+        document.getElementById('gmap'), {zoom: 18, center: oitm});
+    // The marker, positioned at Uluru
+    var marker = new google.maps.Marker({position: oitm, map: map});
+  }
+  </script>
+  <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCNN3no6ufShMv2cQoao7NbF8DM8Fs2Yo0&callback=initMap">
+  </script>
+{% endblock %}
+
 

@@ -31,9 +31,9 @@
   </head>
   <body>
     <header class="">
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark border-top border-secondary">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark border-top border-secondary py-4">
         <div class="container">
-          <a class="navbar-brand text-white" href="{% url 'base-index' %}">
+          <a class="navbar-brand" href="{% url 'base-index' %}">
             <img src="{% static 'base/img/logo_1.png' %}" width="30" height="30" class="d-inline-block align-top" alt="" />
             OIT
           </a>
@@ -58,11 +58,22 @@
                 </li>
               {% endif %}
             </ul>
+            {% comment %}
+            <a href="https://www.facebook.com/Operating-IT-436697390136345" target="_blank"><i class="fab fa-facebook-f fa-2x nb-fg-fb text-white"></i></a>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="https://twitter.com/OperatingI" target="_blank"><i class="fab fa-twitter fa-2x text-white"></i></a>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            {% endcomment %}
+            <a href="https://github.com/oitcode" target="_blank"><i class="fab fa-github fa-2x text-white"></i></a>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;
             {% if user.is_authenticated %}
               <span class="text-secondary">{{ user.get_username }}</span>&nbsp;&nbsp;
               <a class="text-secondary" href="{% url 'logout' %}?next={{request_path}}"><i class="fas fa-sign-out-alt fa-md"></i> &nbsp;Logout</a>
             {% else %}
-              <a class="text-white" href="{% url 'login' %}?next={{request_path}}"><i class="fas fa-sign-in-alt fa-md"></i> &nbsp;Login</a>
+              <a class="text-white-rm btn btn-success" href="{% url 'login' %}?next={{request_path}}"><i class="fas fa-sign-in-alt fa-md"></i> &nbsp;Login</a>
             {% endif %}
           </div>
         </div>
@@ -76,23 +87,30 @@
 
     {% block footer %}
     <footer class="border-top">
-      <div class="nb-bg-fgray py-3">
+      <div class="bg-dark py-3">
         <div class="container pt-2">
           <div class="row">
-            <div class="col-sm-3 py-3">
-              <p class="text-secondary">&copy; 2018 OIT</p>
+            <div class="col-sm-3 py-3 text-light border-right border-secondary">
+              <h5>Operating IT Pvt Ltd</h5>
+              <p>
+Suyog Marga, Chandol<br/>
+Kahtmandu, Nepal<br/>
+Phone: +977 1 4480583<br/>
+Email: info@oit.com.np<br/>
+Website: www.oit.com.np<br/>
+              </p>
             </div>
-            <div class="col-sm-3 py-3 text-secondary">
+            <div class="col-sm-2 py-3 text-light text-center">
               <h5>Site</h5>
-              <a class="text-secondary" href="{% url 'base-index' %}">Home</a><br/>
-              <a class="text-secondary" href="{% url 'base-careers' %}">Careers</a><br/>
-              <a class="text-secondary" href="{% url 'base-contact' %}">Contact</a><br/>
+              <a class="text-light" href="{% url 'base-index' %}">Home</a><br/>
+              <a class="text-light" href="{% url 'base-careers' %}">Careers</a><br/>
+              <a class="text-light" href="{% url 'base-contact' %}">Contact</a><br/>
             </div>
-            <div class="col-sm-3 py-3 text-secondary">
+            <div class="col-sm-2 py-3 text-light text-center">
               <h5>Others</h5>
-              <a class="text-secondary" href="{% url 'base-documentation' %}">Documentation</a><br/>
+              <a class="text-light" href="{% url 'base-documentation' %}">Documentation</a><br/>
             </div>
-            <div class="col-sm-3 py-3 text-secondary">
+            <div class="col-sm-2 py-3 text-light text-center">
               <h5>Follow us</h5>
               <a href="https://www.facebook.com/Operating-IT-436697390136345" target="_blank"><i class="fab fa-facebook fa-2x nb-fg-fb"></i></a>
               &nbsp; &nbsp; &nbsp;
@@ -100,13 +118,16 @@
               &nbsp; &nbsp; &nbsp;
               <a href="https://github.com/oitcode" target="_blank"><i class="fab fa-github fa-2x text-success"></i></a>
             </div>
+            <div class="col-sm-2 py-3">
+            </div>
           </div>
         </div>
       </div>
 
-      <div class="container-fluid nb-bg-fdgray my-0 py-2 nb-font-sm">
-        <div class="container">
-          <a href="{% url 'base-feedback' %}" class="text-dark">Feedback</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <div class="container-fluid bg-secondary my-0 py-2 nb-font-sm">
+        <div class="container text-light">
+          <span class="text-white">&copy; 2018 OIT</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <a href="{% url 'base-feedback' %}" class="text-light">Feedback</a>
         </div>
       </div>
     </footer>
@@ -122,6 +143,8 @@
     <script src="{% static 'base/js/jquery-3.3.1.js'%}"></script>
     <script src="{% static 'base/js/bootstrap.min.js'%}"></script>
      <!-- Optional JavaScript for Bootstrap 4 -->
+    {% block body_script %}
+    {% endblock %}
   </body>
 </html>
 

@@ -64,3 +64,9 @@
 .nb-fg-fb {
   color: #43609C;
 }
+
+#gmap {
+  width: 100%;
+  height: 300px;
+  background-color: grey;
+}

@@ -12,7 +12,7 @@
             {{ crph.body }}
           </p>
           <p>
-            <a class="btn btn-primary shadow-sm"href="{% url 'base-careers-vacancy-list' %}">View all vacancies</a>
+            <a class="btn btn-success shadow-sm"href="{% url 'base-careers-vacancy-list' %}">View all vacancies</a>
           </p>
         </div>
         <div class="col-sm-6">
@@ -30,7 +30,7 @@
       <div class="row">
         {% for crpre in crpr.careerspagereasonsentry_set.all %}
           <div class="col-sm-6 py-5-rm bg-danger-rm text-white-rm">
-            <h4 class="pb-2"><span class="text-warning"><i class="{{ crpre.icon_bs_class }}"></i>&#x2605;</span> {{ crpre.header }}</h4>
+            <h4 class="pb-2"><i class="{{ crpre.icon_bs_class }}"></i>{{ crpre.header }}</h4>
             <p class="mb-4">
               {{ crpre.body }}
             </p>

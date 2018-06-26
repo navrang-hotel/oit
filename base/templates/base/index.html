@@ -26,25 +26,24 @@
 </div>
 
 
-<div class="container pb-5">
+<div class="container pb-5-rm mb-0">
 
-  <h2 class="pb-4-rm">{{ ips.header }}</h2>
-
-  <div class="row py-3">
-    <div class="col-sm-8">
-      <p class="text-secondary">
+  <h2 class="pb-4 text-center">{{ ips.header }}</h2>
+  <div class="row py-3 mb-3">
+    <div class="col-sm-2">
+      {% load static %}
+      <img class="img-fluid" src="{% static 'base/img/services_8.png' %}" />
+    </div>
+    <div class="col-sm-8 mb-5">
+      <p class="text-secondary text-center">
         {{ ips.lpara }}
       </p>
     </div>
-    <div class="col-sm-4">
-      {% load static %}
-      <img class="img-fluid" src="{% static 'base/img/services_2.png' %}" />
-    </div>
   </div>
 
-  <div class="row">
+  <div class="row mb-3">
     {% for ipse in ips.indexpageservicesentry_set.all %}
-      <div class="col-sm-4 py-5-rm bg-danger-rm text-white-rm">
+      <div class="col-sm-4 py-5-rm bg-danger-rm text-white-rm mb-4 pr-5">
         <h4 class="pb-2">{{ ipse.header }}</h4>
         <p class="mb-4">
           <i class="{{ ipse.icon_bs_class }}"></i>
@@ -53,57 +52,109 @@
       </div>
     {% endfor %}
   </div>
-
 </div>
 
-
-<div class="container-fluid bg-info text-white border py-5">
+<hr class="m-0 p-0"/>
+<div class="container-fluid bg-light py-5"> 
   <div class="container">
     <div class="row">
-      <div class="col-sm-6">
-        <h3>{{ ipp.header }}</h3>
-        <p class="py-3-rm">
-          <ul>
-            <li>Latest software</li>
-            <li>Free support</li>
-            <li>Digital Platform</li>
-            <li>Business continuity</li>
+      <div class="col-sm-4">
+        <div class="card border-info-rm">
+          <h5 class="card-header text-success">What you get</h5>
+          {% comment %}
+          <ul class="list-group list-group-flush mb-3">
+            <li class="list-group-item">Latest software</li>
+            <li class="list-group-item">1 year free support</li>
+            <li class="list-group-item">Digital Platform</li>
+            <li class="list-group-item">Business continuity</li>
           </ul>
-        </p>
+          {% endcomment %}
+          <div class="card-body"> 
+            <ul class="mb-3 py-0 text-secondary">
+              <li class="ml-0 pl-0">Latest software</li>
+              <li class="mt-2 ml-0 pl-0">1 year free support</li>
+              <li class="mt-2 ml-0 pl-0">Digital Platform</li>
+              <li class="mt-2 ml-0 pl-0">Business continuity</li>
+            </ul>
+            <a href="#" class="btn btn-sm btn-success" >Learn More</a> 
+          </div> 
+        </div>
       </div>
-      <div class="col-sm-3">
+      <div class="col-sm-4">
+        <div class="card border-info-rm">
+          <h5 class="card-header text-success">Questions ?</h5>
+          <div class="card-body text-secondary">
+            <p class="card-text">
+If you have any quesitons regarding services, please write an
+email to <a href="mailto:info@oit.com.np">info@oit.com.np</a>.
+            </p>
+            <p class="card-text">
+Please, visit <a href="{% url 'base-contact' %}">Contact</a> page to stay in touch with us.
+              <br/>
+              <br/>
+            </p>
+          </div>
+        </div>
       </div>
-      <div class="col-sm-3">
-        {% load static %}
-        <!--<img class="img-fluid" src="{% static 'base/img/index_6.png' %}" />-->
+      <div class="col-sm-4">
+        <div class="card border-info-rm">
+          <h5 class="card-header text-success">Quick Links</h5>
+          <div class="list-group m-0">
+            <a href="#" class="list-group-item">Start project</a>
+            <a href="#" class="list-group-item">Get support</a>
+            <a href="#" class="list-group-item">Visit FAQ</a>
+            <a href="#" class="list-group-item">Donate</a>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-</div>
+</div> 
+<hr class="m-0 p-0"/>
 
-
-<div class="container my-5">
-  <h2>Questions?</h2>
-  <div class="row py-4 text-dark">
-    <div class="col-sm-6 bg-light border rounded py-3">
-      <p>
-If you have any quesitons regarding services, please write an
-email to <a href="mailto:info@oit.com.np">info@oit.com.np</a>.
-      </p>
-      <p>
-Please, visit <a href="{% url 'base-contact' %}">Contact</a> page to stay in touch with us. 
-      </p>
+<div class="container py-5">
+  <h3 class="text-center mb-5">Our customers say</h3>
+  <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="8000">
+    <ol class="carousel-indicators">
+      <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <p class="text-center px-5">
+          <i class="fa fa-quote-left text-secondary"></i>
+An extremely friendly organization for our hotel. Like their services. Recommend for everyone.
+          <i class="fa fa-quote-right text-secondary"></i>
+        </p>
+        <h5 class="text-center text-success">Rahul Bhagat</h5>
+        <h6 class="text-center text-muted">Manager, Navrang hotel</h6>
+      </div>
+      <div class="carousel-item">
+        <p class="text-center px-5">
+An extremely friendly organization for our hotel. Like their services. Recommend for everyone.
+        </p>
+        <h5 class="text-center text-success">Deependra Thapaliya</h5>
+        <h6 class="text-center text-muted">CEO, Nepadristi</h6>
+      </div>
+      <div class="carousel-item">
+        <p class="text-center px-5">
+An extremely friendly organization for our hotel. Like their services. Recommend for everyone.
+        </p>
+        <h5 class="text-center text-success">Binod Dahal</h5>
+        <h6 class="text-center text-muted">Propreiter, Alphasoft computers</h6>
+      </div>
     </div>
-    <div class="col-sm-3 py-3">
-    </div>
-    <div class="col-sm-3 py-3">
-      <h5 class="text-center py-2 bg-info text-white my-0">Quick Links</h5>
-      <ul class="list-group">
-        <li class="list-group-item"><a href="{% url 'base-faq' %}">FAQ</a></li>
-        <li class="list-group-item"><a href="{% url 'base-support' %}">Get support</a></li>
-        <li class="list-group-item"><a href="{% url 'base-start-project' %}">Start project</a></li>
-      </ul>
-    </div>
+    {% comment %}
+    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon bg-success" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+      <span class="carousel-control-next-icon bg-success" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+    {% endcomment %}
   </div>
 </div>
 
