@@ -4,51 +4,54 @@
 
 {% block content %}
 
-<div class="container-fluid py-5 bg-info text-white mb-5">
+<div class="container-fluid py-4 bg-light text-white-rm">
   <div class="container">
     <div class="row">
-      <div class="col-sm-4">
+      <div class="col-sm-12 text-center">
         <h3 class="py-3">{{ iph }}</h3>
-        <p>
+        <p class="text-secondary">
           {{ iphp }}
         </p>
         <br/>
-        <a class="btn btn-warning shadow" href="{% url 'base-start-project' %}">Start Project</a>
-      </div>
-      <div class="col-sm-4">
+        <a class="btn btn-success shadow" href="{% url 'base-start-project' %}">Start Project</a>
       </div>
       <div class="col-sm-4">
         {% load static %}
-        <img class="img-fluid" src="{% static 'base/img/logo_1.png' %}" />
+        <!--<img class="img-fluid" src="{% static 'base/img/logo_1.png' %}" />-->
       </div>
     </div>
   </div>
 </div>
 
+<hr class="p-0 m-0"/>
 
-<div class="container pb-5-rm mb-0">
 
-  <h2 class="pb-4 text-center">{{ ips.header }}</h2>
-  <div class="row py-3 mb-3">
+<div class="container pb-5-rm mb-0 pt-5">
+  <h3 class="pb-4 text-center">{{ ips.header }}</h3>
+  <div class="row mb-5">
     <div class="col-sm-2">
-      {% load static %}
-      <img class="img-fluid" src="{% static 'base/img/services_8.png' %}" />
     </div>
-    <div class="col-sm-8 mb-5">
+    <div class="col-sm-8">
       <p class="text-secondary text-center">
         {{ ips.lpara }}
       </p>
+    </div>
+    <div class="col-sm-2">
     </div>
   </div>
 
   <div class="row mb-3">
     {% for ipse in ips.indexpageservicesentry_set.all %}
-      <div class="col-sm-4 py-5-rm bg-danger-rm text-white-rm mb-4 pr-5">
-        <h4 class="pb-2">{{ ipse.header }}</h4>
-        <p class="mb-4">
+      <div class="col-sm-4 py-5-rm bg-danger-rm text-white-rm mb-2 pr-5">
+        <div class="media">
           <i class="{{ ipse.icon_bs_class }}"></i>
-          {{ ipse.body }}
-        </p>
+          <div class="media-body">
+            <h5 class="pb-2">{{ ipse.header }}</h5>
+             <p class="mb-4 text-secondary">
+               {{ ipse.body }}
+             </p>
+          </div>
+        </div>
       </div>
     {% endfor %}
   </div>
@@ -96,14 +99,19 @@ Please, visit <a href="{% url 'base-contact' %}">Contact</a> page to stay in tou
           </div>
         </div>
       </div>
-      <div class="col-sm-4">
+      <div class="col-sm-1">
+      </div>
+      <div class="col-sm-3">
         <div class="card border-info-rm">
           <h5 class="card-header text-success">Quick Links</h5>
           <div class="list-group m-0">
-            <a href="#" class="list-group-item">Start project</a>
-            <a href="#" class="list-group-item">Get support</a>
-            <a href="#" class="list-group-item">Visit FAQ</a>
-            <a href="#" class="list-group-item">Donate</a>
+            <a href="#" class="list-group-item bg-success text-white">Start project</a>
+            <a href="#" class="list-group-item bg-success text-white">
+              Get support
+              <span class="badge badge-secondary">Beta</span>
+            </a>
+            <a href="#" class="list-group-item bg-success text-white">Visit FAQ</a>
+            <a href="#" class="list-group-item bg-success text-white">Esewa</a>
           </div>
         </div>
       </div>
