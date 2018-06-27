@@ -7,7 +7,7 @@ from django.contrib import admin
 # =============================
 
 from .models import Project, StartProjectRequest, ProjectTask, ProjectComment
-from .models import ProjectUserContext
+from .models import ProjectUserContext, GetSupportTicket
 
 class ProjectUserContextInline(admin.TabularInline):
     """Class for through model."""
@@ -24,5 +24,5 @@ admin.site.register(Project, ProjectAdmin)
 admin.site.register(StartProjectRequest)
 admin.site.register(ProjectTask)
 admin.site.register(ProjectComment)
-
+admin.site.register(GetSupportTicket)
 

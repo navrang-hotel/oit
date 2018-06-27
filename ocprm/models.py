@@ -141,3 +141,38 @@ class ProjectComment(models.Model):
     class Meta:
         ordering = ['-write_dtime']
 
+# ==================
+# Get support ticket
+# ==================
+
+class GetSupportTicket(models.Model):
+    """Class for get support ticket model."""
+
+    STATUS = (
+        ('N', 'New',),
+        ('O', 'Open',),
+        ('F', 'Fixed',),
+        ('R', 'Re-test',),
+        ('C', 'Closed',),
+    )
+
+    RCA = (
+        ('C', 'Code',),
+        ('D', 'Design',),
+        ('U', 'User-error',),
+        ('E', 'Environment',),
+    )
+
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    title = models.CharField(max_length=100)
+    description = models.TextField(max_length=200)
+    raised_date = models.DateTimeField(default=timezone.now)
+    closed_date = models.DateTimeField(null=True, blank=True)
+    status = models.CharField(max_length=1, choices=STATUS)
+    rca = models.CharField(max_length=1, choices=RCA, null=True, blank=True)
+
+    def __str__(self):
+        """String representation of object."""
+        
+        return  '[' + str(self.id) + '] ' + self.title
+

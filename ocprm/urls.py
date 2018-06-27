@@ -17,5 +17,6 @@ urlpatterns = [
     #path('projectdetail/', views.projectDetail, name='ocprm-project-detail'),
     path('projectdetail/<int:pk>/', views.ProjectDetail.as_view(), name='ocprm-project-detail'),
     path('support/', views.support, name='ocprm-support'),
+    path('pdftest/', views.pdf_view, name='ocprm-pdftest'),
 ]
 
