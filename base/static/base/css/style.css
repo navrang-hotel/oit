@@ -70,3 +70,7 @@
   height: 300px;
   background-color: grey;
 }
+
+.nb-anu:hover {
+  text-decoration: none;
+}
