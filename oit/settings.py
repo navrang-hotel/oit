@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'ohotel.apps.OhotelConfig',
     'ocprm.apps.OcprmConfig',
     'ocent.apps.OcentConfig',
+    'milano.apps.MilanoConfig',
 ]
 
 MIDDLEWARE = [
