@@ -6,6 +6,8 @@ from django.shortcuts import render
 # Added by developer after this
 # =============================
 
+from django.contrib.auth.decorators import login_required
+
 def index(request):
     """View function for index page."""
 
@@ -46,3 +48,13 @@ def contact(request):
 
     return render(request, template, context)
 
+@login_required
+def mycart(request):
+    """View function for my cart page."""
+
+    template = 'milano/mycart.html'
+
+    context = {}
+
+    return render(request, template, context)
+    

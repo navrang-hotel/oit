@@ -18,7 +18,7 @@
    
     <!-- title and favicon -->
     <title>OIT</title>
-    <link rel="icon" type="image/gif/png" href="{% static 'base/img/ofavicon_1.png'%}">
+    <link rel="icon" type="image/gif/png" href="{% static 'milano/img/logo_1.png'%}">
     <!-- /title and favicon -->
 
     <!-- Font Awesome -->
@@ -32,26 +32,37 @@
   <body>
     <header class="bg-light">
       <div class="container pt-3">
-        <p class="text-success nb-fs-sm">
-          <i class="fas fa-phone"></i> Phone: +977 1 4480583
-          &nbsp;&nbsp;&nbsp;&nbsp;
-          <i class="fas fa-envelope"></i> Email: info@milano.com.np
-          <span class="text-right">
-            &nbsp;&nbsp;&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp;&nbsp;
-            <a href="https://www.facebook.com/Operating-IT-436697390136345" target="_blank"><i class="fab fa-facebook-f nb-fg-fb text-primary"></i></a>
-            &nbsp;&nbsp;&nbsp;&nbsp;
-            <a href="https://twitter.com/OperatingI" target="_blank"><i class="fab fa-twitter text-info"></i></a>
-            &nbsp;&nbsp;&nbsp;&nbsp;
-            <a href="https://github.com/oitcode" target="_blank"><i class="fab fa-github text-success"></i></a>
-            &nbsp;&nbsp;&nbsp;&nbsp;
-          </span>
-        </p>
+        <div class="row">
+          <div class="col-sm-6">
+            <p class="text-success nb-fs-sm">
+              <i class="fas fa-phone"></i> Phone: +977 1 4480583
+              &nbsp;&nbsp;&nbsp;&nbsp;
+              <i class="fas fa-envelope"></i> Email: info@milano.com.np
+              <span class="text-right">
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="https://www.facebook.com/Operating-IT-436697390136345" target="_blank"><i class="fab fa-facebook-f nb-fg-fb text-primary"></i></a>
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="https://twitter.com/OperatingI" target="_blank"><i class="fab fa-twitter text-info"></i></a>
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="https://github.com/oitcode" target="_blank"><i class="fab fa-github text-success"></i></a>
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="{% url 'milano-mycart' %}" target="_blank"><i class="fas fa-cart-plus text-success"></i></a>
+                &nbsp;&nbsp;&nbsp;&nbsp;
+              </span>
+            </p>
+          </div>
+          <div class="col-sm-2">
+          </div>
+          <div class="col-sm-4">
+            <img src="{% static 'milano/img/logo_1.png' %}" width="30" height="30" class="" alt="" />
+          </div>
+        </div>
       </div>
       <nav class="navbar navbar-expand-lg navbar-dark-rm bg-dark-rm border border-secondary-rm py-4">
         <div class="container">
           <a class="navbar-brand" href="{% url 'base-index' %}">
-            <img src="{% static 'milano/img/nav_icon_1.png' %}" width="30" height="30" class="d-inline-block align-top" alt="" />
+            <img src="{% static 'milano/img/logo_1.png' %}" width="30" height="30" class="d-inline-block align-top" alt="" />
             MILANO
           </a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -63,13 +74,19 @@
               <li class="nav-item {% block navHom %}{% endblock %}">
                 <a class="nav-link" href="{% url 'milano-index' %}">HOME <span class="sr-only">(current)</span></a>
               </li>
-              <li class="nav-item {% block navCar %}{% endblock %}">
-                <a class="nav-link" href="{% url 'milano-products' %}">PRODUCTS</a>
+              <li class="nav-item {% block navMen %}{% endblock %}">
+                <a class="nav-link" href="{% url 'milano-products' %}">MENS</a>
               </li>
-              <li class="nav-item {% block navDea %}{% endblock %}">
-                <a class="nav-link" href="{% url 'milano-dealers' %}">DEALERS</a>
+              <li class="nav-item {% block navLad %}{% endblock %}">
+                <a class="nav-link" href="{% url 'milano-products' %}">LADIES</a>
               </li>
-              <li class="nav-item {% block navTea %}{% endblock %}">
+              <li class="nav-item {% block navKid %}{% endblock %}">
+                <a class="nav-link" href="{% url 'milano-products' %}">KIDS</a>
+              </li>
+              <li class="nav-item {% block navSto %}{% endblock %}">
+                <a class="nav-link" href="{% url 'milano-dealers' %}">STORES</a>
+              </li>
+              <li class="nav-item {% block navAbo %}{% endblock %}">
                 <a class="nav-link" href="{% url 'milano-about' %}">ABOUT</a>
               </li>
               <li class="nav-item {% block navCon %}{% endblock %}">
@@ -91,14 +108,17 @@
       <div class="bg-light py-3">
         <div class="container pt-2">
           <div class="row">
-            <div class="col-sm-3 py-3 text-secondary text-center border-right border-secondary">
-              <h5>Milano Footwear</h5>
+            <div class="col-sm-3 py-3 text-secondary text-center">
+              {% load static %}
+              <img class="img-fluid align-top" src="{% static 'milano/img/logo_1.png' %}" />
+            </div>
+            <div class="col-sm-2 py-3 text-muted text-center border-right border-secondary">
               <p>
-New road<br/>
-Kahtmandu, Nepal<br/>
-Phone: +977 1 4480583<br/>
-Email: info@milano.com.np<br/>
-Website: www.milano.com.np<br/>
+                New road<br/>
+                Kahtmandu, Nepal<br/>
+                Phone: +977 1 4480583<br/>
+                Email: info@milano.com.np<br/>
+                Website: www.milano.com.np<br/>
               </p>
             </div>
             <div class="col-sm-2 py-3 text-muted text-center">
