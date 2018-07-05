@@ -1,0 +1,23 @@
+{% extends 'ocprm/odashboard.html' %}
+
+{% block dash_content %}
+
+  <div class="container">
+    <div class="col-sm-6 bg-white rounded border p-3">
+      <h5 class="text-success">Request received</h5>
+      <p class="text-dark">
+ID: <strong>{{ pk }}</strong><br />
+Your request for new project has been created.<br />
+      </p>
+      <p class="text-muted">
+You will receive an email regarding the next steps for the project. 
+      </p>
+      <hr />
+      <p>
+        <a href="">Back to project</a>&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="">Edit request</a>&nbsp;&nbsp;&nbsp;&nbsp;
+      </p>
+    </div>
+  </div>
+{% endblock %}
+

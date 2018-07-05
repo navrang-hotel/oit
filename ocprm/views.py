@@ -6,15 +6,19 @@ from django.shortcuts import render
 # Added by developer after this
 # =============================
 
+from django.views.generic.edit import CreateView
 from django.views.generic.detail import DetailView 
 from django.views.generic.list import ListView 
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
+from django.urls import reverse
+from django.shortcuts import get_object_or_404
 from reportlab.pdfgen import canvas
 
 from django.contrib.auth.mixins import LoginRequiredMixin
 
-from .models import Project
+from .models import Project, StartProjectRequestD, GetSupportTicket
+from .models import ProjectComment
 
 @login_required
 def index(request):
@@ -64,6 +68,7 @@ class ProjectDetail(LoginRequiredMixin, DetailView):
     template_name = 'ocprm/odashboard_detail.html'
 
 
+@login_required
 def support(request):
     """View function for support page."""
 
@@ -88,4 +93,96 @@ def pdf_view(request):
     p.showPage()
     p.save()
     return response
+
+class GetSupportTicketCreate(CreateView):
+    """View class for get support ticket create page."""
+
+    template_name = 'ocprm/odashboard_support.html'
+
+    model = GetSupportTicket
+    #fields = '__all__'
+    fields = [
+        'title',
+        'description',
+    ]
+
+    def get_success_url(self):
+        #return reverse('ocprm-gsr-success', args=[self.kwargs['pk']])
+        return reverse('ocprm-gsr-success', args=[self.object.id])
+
+    def form_valid(self, form):
+        """
+        Add user and associated project to form data before setting it as valid.
+        """
+        #Add logged-in user as raiser
+        form.instance.user = self.request.user
+        form.instance.status = 'N'
+        #Associate comment with project based on passed id
+        form.instance.project = get_object_or_404(Project, pk = self.kwargs['pk'])
+        # Call super-class form validation behaviour
+        return super(GetSupportTicketCreate, self).form_valid(form)
+
+def support_request_success(request, pk):
+    """View function for support request success message."""
+
+    template = 'ocprm/gsrsuccess.html'
+    context = {
+        'pk': pk,
+    }
+
+    return render(request, template, context)
+   
+class StartProjectRequestCreate(CreateView):
+    """View class for creating start project request."""
+
+    model = StartProjectRequestD
+    template_name = 'ocprm/start_project.html'
+    fields = [
+        'status',
+        'project_type',
+        'description',
+    ]
+
+    def get_success_url(self):
+        #return reverse('ocprm-spr-success')
+        return reverse('ocprm-spr-success', args=[self.object.id])
+
+    def form_valid(self, form):
+        """
+        Add user and associated project to form data before setting it as valid.
+        """
+        form.instance.user = self.request.user
+        #form.instance.status = 'N'
+        return super(StartProjectRequestCreate, self).form_valid(form)
+
+def start_project_success(request, pk):
+    """View function for start project success message."""
+
+    template = 'ocprm/sprsuccess.html'
+    context = {
+        'pk': pk,
+    }
+
+    return render(request, template, context)
+
+class ProjectCommentCreate(CreateView):
+    """View class for project comment create page."""
+
+    template_name = 'ocprm/project_comment_create.html'
+
+    model = ProjectComment
+    fields = [
+        'body',
+    ]
+
+    def get_success_url(self):
+        return reverse('ocprm-project-detail', args=[self.kwargs['pk']])
+
+    def form_valid(self, form):
+        """
+        Add user and other info to form data before setting it as valid.
+        """
+        form.instance.commentor = self.request.user
+        form.instance.project = get_object_or_404(Project, pk = self.kwargs['pk'])
+        return super(ProjectCommentCreate, self).form_valid(form)
 

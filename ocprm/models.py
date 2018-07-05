@@ -9,6 +9,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.utils import timezone
 
+
 # ===============
 # Project
 # ===============
@@ -59,6 +60,32 @@ class StartProjectRequest(models.Model):
 
 
     email = models.EmailField(max_length=50)
+    status = models.CharField(max_length=1, choices=STATUS)
+    project_type = models.CharField(max_length=1, choices=PROJECT_TYPE)
+    description = models.TextField()
+
+    def __str__(self):
+        """String representation of object."""
+        
+        return self.email
+
+class StartProjectRequestD(models.Model):
+    """Model class for start project request."""
+
+    STATUS = (
+        ('P', 'Pending',),
+        ('D', 'Denied',),
+        ('H', 'On-Hold',),
+        ('A', 'Approved',),
+    )
+
+    PROJECT_TYPE = (
+        ('P', 'Personal',),
+        ('B', 'Business',),
+    )
+
+
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     status = models.CharField(max_length=1, choices=STATUS)
     project_type = models.CharField(max_length=1, choices=PROJECT_TYPE)
     description = models.TextField()
@@ -129,7 +156,7 @@ class ProjectComment(models.Model):
     """Class for project comment model."""
 
     project = models.ForeignKey(Project, on_delete=models.CASCADE)
-    body = models.CharField(max_length=200)
+    body = models.TextField(max_length=200)
     write_dtime = models.DateTimeField(default=timezone.now)
     commentor = models.ForeignKey(User, on_delete=models.CASCADE)
     
@@ -164,6 +191,7 @@ class GetSupportTicket(models.Model):
     )
 
     user = models.ForeignKey(User, on_delete=models.CASCADE)
+    project = models.ForeignKey(Project, on_delete=models.CASCADE)
     title = models.CharField(max_length=100)
     description = models.TextField(max_length=200)
     raised_date = models.DateTimeField(default=timezone.now)

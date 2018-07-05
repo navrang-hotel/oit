@@ -1,0 +1,40 @@
+{% extends 'ocprm/odashboard.html' %}
+
+{% block dash_content %}
+
+  <div class="container">
+    <div class="col-sm-6 bg-white rounded border p-3">
+      <h5 class="text-success">Start project</h5>
+      <p class="text-muted">
+Please fill in the info.
+      </p>
+      <form action="" method="post">
+        {% csrf_token %}
+        <div class="form-group">
+          {{ form.status.label }}<br />
+          {{ form.status }}
+          <hr />
+        </div>
+        <div class="form-group">
+          {{ form.project_type.label }}<br />
+          {{ form.project_type }}
+          <hr />
+        </div>
+        <div class="form-group">
+          {{ form.description.label }}<br />
+          {{ form.description }}
+          <hr />
+        </div>
+        <div class="form-group">
+          <button class="btn btn-success text-white pull-right" type="submit">Submit</button>
+        </div>
+      </form>
+      <hr />
+      <p>
+        <a href="">Back to project</a>&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="">Edit request</a>&nbsp;&nbsp;&nbsp;&nbsp;
+      </p>
+    </div>
+  </div>
+{% endblock %}
+

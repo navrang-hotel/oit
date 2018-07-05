@@ -5,13 +5,10 @@
 
   <div class="container bg-white rounded p-3 mb-4">
     <p class="m-0 p-0">
-      <a class="btn btn-info nb-bg-dinfoe text-white py-1 px-3 m-0" href="{% url 'ocprm-dashboard' %}">&#x2190; Back</a>
-      <a class="btn btn-info nb-bg-dinfoe text-white py-1 px-3 m-0" href="{% url 'ocprm-pdftest' %}">PDF</a>
-      {% comment %}
-      <a class="btn btn-info nb-bg-dinfoe text-white py-1 px-3 m-0" href="">Get support</a>
-      <a class="bg-secondary text-white rounded border-right border-white py-1 px-3 m-0" href="">New Task</a>
-      <a class="bg-secondary text-white rounded border-right border-white py-1 px-3 m-0" href="">Generate PDF</a>
-      {% endcomment %}
+      <a class="btn btn-light py-1 px-3 m-0" href="{% url 'ocprm-dashboard' %}">&#x2190; Back</a>
+      <a class="btn btn-light py-1 px-3 m-0" href="{% url 'ocprm-pdftest' %}">PDF</a>
+      <a class="btn btn-light py-1 px-3 m-0" href="{% url 'ocprm-support' project.pk %}">Issue</a>
+      <a class="btn btn-light py-1 px-3 m-0" href="{% url 'ocprm-project-comment' project.pk %}">Comment</a>
     </p>
   </div>
 
@@ -115,9 +112,6 @@
       </p>
       <hr />
     {% endfor %}
-    <p> 
-      <a href="">Write comment</a>
-    </p> 
   </div>
 
 {% endblock %}
