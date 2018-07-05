@@ -40,5 +40,6 @@ urlpatterns = [
     path('register/success', views.userRegistrationSuccess, name='base-user-register-success'),
     path('terms/', views.terms, name='base-terms'),
     path('userprofile/', views.userProfile, name='base-userprofile'),
+    path('whatyouget/', views.what_you_get, name='base-whatyouget'),
 ]
 

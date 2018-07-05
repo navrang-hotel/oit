@@ -4,7 +4,7 @@
     <!-- meta -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Operating IT Nepal Software and IT services, OIT, OIT Nepal, OIT Kathmandu, Software kathmandu, oit">
+    <meta name="description" content="Real Estate of Nepal, Buy and sale land ">
     <!-- /meta -->
 
     <!-- Bootstrap 4.0 -->
@@ -17,8 +17,8 @@
     <!-- /Bootstrap 4.0 -->
    
     <!-- title and favicon -->
-    <title>OIT</title>
-    <link rel="icon" type="image/gif/png" href="{% static 'base/img/ofavicon_1.png'%}">
+    <title>A5 Real Estate</title>
+    <link rel="icon" type="image/gif/png" href="{% static 'realst/img/home_1.png'%}">
     <!-- /title and favicon -->
 
     <!-- Font Awesome -->
@@ -31,11 +31,11 @@
   </head>
   <body>
     <header class="">
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark border-top border-secondary py-4">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-success border-top border-secondary py-4">
         <div class="container">
           <a class="navbar-brand" href="{% url 'base-index' %}">
-            <img src="{% static 'base/img/logo_1.png' %}" width="30" height="30" class="d-inline-block align-top" alt="" />
-            OIT
+            <img src="{% static 'realst/img/home_1.png' %}" width="30" height="30" class="d-inline-block align-top" alt="" />
+            A5Estate
           </a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -44,37 +44,28 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
               <li class="nav-item {% block navHom %}{% endblock %}">
-                <a class="nav-link" href="{% url 'base-index' %}">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="">Home Loans <span class="sr-only">(current)</span></a>
               </li>
               <li class="nav-item {% block navCar %}{% endblock %}">
-                <a class="nav-link" href="{% url 'base-careers' %}">Careers</a>
+                <a class="nav-link" href="">About uS</a>
               </li>
               <li class="nav-item {% block navCon %}{% endblock %}">
-                <a class="nav-link" href="{% url 'base-contact' %}">Contact</a>
+                <a class="nav-link" href="">Calculators</a>
               </li>
-              {% if user.is_authenticated %}
-                <li class="nav-item {% block navDas %}{% endblock %}">
-                  <a class="nav-link" href="{% url 'ocent-index' %}">Dashboard</a>
-                </li>
-              {% endif %}
+              <li class="nav-item {% block nav1 %}{% endblock %}">
+                <a class="nav-link" href="">Pricing</a>
+              </li>
+              <li class="nav-item {% block nav2 %}{% endblock %}">
+                <a class="nav-link" href="">News</a>
+              </li>
+              <li class="nav-item {% block nav3 %}{% endblock %}">
+                <a class="nav-link" href="">Classified</a>
+              </li>
+              <li class="nav-item {% block nav4 %}{% endblock %}">
+                <a class="nav-link" href="">eMagazine</a>
+              </li>
             </ul>
-            {% comment %}
-            <a href="https://www.facebook.com/Operating-IT-436697390136345" target="_blank"><i class="fab fa-facebook-f fa-2x nb-fg-fb text-white"></i></a>
-            &nbsp;&nbsp;&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp;&nbsp;
-            <a href="https://twitter.com/OperatingI" target="_blank"><i class="fab fa-twitter fa-2x text-white"></i></a>
-            &nbsp;&nbsp;&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp;&nbsp;
-            {% endcomment %}
-            <a href="https://github.com/oitcode" target="_blank"><i class="fab fa-github fa-2x text-white"></i></a>
-            &nbsp;&nbsp;&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp;&nbsp;
-            {% if user.is_authenticated %}
-              <span class="text-secondary">{{ user.get_username }}</span>&nbsp;&nbsp;
-              <a class="text-secondary" href="{% url 'logout' %}?next={{request_path}}"><i class="fas fa-sign-out-alt fa-md"></i> &nbsp;Logout</a>
-            {% else %}
-              <a class="text-white-rm btn btn-success" href="{% url 'login' %}?next={{request_path}}"><i class="fas fa-sign-in-alt fa-md"></i> &nbsp;Login</a>
-            {% endif %}
+            <a href="" target="_blank" class="text-white p-2 rounded border">Post your Ad</a>
           </div>
         </div>
       </nav>
@@ -87,30 +78,30 @@
 
     {% block footer %}
     <footer class="border-top">
-      <div class="bg-dark py-3">
+      <div class="bg-light py-3">
         <div class="container pt-2">
           <div class="row">
-            <div class="col-sm-3 py-3 text-light text-center border-right border-secondary">
-              <h5>Operating IT Pvt Ltd</h5>
+            <div class="col-sm-3 py-3 text-secondary text-center border-right border-secondary">
+              <h5>A5 Real Estate Nepal</h5>
               <p>
-Suyog Marga, Chandol<br/>
-Kahtmandu, Nepal<br/>
+Baneshwor, Kathmandu<br/>
+State 3, Nepal<br/>
 Phone: +977 1 4480583<br/>
-Email: info@oit.com.np<br/>
-Website: www.oit.com.np<br/>
+Email: info@a5.com.np<br/>
+Website: www.a5.com.np<br/>
               </p>
             </div>
-            <div class="col-sm-2 py-3 text-light text-center">
+            <div class="col-sm-2 py-3 text-secondary text-center">
               <h5>Site</h5>
-              <a class="text-light" href="{% url 'base-index' %}">Home</a><br/>
-              <a class="text-light" href="{% url 'base-careers' %}">Careers</a><br/>
-              <a class="text-light" href="{% url 'base-contact' %}">Contact</a><br/>
+              <a class="text-secondary" href="{% url 'base-index' %}">Home</a><br/>
+              <a class="text-secondary" href="{% url 'base-careers' %}">Careers</a><br/>
+              <a class="text-secondary" href="{% url 'base-contact' %}">Contact</a><br/>
             </div>
-            <div class="col-sm-2 py-3 text-light text-center">
+            <div class="col-sm-2 py-3 text-secondary text-center">
               <h5>Others</h5>
-              <a class="text-light" href="{% url 'base-documentation' %}">Documentation</a><br/>
+              <a class="text-secondary" href="{% url 'base-documentation' %}">Documentation</a><br/>
             </div>
-            <div class="col-sm-2 py-3 text-light text-center">
+            <div class="col-sm-2 py-3 text-secondary text-center">
               <h5>Follow us</h5>
               <a href="https://www.facebook.com/Operating-IT-436697390136345" target="_blank"><i class="fab fa-facebook fa-2x nb-fg-fb"></i></a>
               &nbsp; &nbsp; &nbsp;
@@ -123,11 +114,11 @@ Website: www.oit.com.np<br/>
           </div>
         </div>
       </div>
-
-      <div class="container-fluid bg-secondary my-0 py-2 nb-font-sm">
-        <div class="container text-light">
-          <span class="text-white">&copy; 2018 OIT</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          <a href="{% url 'base-feedback' %}" class="text-light">Feedback</a>
+      <hr class="m-0"/>
+      <div class="container-fluid bg-light my-0 py-2 nb-font-sm">
+        <div class="container text-secondary">
+          <span class="text-secondary">&copy; 2018 OIT</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <a href="{% url 'base-feedback' %}" class="text-secondary">Feedback</a>
         </div>
       </div>
     </footer>

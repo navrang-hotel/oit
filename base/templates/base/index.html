@@ -65,14 +65,6 @@
       <div class="col-sm-4 mb-4">
         <div class="card border-info-rm">
           <h5 class="card-header text-success">What you get</h5>
-          {% comment %}
-          <ul class="list-group list-group-flush mb-3">
-            <li class="list-group-item">Latest software</li>
-            <li class="list-group-item">1 year free support</li>
-            <li class="list-group-item">Digital Platform</li>
-            <li class="list-group-item">Business continuity</li>
-          </ul>
-          {% endcomment %}
           <div class="card-body"> 
             <ul class="mb-3 py-0 text-secondary">
               <li class="ml-0 pl-0">Latest software</li>
@@ -80,7 +72,7 @@
               <li class="mt-2 ml-0 pl-0">Digital Platform</li>
               <li class="mt-2 ml-0 pl-0">Business continuity</li>
             </ul>
-            <a href="#" class="btn btn-sm btn-success" >Learn More</a> 
+            <a href="{% url 'base-whatyouget' %}" class="btn btn-sm btn-success" >Learn More</a> 
           </div> 
         </div>
       </div>
@@ -106,7 +98,7 @@ Please, visit <a href="{% url 'base-contact' %}">Contact</a> page to stay in tou
         <div class="card border-info-rm">
           <h5 class="card-header bg-success text-white">Quick Links</h5>
           <div class="list-group m-0">
-            <a href="#" class="list-group-item">Start project</a>
+            <a href="{% url 'base-start-project' %}" class="list-group-item">Start project</a>
             <a href="#" class="list-group-item">
               Get support
               <span class="badge badge-warning">Beta</span>

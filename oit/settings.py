@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'ocprm.apps.OcprmConfig',
     'ocent.apps.OcentConfig',
     'milano.apps.MilanoConfig',
+    'realst.apps.RealstConfig',
 ]
 
 MIDDLEWARE = [

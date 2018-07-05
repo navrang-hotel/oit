@@ -33,6 +33,7 @@ urlpatterns += [
     path('ocprm/', include('ocprm.urls')),
     path('ocent/', include('ocent.urls')),
     path('milano/', include('milano.urls')),
+    path('realst/', include('realst.urls')),
 ]
 
 #Add Django site authentication urls (for login, logout, password management)

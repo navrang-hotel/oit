@@ -389,5 +389,13 @@ def userProfile(request):
 
     return render(request, template, context)
     
+def what_you_get(request):
+    """View function for what you get page.""" 
+
+    template = 'base/what_you_get.html'
+
+    context = {}
+
+    return render(request, template, context)
 
 
