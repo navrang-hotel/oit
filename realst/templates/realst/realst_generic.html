@@ -27,13 +27,14 @@
 
     <!-- Local style sheet -->
     <link rel="stylesheet" href="{% static 'base/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'realst/css/style.css' %}">
     <!-- /Local style sheet -->
   </head>
   <body>
     <header class="">
       <nav class="navbar navbar-expand-lg navbar-dark bg-success border-top border-secondary py-4">
         <div class="container">
-          <a class="navbar-brand" href="{% url 'base-index' %}">
+          <a class="navbar-brand" href="{% url 'realst-index' %}">
             <img src="{% static 'realst/img/home_1.png' %}" width="30" height="30" class="d-inline-block align-top" alt="" />
             A5Estate
           </a>
@@ -44,16 +45,19 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
               <li class="nav-item {% block navHom %}{% endblock %}">
-                <a class="nav-link" href="">Home Loans <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="{% url 'realst-homeloan' %}">Home Loans <span class="sr-only">(current)</span></a>
               </li>
               <li class="nav-item {% block navCar %}{% endblock %}">
-                <a class="nav-link" href="">About uS</a>
+                <a class="nav-link" href="{% url 'realst-aboutus' %}">About Us</a>
+              </li>
+              <li class="nav-item {% block navOla %}{% endblock %}">
+                <a class="nav-link" href="{% url 'realst-contactus' %}">Contact Us</a>
               </li>
               <li class="nav-item {% block navCon %}{% endblock %}">
                 <a class="nav-link" href="">Calculators</a>
               </li>
               <li class="nav-item {% block nav1 %}{% endblock %}">
-                <a class="nav-link" href="">Pricing</a>
+                <a class="nav-link" href="{% url 'realst-pricing' %}">Pricing</a>
               </li>
               <li class="nav-item {% block nav2 %}{% endblock %}">
                 <a class="nav-link" href="">News</a>
