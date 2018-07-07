@@ -152,3 +152,15 @@ STATIC_ROOT = os.path.join(BASE_DIR, "static/")
 LOGIN_REDIRECT_URL = '/ocent'
 
 # Just settings
+
+
+# For email
+
+EMAIL_HOST = 'mail.oit.com.np'
+EMAIL_HOST_USER = 'info@oit.com.np'
+EMAIL_HOST_PASSWORD = 'perlRoses1994$1970#'
+#DEFAULT_FROM_EMAIL = 'info@oit.com.np'
+#SERVER_EMAIL = 'info@oit.com.np'
+EMAIL_PORT = 587
+#EMAIL_USE_TLS = True
+

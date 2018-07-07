@@ -4,46 +4,62 @@
 
 {% block content %}
 
-<div class="container-fluid py-4 bg-light text-white-rm">
+<div class="container-fluid py-3 bg-info-rm nb-bg-cloud">
   <div class="container">
     <div class="row">
-      <div class="col-sm-12 text-center">
-        <!--<h3 class="py-2">{{ iph }}</h3>-->
-        <h3 class="py-2 text-muted">Enterprise IT services</h5>
-        <p class="text-secondary">
+      <div class="col-lg-7">
+        <h1 class="py-2 text-black">Operating IT</h1>
+        <h2 class="py-2 text-secondary">IT and Software Services</h2>
+        <p class="d-none d-lg-block text-secondary">
           {{ iphp }}
         </p>
-        <br/>
-        <a class="btn btn-success shadow" href="{% url 'base-start-project' %}">Start Project</a>
       </div>
-      <div class="col-sm-4">
-        {% load static %}
-        <!--<img class="img-fluid" src="{% static 'base/img/logo_1.png' %}" />-->
+      <div class="col-lg-2">
+      </div>
+      <div class="col-lg-3 bg-light rounded border border-secondary py-3">
+        <form>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Email</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter your email">
+            {% comment %}
+            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            {% endcomment %}
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">Project type</label>
+            <select class="form-control" id="exampleFormControlSelect1">
+              <option>Web app</option>
+              <option>Desktop app</option>
+              <option>Android app</option>
+              <option>IOS app</option>
+              <option>Digital marketing</option>
+              <option>Consultation</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="inputDescription">Description</label>
+            <input type="textarea" class="form-control" id="inputDescription" aria-describedby="emailHelp" placeholder="Enter the description">
+          </div>
+          <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+            <label class="form-check-label" for="exampleCheck1">Accept terms</label>
+          </div>
+            <button type="submit" class="btn btn-primary mt-3">Start Project</button>
+        </form>
       </div>
     </div>
   </div>
 </div>
 
+
 <hr class="p-0 m-0"/>
 
 
 <div class="container pb-5-rm mb-0 pt-5">
-  <h3 class="pb-4 text-center">{{ ips.header }}</h3>
-  <div class="row mb-5">
-    <div class="col-sm-2">
-    </div>
-    <div class="col-sm-8">
-      <p class="text-secondary text-center">
-        {{ ips.lpara }}
-      </p>
-    </div>
-    <div class="col-sm-2">
-    </div>
-  </div>
-
+  <h3 class="pb-0 mb-5 text-center">{{ ips.header }}</h3>
   <div class="row mb-3">
     {% for ipse in ips.indexpageservicesentry_set.all %}
-      <div class="col-sm-4 py-5-rm bg-danger-rm text-white-rm mb-2 pr-5">
+      <div class="col-lg-4 py-5-rm bg-danger-rm text-white-rm mb-2 pr-5">
         <div class="media">
           <i class="{{ ipse.icon_bs_class }}"></i>
           <div class="media-body">
@@ -59,58 +75,6 @@
 </div>
 
 <hr class="m-0 p-0"/>
-<div class="container-fluid bg-light py-5"> 
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-4 mb-4">
-        <div class="card border-info-rm">
-          <h5 class="card-header text-success">What you get</h5>
-          <div class="card-body"> 
-            <ul class="mb-3 py-0 text-secondary">
-              <li class="ml-0 pl-0">Latest software</li>
-              <li class="mt-2 ml-0 pl-0">1 year free support</li>
-              <li class="mt-2 ml-0 pl-0">Digital Platform</li>
-              <li class="mt-2 ml-0 pl-0">Business continuity</li>
-            </ul>
-            <a href="{% url 'base-whatyouget' %}" class="btn btn-sm btn-success" >Learn More</a> 
-          </div> 
-        </div>
-      </div>
-      <div class="col-sm-4 mb-4">
-        <div class="card border-info-rm">
-          <h5 class="card-header text-success">Questions ?</h5>
-          <div class="card-body text-secondary">
-            <p class="card-text">
-If you have any quesitons regarding services, please write an
-email to <a href="mailto:info@oit.com.np">info@oit.com.np</a>.
-            </p>
-            <p class="card-text">
-Please, visit <a href="{% url 'base-contact' %}">Contact</a> page to stay in touch with us.
-              <br/>
-              <br/>
-            </p>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-1">
-      </div>
-      <div class="col-sm-3 mb-4">
-        <div class="card border-info-rm">
-          <h5 class="card-header bg-success text-white">Quick Links</h5>
-          <div class="list-group m-0">
-            <a href="{% url 'base-start-project' %}" class="list-group-item">Start project</a>
-            <a href="#" class="list-group-item">
-              Get support
-              <span class="badge badge-warning">Beta</span>
-            </a>
-            <a href="#" class="list-group-item">Visit FAQ</a>
-            <a href="#" class="list-group-item">Esewa</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div> 
 <hr class="m-0 p-0"/>
 
 <div class="container py-5">

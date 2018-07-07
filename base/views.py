@@ -15,6 +15,7 @@ from django.http import HttpResponseRedirect
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
+from django.core.mail import send_mail
 
 from .models import ContactMessage, JobVacancy
 from .models import IndexPageHeader, IndexPageHeroPara, IndexPageMain, IndexPagePartner
@@ -45,6 +46,15 @@ def index(request):
         'ipp': ipp,
         'ips': ips,
     }
+
+    # Django Sendmail test, TODO: remove from here
+    send_mail(
+        'Subject here',
+        'Here is the message.',
+        'info@oit.com.np',
+        ['shyam.sitaula@oit.com.np'],
+        fail_silently=False,
+    )
 
     return render(request, template, context)
 
@@ -207,6 +217,8 @@ class ContactMessageCreate(CreateView):
         context['cpwm'] = cpwm
         context['cpec'] = cpec
         context['cpfu'] = cpfu
+
+
         return context
 
 def contactMessageSuccess(request):

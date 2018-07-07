@@ -27,6 +27,7 @@
 
     <!-- Local style sheet -->
     <link rel="stylesheet" href="{% static 'base/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'realst/css/style.css' %}">
     <!-- /Local style sheet -->
   </head>
   <body>
@@ -35,7 +36,7 @@
         <div class="container">
           <a class="navbar-brand" href="{% url 'base-index' %}">
             <img src="{% static 'base/img/logo_1.png' %}" width="30" height="30" class="d-inline-block align-top" alt="" />
-            OIT
+            <!--OIT-->
           </a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -45,6 +46,9 @@
             <ul class="navbar-nav mr-auto">
               <li class="nav-item {% block navHom %}{% endblock %}">
                 <a class="nav-link" href="{% url 'base-index' %}">Home <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item {% block navAbo %}{% endblock %}">
+                <a class="nav-link" href="">About Us</a>
               </li>
               <li class="nav-item {% block navCar %}{% endblock %}">
                 <a class="nav-link" href="{% url 'base-careers' %}">Careers</a>
@@ -73,7 +77,7 @@
               <span class="text-secondary">{{ user.get_username }}</span>&nbsp;&nbsp;
               <a class="text-secondary" href="{% url 'logout' %}?next={{request_path}}"><i class="fas fa-sign-out-alt fa-md"></i> &nbsp;Logout</a>
             {% else %}
-              <a class="text-white-rm btn btn-success" href="{% url 'login' %}?next={{request_path}}"><i class="fas fa-sign-in-alt fa-md"></i> &nbsp;Login</a>
+              <a class="text-white" href="{% url 'login' %}?next={{request_path}}"><i class="fas fa-sign-in-alt fa-md"></i> &nbsp;Login</a>
             {% endif %}
           </div>
         </div>
@@ -87,10 +91,10 @@
 
     {% block footer %}
     <footer class="border-top">
-      <div class="bg-dark py-3">
+      <div class="bg-light py-3">
         <div class="container pt-2">
           <div class="row">
-            <div class="col-sm-3 py-3 text-light text-center border-right border-secondary">
+            <div class="col-sm-3 py-3 text-secondary text-center border-right border-secondary">
               <h5>Operating IT Pvt Ltd</h5>
               <p>
 Suyog Marga, Chandol<br/>
@@ -100,17 +104,17 @@ Email: info@oit.com.np<br/>
 Website: www.oit.com.np<br/>
               </p>
             </div>
-            <div class="col-sm-2 py-3 text-light text-center">
+            <div class="col-sm-2 py-3 text-secondary text-center">
               <h5>Site</h5>
-              <a class="text-light" href="{% url 'base-index' %}">Home</a><br/>
-              <a class="text-light" href="{% url 'base-careers' %}">Careers</a><br/>
-              <a class="text-light" href="{% url 'base-contact' %}">Contact</a><br/>
+              <a class="text-secondary" href="{% url 'base-index' %}">Home</a><br/>
+              <a class="text-secondary" href="{% url 'base-careers' %}">Careers</a><br/>
+              <a class="text-secondary" href="{% url 'base-contact' %}">Contact</a><br/>
             </div>
-            <div class="col-sm-2 py-3 text-light text-center">
+            <div class="col-sm-2 py-3 text-secondary text-center">
               <h5>Others</h5>
-              <a class="text-light" href="{% url 'base-documentation' %}">Documentation</a><br/>
+              <a class="text-secondary" href="{% url 'base-documentation' %}">Documentation</a><br/>
             </div>
-            <div class="col-sm-2 py-3 text-light text-center">
+            <div class="col-sm-2 py-3 text-secondary text-center">
               <h5>Follow us</h5>
               <a href="https://www.facebook.com/Operating-IT-436697390136345" target="_blank"><i class="fab fa-facebook fa-2x nb-fg-fb"></i></a>
               &nbsp; &nbsp; &nbsp;
@@ -123,11 +127,12 @@ Website: www.oit.com.np<br/>
           </div>
         </div>
       </div>
-
-      <div class="container-fluid bg-secondary my-0 py-2 nb-font-sm">
-        <div class="container text-light">
-          <span class="text-white">&copy; 2018 OIT</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          <a href="{% url 'base-feedback' %}" class="text-light">Feedback</a>
+      <hr class="m-0" />
+      <div class="container-fluid bg-light my-0 py-2 nb-font-sm">
+        <div class="container text-secondary">
+          <span class="text-secondary">&copy; 2018 OIT</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <a href="{% url 'base-feedback' %}" class="text-secondary">Feedback</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <a href="#" class="text-secondary">Top</a>
         </div>
       </div>
     </footer>
