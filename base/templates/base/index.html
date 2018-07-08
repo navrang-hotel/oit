@@ -1,5 +1,7 @@
 {% extends 'base/base_generic.html' %}
 
+{% load odfilter %}
+
 {% block navHom%} active {% endblock %}
 
 {% block content %}
@@ -17,34 +19,30 @@
       <div class="col-lg-2">
       </div>
       <div class="col-lg-3 bg-light rounded border border-secondary py-3">
-        <form>
+        <form action="" method="post">
+          {% csrf_token %} 
           <div class="form-group">
-            <label for="exampleInputEmail1">Email</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter your email">
+            {{ form.email.label}} <br />
+            {{ form.email|addcss:"form-control" }}
             {% comment %}
             <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
             {% endcomment %}
           </div>
           <div class="form-group">
-            <label for="exampleInputPassword1">Project type</label>
-            <select class="form-control" id="exampleFormControlSelect1">
-              <option>Web app</option>
-              <option>Desktop app</option>
-              <option>Android app</option>
-              <option>IOS app</option>
-              <option>Digital marketing</option>
-              <option>Consultation</option>
-            </select>
+            {{ form.project_type.label}} <br />
+            {{ form.project_type|addcss:"form-control" }}
           </div>
           <div class="form-group">
-            <label for="inputDescription">Description</label>
-            <input type="textarea" class="form-control" id="inputDescription" aria-describedby="emailHelp" placeholder="Enter the description">
+            {{ form.description.label}} <br />
+            {{ form.description|addcss:"form-control" }}
           </div>
+          {% comment %}
           <div class="form-check">
             <input type="checkbox" class="form-check-input" id="exampleCheck1">
             <label class="form-check-label" for="exampleCheck1">Accept terms</label>
           </div>
-            <button type="submit" class="btn btn-primary mt-3">Start Project</button>
+          {% endcomment %}
+          <button type="submit" class="btn btn-primary mt-3">Start Project</button>
         </form>
       </div>
     </div>
@@ -56,7 +54,7 @@
 
 
 <div class="container pb-5-rm mb-0 pt-5">
-  <h3 class="pb-0 mb-5 text-center">{{ ips.header }}</h3>
+  <h1 class="pb-0 mb-5 text-center">{{ ips.header }}</h1>
   <div class="row mb-3">
     {% for ipse in ips.indexpageservicesentry_set.all %}
       <div class="col-lg-4 py-5-rm bg-danger-rm text-white-rm mb-2 pr-5">
@@ -74,8 +72,22 @@
   </div>
 </div>
 
-<hr class="m-0 p-0"/>
-<hr class="m-0 p-0"/>
+<hr class="m-0" />
+<div class="container-fluid bg-light py-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <h1 class="text-center">Questions ?</h1>
+        <p class="text-secondary text-center">
+          If you have any question regarding our services, or any other thing, please
+          write an email to <a href="">info@oit.com.np</a>.<br/><br/>
+        <a class="btn btn-lg btn-success" href="">Contact Us</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+<hr class="m-0" />
 
 <div class="container py-5">
   <h3 class="text-center mb-5">Our customers say</h3>

@@ -33,28 +33,39 @@ def index(request):
 
     template = 'base/index.html'
 
-    iph = IndexPageHeader.objects.get(id=1)
-    iphp = IndexPageHeroPara.objects.get(id=1)
-    ipm = IndexPageMain.objects.get(id=1)
-    ipp = IndexPagePartner.objects.get(id=1)
-    ips = IndexPageServices.objects.get(id=1)
+    if request.method == 'POST':
+        form = StartProjectRequestForm(request.POST)
+        if form.is_valid():
+            email = form.cleaned_data['email']
+            project_type = form.cleaned_data['project_type']
+            description = form.cleaned_data['description']
+            # user_exists = check_user_exists(email)
+            # if user_exists == True: 
+            #     return HttpResponseRedirect(reverse('login'))
+            spr = StartProjectRequest(
+                email = email,
+                project_type = project_type,
+                status = 'P',
+                description = description,
+            ) 
+            spr.save()
+            return HttpResponseRedirect(reverse('base-start-project-request-success'))
+    else:
+        form = StartProjectRequestForm()
+        iph = IndexPageHeader.objects.get(id=1)
+        iphp = IndexPageHeroPara.objects.get(id=1)
+        ipm = IndexPageMain.objects.get(id=1)
+        ipp = IndexPagePartner.objects.get(id=1)
+        ips = IndexPageServices.objects.get(id=1)
 
     context = {
+        'form': form,
         'iph': iph,
         'iphp': iphp,
         'ipm': ipm,
         'ipp': ipp,
         'ips': ips,
     }
-
-    # Django Sendmail test, TODO: remove from here
-    send_mail(
-        'Subject here',
-        'Here is the message.',
-        'info@oit.com.np',
-        ['shyam.sitaula@oit.com.np'],
-        fail_silently=False,
-    )
 
     return render(request, template, context)
 
@@ -218,8 +229,37 @@ class ContactMessageCreate(CreateView):
         context['cpec'] = cpec
         context['cpfu'] = cpfu
 
-
         return context
+
+
+    def form_valid(self, form):
+        sender_email = form.instance.sender_email
+        message = form.instance.message
+        # Django Sendmail test
+        send_mail(
+            'New contact message',
+            message,
+            #'Test message here to be replaced with real one later.',
+            'operating.it.np@gmail.com',
+            ['operating.it.np@gmail.com'],
+            fail_silently=False,
+        )
+
+        send_mail(
+            'Message Received | OIT',
+            'Thank you for writing us a message. Your message has been received.',
+            #'Test message here to be replaced with real one later.',
+            #'info@oit.com.np',
+            sender_email,
+            #['operating.it.np@gmail.com'],
+            [sender_email],
+            fail_silently=False,
+        )
+
+
+        return super().form_valid(form)
+    
+
 
 def contactMessageSuccess(request):
     """View function for contact message success."""

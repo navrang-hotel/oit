@@ -54,15 +54,18 @@ class StartProjectRequest(models.Model):
     )
 
     PROJECT_TYPE = (
-        ('P', 'Personal',),
-        ('B', 'Business',),
+        ('W', 'Web app',),
+        ('D', 'Desktop app',),
+        ('M', 'Mobile app',),
+        ('E', 'Digital Marketing',),
+        ('C', 'Consultation',),
     )
 
 
     email = models.EmailField(max_length=50)
     status = models.CharField(max_length=1, choices=STATUS)
     project_type = models.CharField(max_length=1, choices=PROJECT_TYPE)
-    description = models.TextField()
+    description = models.CharField(max_length=200)
 
     def __str__(self):
         """String representation of object."""
