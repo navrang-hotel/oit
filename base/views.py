@@ -450,4 +450,34 @@ def what_you_get(request):
 
     return render(request, template, context)
 
+def foo_foo(request):
+    """View function for processing foo."""
+
+    if request.method == 'POST':
+        form = StartProjectRequestForm(request.POST)
+        if form.is_valid():
+            email = form.cleaned_data['email']
+            project_type = form.cleaned_data['project_type']
+            description = form.cleaned_data['description']
+            spr = StartProjectRequest(
+                email = email,
+                project_type = project_type,
+                status = 'P',
+                description = description,
+            ) 
+            spr.save()
+            return HttpResponseRedirect(reverse('base-foo-success'))
+    else:
+        pass
+
+def foo_success(request):
+    """View function for foo success."""
+
+    template = 'base/foo_success.html'
+    context = {}
+
+    return render(request, template, context)
+
+    
+
 

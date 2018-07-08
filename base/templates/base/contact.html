@@ -13,12 +13,18 @@
   {% endcomment %}
 
 
+<div class="jumbotron jumbotron-fluid nb-bg-cloud m-0">
+  <div class="container">
+    <h1 class="mb-3">Contact Us</h1> 
+  </div>
+</div>
+
   <div class="container-fluid shadow-rm mt-5">
     <div class="container mb-4">
       <div class="row pb-3">
         <div class="col-sm-6">
           <p class="pb-3">
-            <h3 class="text-info mb-4">{{ oit_address.name }}</h3>
+            <h3 class="mb-4">{{ oit_address.name }}</h3>
             <i class="fas fa-map-marker text-success"></i>&nbsp;{{ oit_address.address }}<br/>
             <i class="fas fa-phone text-success"></i>&nbsp;{{ oit_address.phone }}<br/>
             <i class="fas fa-envelope text-success"></i>&nbsp; <a href="">{{ oit_address.email }}</a><br/>
@@ -30,7 +36,7 @@
         <div class="col-sm-2">
         </div>
         <div class="col-sm-4 bg-light border my-5 shadow-sm">
-          <h3 class="py-3 text-info">{{ cpwm.header }}</h3>
+          <h3 class="py-3">{{ cpwm.header }}</h3>
           <p class="text-secondary py-2">
             {{ cpwm.body }}
           </p>
@@ -66,7 +72,7 @@
     <div class="container">
       <div class="row">
         <div class="col-sm-6 my-5">
-          <h3 class="text-info py-3">{{ cpec.header1 }}</h3>
+          <h3 class="py-3">{{ cpec.header1 }}</h3>
           <h4 class="text-secondary py-2">{{ cpec.header2 }}</h4>
           <p class="py-2"> 
             <a class="btn btn-success text-white" href="{% url 'base-support' %}">Contact support</a>

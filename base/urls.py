@@ -41,5 +41,7 @@ urlpatterns = [
     path('terms/', views.terms, name='base-terms'),
     path('userprofile/', views.userProfile, name='base-userprofile'),
     path('whatyouget/', views.what_you_get, name='base-whatyouget'),
+    path('foodo/', views.foo_foo, name='base-foo'),
+    path('foodo/success', views.foo_success, name='base-foo-success'),
 ]
 
