@@ -6,7 +6,7 @@
 
 {% block content %}
 
-<div class="container-fluid py-3 bg-info-rm nb-bg-cloud">
+<div class="container-fluid py-3 bg-info-rm nb-bg-hero1">
   <div class="container">
     <div class="row">
       <div class="col-lg-7">
@@ -18,7 +18,7 @@
       </div>
       <div class="col-lg-2">
       </div>
-      <div class="col-lg-3 bg-light rounded border border-secondary py-3">
+      <div class="col-lg-3 bg-light rounded border py-3">
         <form action="" method="post">
           {% csrf_token %} 
           <div class="form-group">
@@ -51,10 +51,13 @@
 
 
 <hr class="p-0 m-0"/>
-
+<div class="container-fluid bg-light p-0 my-0">
+  <div class="container p-0 my-0">
+    <h1><span class="bg-info text-white p-1 rounded border shadow">{{ ips.header }}</span></h1>
+  </div>
+</div>
 
 <div class="container pb-5-rm mb-0 pt-5">
-  <h1 class="pb-0 mb-5 text-center">{{ ips.header }}</h1>
   <div class="row mb-3">
     {% for ipse in ips.indexpageservicesentry_set.all %}
       <div class="col-lg-4 py-5-rm bg-danger-rm text-white-rm mb-2 pr-5">
@@ -72,92 +75,75 @@
   </div>
 </div>
 
+
 <hr class="m-0" />
-<div class="container-fluid bg-light py-5">
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-8">
-        <h1 class="text-center">Questions ?</h1>
-        <p class="text-secondary text-center">
-          If you have any question regarding our services, or any other thing, please
-          write an email to <a href="">info@oit.com.np</a>.<br/><br/>
-        <a class="btn btn-lg btn-success" href="">Contact Us</a>
+<div class="container py-5">
+  <h1 class="text-center mb-5">Our customers say</h1>
+  <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="8000">
+    <ol class="carousel-indicators">
+      <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <p class="text-center px-5">
+          <i class="fa fa-quote-left text-secondary"></i>
+Nice solution to our hotel. Good professional service.
+          <i class="fa fa-quote-right text-secondary"></i>
         </p>
+        <h5 class="text-center text-success">Rahul Bhagat</h5>
+        <h6 class="text-center text-muted">Manager, Navrang hotel</h6>
       </div>
-      <div class="col-sm-1">
+      <div class="carousel-item">
+        <p class="text-center px-5">
+Happy with the server operation with OIT.
+        </p>
+        <h5 class="text-center text-success">Deependra Thapaliya</h5>
+        <h6 class="text-center text-muted">CEO, Nepadristi</h6>
       </div>
-      <div class="col-sm-3 bg-white text-black shadow p-3 rounded border">
-        <form action="{% url 'base-foo' %}" method="post">
-          {% csrf_token %} 
-          <div class="form-group">
-            {{ form.email.label}} <br />
-            {{ form.email|addcss:"form-control" }}
-          </div>
-          <div class="form-group">
-            {{ form.project_type.label}} <br />
-            {{ form.project_type|addcss:"form-control" }}
-          </div>
-          <div class="form-group">
-            {{ form.description.label}} <br />
-            {{ form.description|addcss:"form-control" }}
-          </div>
-          <button type="submit" class="btn btn-primary mt-3">Start Project</button>
-        </form>
+      <div class="carousel-item">
+        <p class="text-center px-5">
+Good support for computer hardware store applications.
+        </p>
+        <h5 class="text-center text-success">Binod Dahal</h5>
+        <h6 class="text-center text-muted">Propreiter, Alphasoft computers</h6>
       </div>
     </div>
   </div>
 </div>
+
+
 <hr class="m-0" />
-
-<div class="container-fluid py-0">
-  <div class="row py-0">
-    <div class="col-sm-6 py-5 nb-bg-cloud m-0">
-      <h1 class="text-center mb-5">Our customers say</h1>
-      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="8000">
-        <ol class="carousel-indicators">
-          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-        </ol>
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <p class="text-center px-5">
-              <i class="fa fa-quote-left text-secondary"></i>
-Ni    ce solution to our hotel. Good professional service.
-              <i class="fa fa-quote-right text-secondary"></i>
-            </p>
-            <h5 class="text-center text-success">Rahul Bhagat</h5>
-            <h6 class="text-center text-muted">Manager, Navrang hotel</h6>
-          </div>
-          <div class="carousel-item">
-            <p class="text-center px-5">
-Ha    ppy with the server operation with OIT.
-            </p>
-            <h5 class="text-center text-success">Deependra Thapaliya</h5>
-            <h6 class="text-center text-muted">CEO, Nepadristi</h6>
-          </div>
-          <div class="carousel-item">
-            <p class="text-center px-5">
-Go    od support for computer hardware store applications.
-            </p>
-            <h5 class="text-center text-success">Binod Dahal</h5>
-            <h6 class="text-center text-muted">Propreiter, Alphasoft computers</h6>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col-sm-6 bg-success text-white text-center py-5 rounded border m-0">
-      <h1>Subscribe our newsletter</h1>
-      <p class="text-secondary">
-    Lorem ipsum emut dolor integer heute.
-    Lorem ipsum emut dolor integer heute.
-      </p>
-      <input type="tmail"></input><br/><br/>
-      <a class="rounded border border-primary px-3 py-2 text-primary nb-deco-none" href="">Subscribe</a>
-    </div>
-  </div>
+<div class="container text-center py-5 my-0">
+  <h1>Subscribe our newsletter</h1>
+  <p class="text-secondary">
+  Lorem ipsum emut dolor integer heute.
+  Lorem ipsum emut dolor integer heute.
+  </p>
+  <input type="email"></input><br/><br/>
+  <a class="rounded border border-primary px-3 py-2 text-primary nb-deco-none" href="">Subscribe</a>
 </div>
 
+<hr class="p-0 m-0"/>
+<div class="container-fluid bg-light p-0 my-0">
+  <div class="container p-0 my-0">
+    <h1><span class="bg-success text-white p-1 rounded border shadow">Featured</span></h1>
+  </div>
+</div>
+<div class="container text-center py-5">
+  <h2 class="my-4">Microsoft acquires Github</h2>
+  {% load static %} 
+  <img class="img-responsive my-4" src="{% static 'base/img/microgit_1.jpg' %}" />
+  <p class="text-secondary my-4">
+Microsoft Corp. on Monday announced it has reached an agreement to acquire GitHub,
+the world’s leading software development platform where more than 28 million developers learn,
+share and collaborate to create the future.
+Together, the two companies will empower developers to achieve more at every stage of the development lifecycle,
+accelerate enterprise use of GitHub, and bring Microsoft’s developer tools and services to new audiences.
+  </p>
+  <a class="btn btn-primary my-4" href="">Read more &#x2192;</a>
+</div>
 
 {% endblock %}
 
