@@ -23,9 +23,10 @@ from .models import IndexPageServices
 from .models import OITAddress, ContactPageExistingCustomer, ContactPageFollowUs
 from .models import ContactPageWriteMessage, ContactPageHeader
 from .models import CareersPageHero, CareersPageReasons
+from .models import Subscriber
 
 from ocprm.models import StartProjectRequest
-from .forms import ContactMessageForm, UserRegistrationForm
+from .forms import ContactMessageForm, SubscriberForm, OSignUpForm
 from ocprm.forms import StartProjectRequestForm
 
 def index(request):
@@ -51,7 +52,8 @@ def index(request):
             spr.save()
             return HttpResponseRedirect(reverse('base-start-project-request-success'))
     else:
-        form = StartProjectRequestForm()
+        spr_form = StartProjectRequestForm()
+        subscriber_form = SubscriberForm()
         iph = IndexPageHeader.objects.get(id=1)
         iphp = IndexPageHeroPara.objects.get(id=1)
         ipm = IndexPageMain.objects.get(id=1)
@@ -59,7 +61,8 @@ def index(request):
         ips = IndexPageServices.objects.get(id=1)
 
     context = {
-        'form': form,
+        'spr_form': spr_form,
+        'subscriber_form': subscriber_form,
         'iph': iph,
         'iphp': iphp,
         'ipm': ipm,
@@ -382,7 +385,7 @@ def user_register(request):
     template = 'register.html'
 
     if request.method == 'POST':
-        form = UserRegistrationForm(request.POST)
+        form = OSignUpForm(request.POST)
         if form.is_valid():
             email = form.cleaned_data['email']
             username = form.cleaned_data['username']
@@ -406,7 +409,7 @@ def user_register(request):
                 u.save()
                 return HttpResponseRedirect(reverse('base-user-register-success'))
     else:
-        form = UserRegistrationForm()
+        form = OSignUpForm()
 
     context = {
         'form': form,
@@ -478,6 +481,20 @@ def foo_success(request):
 
     return render(request, template, context)
 
-    
+def add_subscriber(request):
+    """View function for creating subscriber."""
 
+    if request.method == 'POST':
+        form = SubscriberForm(request.POST)
+        if form.is_valid():
+            email = form.cleaned_data['email']
+            s= Subscriber(
+                email = email,
+            ) 
+            s.save()
+            return HttpResponseRedirect(reverse('base-start-project-request-success'))
+    else:
+        pass
+
+    return render(request, template, context)
 

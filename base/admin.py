@@ -13,7 +13,7 @@ from .models import IndexPageServices, IndexPageServicesEntry
 from .models import OITAddress, ContactPageExistingCustomer, ContactPageFollowUs
 from .models import ContactPageWriteMessage, ContactPageHeader
 from .models import CareersPageHero, CareersPageReasons, CareersPageReasonsEntry
-from .models import UserProfile
+from .models import UserProfile, Subscriber
 
 admin.site.register(ContactMessage)
 admin.site.register(JobVacancy)
@@ -34,4 +34,5 @@ admin.site.register(CareersPageReasonsEntry)
 admin.site.register(UserProfile)
 admin.site.register(IndexPageServices)
 admin.site.register(IndexPageServicesEntry)
+admin.site.register(Subscriber)
 

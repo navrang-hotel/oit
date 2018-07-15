@@ -22,19 +22,19 @@
         <form action="" method="post">
           {% csrf_token %} 
           <div class="form-group">
-            {{ form.email.label}} <br />
-            {{ form.email|addcss:"form-control" }}
+            {{ spr_form.email.label}} <br />
+            {{ spr_form.email|addcss:"form-control" }}
             {% comment %}
             <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
             {% endcomment %}
           </div>
           <div class="form-group">
-            {{ form.project_type.label}} <br />
-            {{ form.project_type|addcss:"form-control" }}
+            {{ spr_form.project_type.label}} <br />
+            {{ spr_form.project_type|addcss:"form-control" }}
           </div>
           <div class="form-group">
-            {{ form.description.label}} <br />
-            {{ form.description|addcss:"form-control" }}
+            {{ spr_form.description.label}} <br />
+            {{ spr_form.description|addcss:"form-control" }}
           </div>
           {% comment %}
           <div class="form-check">
@@ -121,8 +121,13 @@ Good support for computer hardware store applications.
 <hr class="m-0" />
 <div class="container text-center py-5 my-0">
   <h1>Subscribe our newsletter</h1>
-  <input type="email"></input><br/><br/>
-  <a class="rounded border border-primary px-3 py-2 text-primary nb-deco-none" href="">Subscribe</a>
+    <form action="{% url 'base-subscriber-add' %}" method="POST">
+      {% csrf_token %}
+      {{ subscriber_form.email.label}} <br />
+      {{ subscriber_form.email|addcss:"form-control" }}
+      <!-- <a class="rounded border border-primary px-3 py-2 text-primary nb-deco-none" href="">Subscribe</a>-->
+      <button type="submit" class="btn btn-primary mt-3">Subscribe</button>
+    </form>
 </div>
 
 <hr class="p-0 m-0"/>

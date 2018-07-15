@@ -355,3 +355,13 @@ class IndexPageServicesEntry(models.Model):
 
         ordering = ['order',]
 
+class Subscriber(models.Model):
+    """Model class for subscriber."""
+
+    email = models.EmailField()
+
+    def __str__(self):
+        """String representation of object."""
+
+        return self.email
+

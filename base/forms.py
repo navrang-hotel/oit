@@ -3,8 +3,10 @@
 # ==============================
 
 from django import forms
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.models import User
 
-from .models import ContactMessage
+from .models import ContactMessage, Subscriber
 
 class ContactMessageForm(forms.ModelForm):
     """Class for contact message model form."""
@@ -57,11 +59,27 @@ class ContactMessageForm(forms.ModelForm):
             'message',
         ]
 
-class UserRegistrationForm(forms.Form):
-    """Class for user registration form."""
+class SubscriberForm(forms.Form):
+    """Class for subscriber form."""
 
-    username = forms.CharField(max_length=50)
     email = forms.EmailField(max_length=50)
-    password1 = forms.CharField(max_length=50)
-    password2 = forms.CharField(max_length=50)
 
+    class Meta:
+        model = Subscriber
+        fields = [
+            'email',
+        ]
+
+class OSignUpForm(UserCreationForm):
+    """Form class for signup form."""
+
+    email = forms.EmailField(max_length=254, help_text="Required") 
+
+    class Meta:
+        model = User
+        fields = (
+            'username',
+            'email',
+            'password1',
+            'password2',
+        )
