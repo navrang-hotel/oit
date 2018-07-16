@@ -492,9 +492,17 @@ def add_subscriber(request):
                 email = email,
             ) 
             s.save()
-            return HttpResponseRedirect(reverse('base-start-project-request-success'))
+            return HttpResponseRedirect(reverse('base-subscribe-success'))
     else:
         pass
+
+    return render(request, template, context)
+
+def subscribe_success(request):
+    """View function for subscribe success."""
+
+    template = 'base/subscribe_success.html'
+    context = {}
 
     return render(request, template, context)
 

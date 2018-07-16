@@ -44,5 +44,6 @@ urlpatterns = [
     path('foodo/', views.foo_foo, name='base-foo'),
     path('foodo/success', views.foo_success, name='base-foo-success'),
     path('subscriber/add/', views.add_subscriber, name='base-subscriber-add'),
+    path('subscriber/success/', views.subscribe_success, name='base-subscribe-success'),
 ]
 
