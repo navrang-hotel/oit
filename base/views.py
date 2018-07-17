@@ -16,6 +16,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from django.core.mail import send_mail
+from django.http import JsonResponse
 
 from .models import ContactMessage, JobVacancy
 from .models import IndexPageHeader, IndexPageHeroPara, IndexPageMain, IndexPagePartner
@@ -505,4 +506,33 @@ def subscribe_success(request):
     context = {}
 
     return render(request, template, context)
+
+def validate_username(request):
+    """View function to check if usrname is available."""
+
+    username = request.GET.get('username', None)
+
+    data = {
+        'is_taken': User.objects.filter(username__iexact=username).exists()
+    }
+
+    return JsonResponse(data)
+
+def subscriber_add_ajax(request):
+    """View function to add a subscriber in ajax."""
+
+    email = request.GET.get('email', None)
+
+    s= Subscriber(
+        email = email,
+    ) 
+    s.save()
+
+    data = {
+        # 'is_taken': User.objects.filter(username__iexact=username).exists()
+        'is_taken': True
+         
+    }
+
+    return JsonResponse(data)
 
