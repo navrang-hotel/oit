@@ -5,8 +5,8 @@
 
   <div class="container bg-white rounded p-3 mb-4">
     <p class="m-0 p-0">
-      <a class="btn btn-light py-1 px-3 m-0" href="{% url 'ocprm-dashboard' %}">&#x2190; Back</a>
-      <a class="btn btn-light py-1 px-3 m-0" href="{% url 'ocprm-pdftest' %}">PDF</a>
+      <a class="btn btn-light py-1 px-3 m-0" href="{% url 'ocprm-project-list' %}">&#x2190; Back</a>
+      <a class="btn btn-light py-1 px-3 m-0 disabled" href="{% url 'ocprm-pdftest' %}">PDF</a>
       <a class="btn btn-light py-1 px-3 m-0" href="{% url 'ocprm-support' project.pk %}">Issue</a>
       <a class="btn btn-light py-1 px-3 m-0" href="{% url 'ocprm-project-comment' project.pk %}">Comment</a>
     </p>
@@ -18,12 +18,14 @@
       <thead>
       </thead>
       <tbody>
+<!--
         <tr>
           <th class="nb-w25">ID</th>
           <td>{{ project.id }}</td>
         </tr>
+-->
         <tr>
-          <th>Name</th>
+          <th class="nb-w25">Name</th>
           <td>{{ project.name }}</td>
         </tr>
         <tr>
@@ -50,14 +52,6 @@
           <th>Url</th>
           <td>{{ project.live_url }}</td>
         </tr>
-        <tr>
-          <th>Client POC</th>
-          <td><a href="">{{ project.client_poc.username }}</a></td>
-        </tr>
-        <tr>
-          <th>OIT POC</th>
-          <td><a href="">{{ project.vendor_poc.username }}</a></td>
-        </tr>
       </tbody>
       <tfoot>
       </tfoot>
@@ -77,18 +71,18 @@
           <th>Name</th>
           <th>Owner</th>
           <th>Status</th>
-          <th>Overdue</th>
         </tr>
       </thead>
       <tbody>
         {% for project_task in project.projecttask_set.all %}
-          <tr>
-            <td>{{ project_task.id }}</td>
-            <td><a href="">{{ project_task.name }}</a></td>
-            <td>{{ project_task.owner.username }}</td>
-            <td>{{ project_task.get_status_display }}</td>
-            <td class="bg-danger-rm text-danger">Yes</td>
-          </tr>
+            {% if project_task.owner == user %}
+              <tr>
+                <td>{{ project_task.id }}</td>
+                <td><a href="">{{ project_task.name }}</a></td>
+                <td class="text-success">You</td>
+                <td>{{ project_task.get_status_display }}</td>
+              </tr>
+            {% endif %}
         {% endfor %}
       </tbody>
       <tfoot>

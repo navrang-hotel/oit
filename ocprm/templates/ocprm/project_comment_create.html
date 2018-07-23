@@ -4,22 +4,19 @@
 
   <div class="container">
     <div class="col-sm-6 bg-white rounded border p-3">
-      <h5 class="text-success">Add comment</h5>
+      <h5 class="text-success d-inline">Add comment</h5>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      <a class="" href="javascript:history.back()">Back to project</a>
+      <hr />
       <form action="" method="post">
         {% csrf_token %}
         <div class="form-group">
           {{ form.body }}
-          <hr />
         </div>
         <div class="form-group">
           <button class="btn btn-success text-white pull-right" type="submit">Submit</button>
         </div>
       </form>
-      <hr />
-      <p>
-        <a href="">Back to project</a>&nbsp;&nbsp;&nbsp;&nbsp;
-        <a href="">Edit request</a>&nbsp;&nbsp;&nbsp;&nbsp;
-      </p>
     </div>
   </div>
 {% endblock %}

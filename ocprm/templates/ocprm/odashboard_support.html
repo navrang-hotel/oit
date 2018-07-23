@@ -4,7 +4,13 @@
 
 {% block dash_content %}
   <div class="container bg-white rounded py-3">
-    <h4 class="py-2 mb-0 ">Get support request</h4>
+    <h4 class="py-2 mb-0 d-inline">Get support request</h4>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+    <a class="" href="javascript:history.back()">Back to project</a>
+    <hr /> 
+    <p class="text-secondary">
+Please provide short title and accurate description of the problem you are facing.
+    </p>
     <hr /> 
     <form action="" method="post">
       {% csrf_token %}

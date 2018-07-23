@@ -58,6 +58,11 @@
 </div>
 
 
+<div class="container text-center">
+  {% load static %} 
+  <img class="img-responsive my-4" src="{% static 'base/img/services_ubu_2.svg' %}" />
+</div>
+
 <div class="container pb-5-rm mb-0 pt-5">
   <div class="row mb-3">
     {% for ipse in ips.indexpageservicesentry_set.all %}
@@ -121,13 +126,11 @@ Good support for computer hardware store applications.
 
 <hr class="m-0" />
 <div class="container text-center py-5 my-0">
-  <h1>Subscribe our newsletter</h1>
+  <h1 class="mb-5">Subscribe our newsletter</h1>
       {% csrf_token %}
       <!-- {{ subscriber_form.email.label}} <br /> -->
       <!--{{ subscriber_form.email|addcss:"form-control" }}-->
-      <input type="email" id="subscriber_email">
-      <!-- <a class="rounded border border-primary px-3 py-2 text-primary nb-deco-none" href="">Subscribe</a>-->
-      <button type="submit" class="btn btn-primary mt-3-rm" id="damaha">Subscribe</button>
+      <input type="email" class="m-0 p-0" id="subscriber_email" placeholder="Email"><button type="submit" class="btn btn-sm btn-primary m-0 p-0-rm" id="damaha">Subscribe</button>
     <p id="ajaxdisp" class="py-3">  
     </p>  
 </div>
@@ -143,7 +146,6 @@ Good support for computer hardware store applications.
 
 <div class="container text-center py-5">
   <h2 class="my-4">Microsoft acquires Github</h2>
-  {% load static %} 
   <img class="img-responsive my-4" src="{% static 'base/img/microgit_1.jpg' %}" />
   <p class="text-secondary my-4">
 Microsoft Corp. on Monday announced it has reached an agreement to acquire GitHub,

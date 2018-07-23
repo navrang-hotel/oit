@@ -6,7 +6,8 @@
   <div class="rounded border bg-white p-4 mb-4">
     <h3>Start new project</h3>
     <h6>Please start a new project.</h6>
-    <a class="btn btn-success mt-3" href="{% url 'ocprm-project-start' %}">Start Project</a>
+    <!-- <a class="btn btn-success mt-3 disabled" href="{% url 'ocprm-project-start' %}">Start Project</a> -->
+    <a class="btn btn-success mt-3 disabled" href="">Start Project</a>
   </div>
 
   <div class="container bg-white p-4 rounded border">
@@ -17,7 +18,7 @@
     <table class="table table-sm-rm table-responsive-sm table-striped border">
       <thead class="bg-info text-white">
         <tr class="p-5">
-          <th scope="col" class="p-3 nb-w10">Project ID</th>
+          <!-- <th scope="col" class="p-3 nb-w10">Project ID</th> -->
           <th scope="col" class="p-3">Name</th>
           <th scope="col" class="p-3">Status</th>
           <th scope="col" class="p-3">Role</th>
@@ -27,7 +28,7 @@
       <tbody>
         {% for project in project_list %}
           <tr>
-            <th scope="row">{{ project.id }}</th>
+            <!-- <th scope="row">{{ project.id }}</th>-->
             <td>{{ project.name }}</td>
             <td>{{ project.get_status_display }}</td>
             <td>

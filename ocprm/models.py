@@ -30,8 +30,6 @@ class Project(models.Model):
     start_date = models.DateField()
     end_date = models.DateField()
     live_url = models.CharField(max_length=100)
-    client_poc = models.ForeignKey(User, on_delete=models.CASCADE, related_name='client_poc')
-    vendor_poc = models.ForeignKey(User, on_delete=models.CASCADE, related_name='vendor_poc')
     actors = models.ManyToManyField(User, through='ProjectUserContext')
 
     def __str__(self):
@@ -131,7 +129,7 @@ class ProjectTask(models.Model):
     STATUS = (
         ('N', 'New',),
         ('O', 'Open',),
-        ('I', 'InProgress',),
+        ('P', 'Pending',),
         ('H', 'OnHold',),
         ('C', 'Complete',),
     )
