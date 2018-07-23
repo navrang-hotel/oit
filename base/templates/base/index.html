@@ -1,5 +1,6 @@
 {% extends 'base/base_generic.html' %}
 
+{% load static %} 
 {% load odfilter %}
 
 {% block navHom%} active {% endblock %}
@@ -58,10 +59,11 @@
 </div>
 
 
+{% comment %}
 <div class="container text-center">
-  {% load static %} 
   <img class="img-responsive my-4" src="{% static 'base/img/services_ubu_2.svg' %}" />
 </div>
+{% endcomment %}
 
 <div class="container pb-5-rm mb-0 pt-5">
   <div class="row mb-3">

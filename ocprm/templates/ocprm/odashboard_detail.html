@@ -78,7 +78,7 @@
             {% if project_task.owner == user %}
               <tr>
                 <td>{{ project_task.id }}</td>
-                <td><a href="">{{ project_task.name }}</a></td>
+                <td><strong>{{ project_task.name }}</strong></td>
                 <td class="text-success">You</td>
                 <td>{{ project_task.get_status_display }}</td>
               </tr>
