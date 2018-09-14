@@ -90,13 +90,13 @@
 }
 .nb-bg-hero1 {
     /* The image used */
-    background-image: url("../img/services_2_ubu.jpg");
+    background-image: url("../img/hero_7.png");
 
     /* Full height */
     /*height: 100%; */
 
     /* Center and scale the image nicely */
-    background-position: right top;
+    /* background-position: right top; */
     background-repeat: no-repeat;
     /* background-size: cover; */
 }
